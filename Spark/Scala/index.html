@@ -1,0 +1,6610 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.10">
+    
+    
+      
+        <title>Scala - maomao的笔记</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.472b142f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.08040f6c.min.css">
+        
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#1-scala" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="maomao的笔记" class="md-header__button md-logo" aria-label="maomao的笔记" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            maomao的笔记
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Scala
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent=""  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9h-1.9M20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69m-9.15 3.96h2.3L12 9l-1.15 3.65Z"/></svg>
+            </label>
+          
+        
+          
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent=""  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="maomao的笔记" class="md-nav__button md-logo" aria-label="maomao的笔记" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    maomao的笔记
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1">
+          目录
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="目录" data-md-level="1">
+        <label class="md-nav__title" for="__nav_1">
+          <span class="md-nav__icon md-icon"></span>
+          目录
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        maomao的个人笔记网站
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_2" type="checkbox" id="__nav_1_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1_2">
+          Linux语法
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Linux语法" data-md-level="2">
+        <label class="md-nav__title" for="__nav_1_2">
+          <span class="md-nav__icon md-icon"></span>
+          Linux语法
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/Linux/" class="md-nav__link">
+        Linux
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_3" type="checkbox" id="__nav_1_3" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1_3">
+          Spark语法
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Spark语法" data-md-level="2">
+        <label class="md-nav__title" for="__nav_1_3">
+          <span class="md-nav__icon md-icon"></span>
+          Spark语法
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Scala
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Scala
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-scala" class="md-nav__link">
+    第1章 Scala入门
+  </a>
+  
+    <nav class="md-nav" aria-label="第1章 Scala入门">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11" class="md-nav__link">
+    1.1 概述
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-scala" class="md-nav__link">
+    1.2 Scala环境搭建
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    第2章 变量和数据类型
+  </a>
+  
+    <nav class="md-nav" aria-label="第2章 变量和数据类型">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21" class="md-nav__link">
+    2.1 注释
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22" class="md-nav__link">
+    2.2 变量和常量（重点）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23" class="md-nav__link">
+    2.3 标识符的命名规范
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24" class="md-nav__link">
+    2.4 字符串输出
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#25" class="md-nav__link">
+    2.5 数据类型（重点）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#27-byteshortintlong" class="md-nav__link">
+    2.7 整数类型（Byte、Short、Int、Long）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#28-floatdouble" class="md-nav__link">
+    2.8 浮点类型（Float、Double）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#29-char" class="md-nav__link">
+    2.9 字符类型（Char）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#210-boolean" class="md-nav__link">
+    2.10 布尔类型：Boolean
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#212" class="md-nav__link">
+    2.12 类型转换
+  </a>
+  
+    <nav class="md-nav" aria-label="2.12 类型转换">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2121" class="md-nav__link">
+    2.12.1 数值类型自动转换
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2122" class="md-nav__link">
+    2.12.2 强制类型转换
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2123-string" class="md-nav__link">
+    2.12.3 数值类型和String类型间转换
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    第3章 运算符
+  </a>
+  
+    <nav class="md-nav" aria-label="第3章 运算符">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31" class="md-nav__link">
+    3.1 算术运算符
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32" class="md-nav__link">
+    3.2 关系运算符（比较运算符）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33" class="md-nav__link">
+    3.3 逻辑运算符
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34" class="md-nav__link">
+    3.4 赋值运算符
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#35" class="md-nav__link">
+    3.5 位运算符
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#36-scala" class="md-nav__link">
+    3.6 Scala运算符本质
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    第4章 流程控制
+  </a>
+  
+    <nav class="md-nav" aria-label="第4章 流程控制">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-if-else" class="md-nav__link">
+    4.1 分支控制if-else
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-switch" class="md-nav__link">
+    4.2 Switch分支结构
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-for" class="md-nav__link">
+    4.3 For循环控制
+  </a>
+  
+    <nav class="md-nav" aria-label="4.3 For循环控制">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#431" class="md-nav__link">
+    4.3.1 基本语法
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#431_1" class="md-nav__link">
+    4.3.1 补充语法
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#45-whiledowhile" class="md-nav__link">
+    4.5 While和do..While循环控制
+  </a>
+  
+    <nav class="md-nav" aria-label="4.5 While和do..While循环控制">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#451-while" class="md-nav__link">
+    4.5.1 While循环控制
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#452-dowhile" class="md-nav__link">
+    4.5.2 do..while循环控制
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#46" class="md-nav__link">
+    4.6 循环中断
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    第5章 函数式编程
+  </a>
+  
+    <nav class="md-nav" aria-label="第5章 函数式编程">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51" class="md-nav__link">
+    5.1 函数基础
+  </a>
+  
+    <nav class="md-nav" aria-label="5.1 函数基础">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#511" class="md-nav__link">
+    5.1.1 函数基本语法
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#512" class="md-nav__link">
+    5.1.2 函数和方法的区别
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#513" class="md-nav__link">
+    5.1.3 函数参数
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#514" class="md-nav__link">
+    5.1.4 函数至简原则（重点）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#515" class="md-nav__link">
+    5.1.5 匿名函数化简
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52" class="md-nav__link">
+    5.2 函数高级
+  </a>
+  
+    <nav class="md-nav" aria-label="5.2 函数高级">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#521" class="md-nav__link">
+    5.2.1 高阶函数
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#523" class="md-nav__link">
+    5.2.3 函数柯里化&amp;闭包
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#524" class="md-nav__link">
+    5.2.4 递归
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#525" class="md-nav__link">
+    5.2.5 控制抽象
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#526" class="md-nav__link">
+    5.2.6 惰性函数
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    第6章 面向对象
+  </a>
+  
+    <nav class="md-nav" aria-label="第6章 面向对象">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-scala" class="md-nav__link">
+    6.1 Scala包
+  </a>
+  
+    <nav class="md-nav" aria-label="6.1 Scala包">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#611" class="md-nav__link">
+    6.1.1 包的命名
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#612" class="md-nav__link">
+    6.1.2 包对象
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#614" class="md-nav__link">
+    6.1.4 导包说明
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62" class="md-nav__link">
+    6.2 类和对象
+  </a>
+  
+    <nav class="md-nav" aria-label="6.2 类和对象">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#621" class="md-nav__link">
+    6.2.1 定义类
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#622" class="md-nav__link">
+    6.2.2 属性和封装
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#623" class="md-nav__link">
+    6.2.3 访问权限
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#624" class="md-nav__link">
+    6.2.4 方法
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#625" class="md-nav__link">
+    6.2.5 构造器
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#626" class="md-nav__link">
+    6.2.6 构造器参数
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63" class="md-nav__link">
+    6.3 继承
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#64" class="md-nav__link">
+    6.4 抽象属性和抽象方法
+  </a>
+  
+    <nav class="md-nav" aria-label="6.4 抽象属性和抽象方法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#641" class="md-nav__link">
+    6.4.1 抽象属性和抽象方法
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#642" class="md-nav__link">
+    6.4.2 匿名子类
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#65" class="md-nav__link">
+    6.5 单例对象（伴生对象）
+  </a>
+  
+    <nav class="md-nav" aria-label="6.5 单例对象（伴生对象）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#651" class="md-nav__link">
+    6.5.1 单例对象语法
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#652-apply" class="md-nav__link">
+    6.5.2 apply方法
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#66-trait" class="md-nav__link">
+    6.6 特质（Trait）
+  </a>
+  
+    <nav class="md-nav" aria-label="6.6 特质（Trait）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#661" class="md-nav__link">
+    6.6.1 特质声明
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#662" class="md-nav__link">
+    6.6.2 特质基本语法
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#663" class="md-nav__link">
+    6.6.3特质和抽象类的区别
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#67" class="md-nav__link">
+    6.7 扩展
+  </a>
+  
+    <nav class="md-nav" aria-label="6.7 扩展">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#671" class="md-nav__link">
+    6.7.1 类型检查和转换
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#672" class="md-nav__link">
+    6.7.2 枚举类和应用类
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#673-type" class="md-nav__link">
+    6.7.3 Type定义新类型
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    第7章 集合
+  </a>
+  
+    <nav class="md-nav" aria-label="第7章 集合">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71" class="md-nav__link">
+    7.1 集合简介
+  </a>
+  
+    <nav class="md-nav" aria-label="7.1 集合简介">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#711" class="md-nav__link">
+    7.1.1 不可变集合继承图
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#712" class="md-nav__link">
+    7.1.2 可变集合继承图
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72" class="md-nav__link">
+    7.2 数组
+  </a>
+  
+    <nav class="md-nav" aria-label="7.2 数组">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#721" class="md-nav__link">
+    7.2.1 不可变数组
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#722" class="md-nav__link">
+    7.2.2 可变数组
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#723" class="md-nav__link">
+    7.2.3 不可变数组与可变数组的转换
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#724" class="md-nav__link">
+    7.2.4 多维数组
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#73-seqlist" class="md-nav__link">
+    7.3 Seq集合（List）
+  </a>
+  
+    <nav class="md-nav" aria-label="7.3 Seq集合（List）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#731-list" class="md-nav__link">
+    7.3.1 不可变List
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#732-listbuffer" class="md-nav__link">
+    7.3.2 可变ListBuffer
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#74-set" class="md-nav__link">
+    7.4 Set集合
+  </a>
+  
+    <nav class="md-nav" aria-label="7.4 Set集合">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#741-set" class="md-nav__link">
+    7.4.1 不可变Set
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#742-mutableset" class="md-nav__link">
+    7.4.2 可变mutable.Set
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#75-map" class="md-nav__link">
+    7.5 Map集合
+  </a>
+  
+    <nav class="md-nav" aria-label="7.5 Map集合">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#751-map" class="md-nav__link">
+    7.5.1 不可变Map
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#752-map" class="md-nav__link">
+    7.5.2 可变Map
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#76" class="md-nav__link">
+    7.6 元组
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#77" class="md-nav__link">
+    7.7 集合常用函数
+  </a>
+  
+    <nav class="md-nav" aria-label="7.7 集合常用函数">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#771" class="md-nav__link">
+    7.7.1 基本属性和常用操作
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#772" class="md-nav__link">
+    7.7.2 衍生集合
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#773" class="md-nav__link">
+    7.7.3 集合计算初级函数
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#774" class="md-nav__link">
+    7.7.4 集合计算高级函数
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#775-wordcount" class="md-nav__link">
+    7.7.5 WordCount案例
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#78" class="md-nav__link">
+    7.8 队列
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#79" class="md-nav__link">
+    7.9 并行集合
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8" class="md-nav__link">
+    第8章 模式匹配
+  </a>
+  
+    <nav class="md-nav" aria-label="第8章 模式匹配">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#81" class="md-nav__link">
+    8.1 基本语法
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#82" class="md-nav__link">
+    8.2 模式匹配常见用法
+  </a>
+  
+    <nav class="md-nav" aria-label="8.2 模式匹配常见用法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#821" class="md-nav__link">
+    8.2.1 匹配类型
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#822" class="md-nav__link">
+    8.2.2 匹配对象及样例类
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#83" class="md-nav__link">
+    8.3 偏函数中的模式匹配
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#84" class="md-nav__link">
+    8.4 下划线的使用总结
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9" class="md-nav__link">
+    第9章 异常
+  </a>
+  
+    <nav class="md-nav" aria-label="第9章 异常">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#91-java" class="md-nav__link">
+    9.1 Java异常处理
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#92-scala" class="md-nav__link">
+    9.2 Scala异常处理
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10" class="md-nav__link">
+    第10章 隐式转换
+  </a>
+  
+    <nav class="md-nav" aria-label="第10章 隐式转换">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#101" class="md-nav__link">
+    10.1 隐式函数
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#102" class="md-nav__link">
+    10.2 隐式参数
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11_1" class="md-nav__link">
+    第11章 泛型
+  </a>
+  
+    <nav class="md-nav" aria-label="第11章 泛型">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#111" class="md-nav__link">
+    11.1 协变和逆变
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#112" class="md-nav__link">
+    11.2 泛型上下限
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#113" class="md-nav__link">
+    11.3 上下文限定
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-idea" class="md-nav__link">
+    第12章 IDEA快捷键
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Spark%E5%85%A5%E9%97%A8/" class="md-nav__link">
+        Spark入门
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SparkCore/" class="md-nav__link">
+        SparkCore
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SparkSQL/" class="md-nav__link">
+        SparkSQL
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SparkStreaming/" class="md-nav__link">
+        SparkStreaming
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Spark%E5%86%85%E6%A0%B8/" class="md-nav__link">
+        Spark内核
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Spark%E4%BC%98%E5%8C%96/" class="md-nav__link">
+        Spark优化
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_4" type="checkbox" id="__nav_1_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1_4">
+          Flink语法
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Flink语法" data-md-level="2">
+        <label class="md-nav__title" for="__nav_1_4">
+          <span class="md-nav__icon md-icon"></span>
+          Flink语法
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Flink/Flink/" class="md-nav__link">
+        Flink
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_5" type="checkbox" id="__nav_1_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1_5">
+          TiDB概述
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="TiDB概述" data-md-level="2">
+        <label class="md-nav__title" for="__nav_1_5">
+          <span class="md-nav__icon md-icon"></span>
+          TiDB概述
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../TiDB/Tidb%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/" class="md-nav__link">
+        TiDB
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-scala" class="md-nav__link">
+    第1章 Scala入门
+  </a>
+  
+    <nav class="md-nav" aria-label="第1章 Scala入门">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11" class="md-nav__link">
+    1.1 概述
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-scala" class="md-nav__link">
+    1.2 Scala环境搭建
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    第2章 变量和数据类型
+  </a>
+  
+    <nav class="md-nav" aria-label="第2章 变量和数据类型">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21" class="md-nav__link">
+    2.1 注释
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22" class="md-nav__link">
+    2.2 变量和常量（重点）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23" class="md-nav__link">
+    2.3 标识符的命名规范
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24" class="md-nav__link">
+    2.4 字符串输出
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#25" class="md-nav__link">
+    2.5 数据类型（重点）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#27-byteshortintlong" class="md-nav__link">
+    2.7 整数类型（Byte、Short、Int、Long）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#28-floatdouble" class="md-nav__link">
+    2.8 浮点类型（Float、Double）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#29-char" class="md-nav__link">
+    2.9 字符类型（Char）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#210-boolean" class="md-nav__link">
+    2.10 布尔类型：Boolean
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#212" class="md-nav__link">
+    2.12 类型转换
+  </a>
+  
+    <nav class="md-nav" aria-label="2.12 类型转换">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2121" class="md-nav__link">
+    2.12.1 数值类型自动转换
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2122" class="md-nav__link">
+    2.12.2 强制类型转换
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2123-string" class="md-nav__link">
+    2.12.3 数值类型和String类型间转换
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    第3章 运算符
+  </a>
+  
+    <nav class="md-nav" aria-label="第3章 运算符">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31" class="md-nav__link">
+    3.1 算术运算符
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32" class="md-nav__link">
+    3.2 关系运算符（比较运算符）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33" class="md-nav__link">
+    3.3 逻辑运算符
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34" class="md-nav__link">
+    3.4 赋值运算符
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#35" class="md-nav__link">
+    3.5 位运算符
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#36-scala" class="md-nav__link">
+    3.6 Scala运算符本质
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    第4章 流程控制
+  </a>
+  
+    <nav class="md-nav" aria-label="第4章 流程控制">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-if-else" class="md-nav__link">
+    4.1 分支控制if-else
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-switch" class="md-nav__link">
+    4.2 Switch分支结构
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-for" class="md-nav__link">
+    4.3 For循环控制
+  </a>
+  
+    <nav class="md-nav" aria-label="4.3 For循环控制">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#431" class="md-nav__link">
+    4.3.1 基本语法
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#431_1" class="md-nav__link">
+    4.3.1 补充语法
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#45-whiledowhile" class="md-nav__link">
+    4.5 While和do..While循环控制
+  </a>
+  
+    <nav class="md-nav" aria-label="4.5 While和do..While循环控制">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#451-while" class="md-nav__link">
+    4.5.1 While循环控制
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#452-dowhile" class="md-nav__link">
+    4.5.2 do..while循环控制
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#46" class="md-nav__link">
+    4.6 循环中断
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    第5章 函数式编程
+  </a>
+  
+    <nav class="md-nav" aria-label="第5章 函数式编程">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51" class="md-nav__link">
+    5.1 函数基础
+  </a>
+  
+    <nav class="md-nav" aria-label="5.1 函数基础">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#511" class="md-nav__link">
+    5.1.1 函数基本语法
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#512" class="md-nav__link">
+    5.1.2 函数和方法的区别
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#513" class="md-nav__link">
+    5.1.3 函数参数
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#514" class="md-nav__link">
+    5.1.4 函数至简原则（重点）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#515" class="md-nav__link">
+    5.1.5 匿名函数化简
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52" class="md-nav__link">
+    5.2 函数高级
+  </a>
+  
+    <nav class="md-nav" aria-label="5.2 函数高级">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#521" class="md-nav__link">
+    5.2.1 高阶函数
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#523" class="md-nav__link">
+    5.2.3 函数柯里化&amp;闭包
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#524" class="md-nav__link">
+    5.2.4 递归
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#525" class="md-nav__link">
+    5.2.5 控制抽象
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#526" class="md-nav__link">
+    5.2.6 惰性函数
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    第6章 面向对象
+  </a>
+  
+    <nav class="md-nav" aria-label="第6章 面向对象">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-scala" class="md-nav__link">
+    6.1 Scala包
+  </a>
+  
+    <nav class="md-nav" aria-label="6.1 Scala包">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#611" class="md-nav__link">
+    6.1.1 包的命名
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#612" class="md-nav__link">
+    6.1.2 包对象
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#614" class="md-nav__link">
+    6.1.4 导包说明
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62" class="md-nav__link">
+    6.2 类和对象
+  </a>
+  
+    <nav class="md-nav" aria-label="6.2 类和对象">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#621" class="md-nav__link">
+    6.2.1 定义类
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#622" class="md-nav__link">
+    6.2.2 属性和封装
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#623" class="md-nav__link">
+    6.2.3 访问权限
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#624" class="md-nav__link">
+    6.2.4 方法
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#625" class="md-nav__link">
+    6.2.5 构造器
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#626" class="md-nav__link">
+    6.2.6 构造器参数
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63" class="md-nav__link">
+    6.3 继承
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#64" class="md-nav__link">
+    6.4 抽象属性和抽象方法
+  </a>
+  
+    <nav class="md-nav" aria-label="6.4 抽象属性和抽象方法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#641" class="md-nav__link">
+    6.4.1 抽象属性和抽象方法
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#642" class="md-nav__link">
+    6.4.2 匿名子类
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#65" class="md-nav__link">
+    6.5 单例对象（伴生对象）
+  </a>
+  
+    <nav class="md-nav" aria-label="6.5 单例对象（伴生对象）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#651" class="md-nav__link">
+    6.5.1 单例对象语法
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#652-apply" class="md-nav__link">
+    6.5.2 apply方法
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#66-trait" class="md-nav__link">
+    6.6 特质（Trait）
+  </a>
+  
+    <nav class="md-nav" aria-label="6.6 特质（Trait）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#661" class="md-nav__link">
+    6.6.1 特质声明
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#662" class="md-nav__link">
+    6.6.2 特质基本语法
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#663" class="md-nav__link">
+    6.6.3特质和抽象类的区别
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#67" class="md-nav__link">
+    6.7 扩展
+  </a>
+  
+    <nav class="md-nav" aria-label="6.7 扩展">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#671" class="md-nav__link">
+    6.7.1 类型检查和转换
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#672" class="md-nav__link">
+    6.7.2 枚举类和应用类
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#673-type" class="md-nav__link">
+    6.7.3 Type定义新类型
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    第7章 集合
+  </a>
+  
+    <nav class="md-nav" aria-label="第7章 集合">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71" class="md-nav__link">
+    7.1 集合简介
+  </a>
+  
+    <nav class="md-nav" aria-label="7.1 集合简介">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#711" class="md-nav__link">
+    7.1.1 不可变集合继承图
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#712" class="md-nav__link">
+    7.1.2 可变集合继承图
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72" class="md-nav__link">
+    7.2 数组
+  </a>
+  
+    <nav class="md-nav" aria-label="7.2 数组">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#721" class="md-nav__link">
+    7.2.1 不可变数组
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#722" class="md-nav__link">
+    7.2.2 可变数组
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#723" class="md-nav__link">
+    7.2.3 不可变数组与可变数组的转换
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#724" class="md-nav__link">
+    7.2.4 多维数组
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#73-seqlist" class="md-nav__link">
+    7.3 Seq集合（List）
+  </a>
+  
+    <nav class="md-nav" aria-label="7.3 Seq集合（List）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#731-list" class="md-nav__link">
+    7.3.1 不可变List
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#732-listbuffer" class="md-nav__link">
+    7.3.2 可变ListBuffer
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#74-set" class="md-nav__link">
+    7.4 Set集合
+  </a>
+  
+    <nav class="md-nav" aria-label="7.4 Set集合">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#741-set" class="md-nav__link">
+    7.4.1 不可变Set
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#742-mutableset" class="md-nav__link">
+    7.4.2 可变mutable.Set
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#75-map" class="md-nav__link">
+    7.5 Map集合
+  </a>
+  
+    <nav class="md-nav" aria-label="7.5 Map集合">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#751-map" class="md-nav__link">
+    7.5.1 不可变Map
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#752-map" class="md-nav__link">
+    7.5.2 可变Map
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#76" class="md-nav__link">
+    7.6 元组
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#77" class="md-nav__link">
+    7.7 集合常用函数
+  </a>
+  
+    <nav class="md-nav" aria-label="7.7 集合常用函数">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#771" class="md-nav__link">
+    7.7.1 基本属性和常用操作
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#772" class="md-nav__link">
+    7.7.2 衍生集合
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#773" class="md-nav__link">
+    7.7.3 集合计算初级函数
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#774" class="md-nav__link">
+    7.7.4 集合计算高级函数
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#775-wordcount" class="md-nav__link">
+    7.7.5 WordCount案例
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#78" class="md-nav__link">
+    7.8 队列
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#79" class="md-nav__link">
+    7.9 并行集合
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8" class="md-nav__link">
+    第8章 模式匹配
+  </a>
+  
+    <nav class="md-nav" aria-label="第8章 模式匹配">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#81" class="md-nav__link">
+    8.1 基本语法
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#82" class="md-nav__link">
+    8.2 模式匹配常见用法
+  </a>
+  
+    <nav class="md-nav" aria-label="8.2 模式匹配常见用法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#821" class="md-nav__link">
+    8.2.1 匹配类型
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#822" class="md-nav__link">
+    8.2.2 匹配对象及样例类
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#83" class="md-nav__link">
+    8.3 偏函数中的模式匹配
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#84" class="md-nav__link">
+    8.4 下划线的使用总结
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9" class="md-nav__link">
+    第9章 异常
+  </a>
+  
+    <nav class="md-nav" aria-label="第9章 异常">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#91-java" class="md-nav__link">
+    9.1 Java异常处理
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#92-scala" class="md-nav__link">
+    9.2 Scala异常处理
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10" class="md-nav__link">
+    第10章 隐式转换
+  </a>
+  
+    <nav class="md-nav" aria-label="第10章 隐式转换">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#101" class="md-nav__link">
+    10.1 隐式函数
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#102" class="md-nav__link">
+    10.2 隐式参数
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11_1" class="md-nav__link">
+    第11章 泛型
+  </a>
+  
+    <nav class="md-nav" aria-label="第11章 泛型">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#111" class="md-nav__link">
+    11.1 协变和逆变
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#112" class="md-nav__link">
+    11.2 泛型上下限
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#113" class="md-nav__link">
+    11.3 上下文限定
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-idea" class="md-nav__link">
+    第12章 IDEA快捷键
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h2 id="1-scala">第1章 Scala入门</h2>
+<h3 id="11">1.1 概述</h3>
+<p>Scala将面向对象和函数式编程结合成一种简洁的高级语言。</p>
+<p>语言特点如下：</p>
+<p>（1）Scala和Java一样属于JVM语言，使用时都需要先编译为class字节码文件，并且Scala能够直接调用Java的类库。</p>
+<p>（2）Scala支持两种编程范式面向对象和函数式编程。</p>
+<p>（3）Scala语言更加简洁高效；语法能够化简，函数式编程的思想使代码结构简洁。</p>
+<p>（4）作者马丁·奥德斯基设计Scala借鉴了Java的设计思想，同时优秀的设计也推动了Java语言的发展。</p>
+<h3 id="12-scala">1.2 Scala环境搭建</h3>
+<p>1）安装步骤</p>
+<p>（1）首先确保JDK1.8安装成功</p>
+<p>（2）下载对应的Scala安装文件scala-2.12.11.zip</p>
+<p>（3）解压scala-2.12.11.zip，解压到任意没有中文的路径,例如D:\Tools</p>
+<p>（4）配置Scala的环境变量</p>
+<p><img alt="trigger" src="https://s2.loli.net/2022/11/03/osh2et61jWS3Pu7.png#pic_left" width="width" />
+<img alt="trigger" src="https://s2.loli.net/2022/11/03/HFMYx6no2bL7fVP.png#pic_left" width="width" /></p>
+<p>注意1：解压路径不能有任何中文路径，最好不要有空格。</p>
+<p>注意2：环境变量要大写SCALA_HOME。</p>
+<p>2）测试</p>
+<p>需求：计算两数a和b的和。</p>
+<p>步骤</p>
+<p>（1）在键盘上同时按win+r键，并在运行窗口输入cmd命令。</p>
+<p><img alt="trigger" src="https://s2.loli.net/2022/11/03/PD6AVKEoQOvG2Zz.png#pic_left" width="width" /></p>
+<p>（2）输入Scala并按回车键，启动Scala环境。然后定义两个变量，并计算求和。</p>
+<p><img alt="trigger" src="https://s2.loli.net/2022/11/03/byNjdZ7Iva6uiwR.png#pic_left" width="width" /></p>
+<h1 id="2">第2章 变量和数据类型</h1>
+<h2 id="21">2.1 注释</h2>
+<p>Scala注释使用和Java完全一样。</p>
+<p>注释是一个程序员必须要具有的良好编程习惯。将自己的思想通过注释先整理出来，再用代码去体现。</p>
+<p>1）基本语法</p>
+<p>（1）单行注释：//</p>
+<p>（2）多行注释：/<em> </em>/</p>
+<p>（3）文档注释：/**</p>
+<p>​        *</p>
+<p>​    */</p>
+<p>2）代码规范</p>
+<p>（1）使用一次tab操作，实现缩进，默认整体向右边移动，用shift+tab整体向左移。</p>
+<p>（2）或者使用ctrl + alt + L来进行格式化。</p>
+<p>（3）运算符两边习惯性各加一个空格。比如：2 + 4 * 5。</p>
+<p>（4）一行最长不超过80个字符，超过的<strong>请使用换行展示</strong>，尽量保持格式优雅。</p>
+<h2 id="22">2.2 变量和常量（重点）</h2>
+<p><strong>常量：</strong>在程序执行的过程中，其值不会被改变的变量。</p>
+<p>0）回顾：Java变量和常量语法</p>
+<p>​        变量类型 变量名称 = 初始值                     int a = 10</p>
+<p>​        final常量类型 常量名称 = 初始值            final int b = 20</p>
+<p>​        注意：java中的final如果加static才会被存放在常量池中，否则作为不可修改的变量存在堆栈中。</p>
+<p>1）基本语法</p>
+<p>​        var 变量名 [: 变量类型] = 初始值            var i:Int = 10</p>
+<p>val 常量名 [: 常量类型] = 初始值             val j:Int = 20</p>
+<p>注意：能用常量的地方不用变量。</p>
+<p>2）案例实操</p>
+<p>（1）声明一个值的时候，类型可以省略，编译器自动推导，即类型推导。</p>
+<p>（2）类型确定后，就不能修改，说明Scala是强数据类型语言。</p>
+<p>（3）变量声明时，必须要有初始值。</p>
+<p>（4）在声明/定义一个变量时，可以使用var或者val来修饰，var修饰的变量可改变，val修饰的变量不可改。</p>
+<p>（5）var修饰的对象引用可以改变，val修饰的对象则不可改变，但对象的状态（值）却是可以改变的。（比如：自定义对象、数组、集合等等）。</p>
+<pre><code class="language-scala">package com.atguigu.chapter02
+
+object Test01_Var {
+  def main(args: Array[String]): Unit = {
+
+    // 声明变量和常量
+    val a: Int = 10
+    var b: Int = 20
+
+
+    // 常量值无法修改
+    //    a = 20
+    b = 30
+    //    （1）声明变量时，类型可以省略，编译器自动推导，即类型推导
+    val c = 30
+
+
+    //    （2）类型确定后，就不能修改，说明Scala是强数据类型语言。
+
+    //    b = &quot;30&quot;
+
+    //    （3）变量声明时，必须要有初始值
+    val d: Int = 0
+
+//    var d1:Int = _
+
+    val test02_Var = new Test02_Var()
+    println(test02_Var.i)
+
+    //    （4）var修饰的对象引用可以改变，val修饰的对象则不可改变，
+    //    但对象的状态（值）却是可以改变的。（比如：自定义对象、数组、集合等等）
+    val person0 = new Person02()
+    var person1 = new Person02()
+
+    // 引用数据类型的常量和变量能否替换成别的对象
+    // var 可以修改引用数据类型的地址值  val不行
+    person1 = new Person02()
+
+    // 引用数据类型中的属性值能否发生变化  取决于内部的属性在定义的时候是var还是val
+    //    person0.name = &quot;lisi&quot;
+    person0.age = 11
+
+  }
+}
+
+class Test01_Var {
+
+  // scala中类的属性 如果是var变量也能使用默认值  但是必须要有等号
+  var i: Int = _
+}
+
+class Person01 {
+  val name: String = &quot;zhangsan&quot;
+  var age: Int = 10
+}
+</code></pre>
+<h2 id="23">2.3 标识符的命名规范</h2>
+<p>Scala对各种变量、方法、函数等命名时使用的字符序列称为标识符。即：凡是自己可以起名字的地方都叫标识符。</p>
+<p>1）命名规则</p>
+<p>Scala中的标识符声明，基本和Java是一致的，但是细节上会有所变化，有以下三种规则：</p>
+<p>（1）以字母或者下划线开头，后接字母、数字、下划线</p>
+<p>（2）以操作符开头，且只包含操作符（+ - * / # !等）</p>
+<p>（3）用反引号<code>....</code>包括的任意字符串，即使是Scala关键字（39个）也可以</p>
+<p>•    package, import, class, object, trait, extends, with, type, for</p>
+<p>•    private, protected, abstract, sealed, final, implicit, lazy, override</p>
+<p>•    try, catch, finally, throw </p>
+<p>•    if, else, match, case, do, while, for, return, yield</p>
+<p>•    def, val, var </p>
+<p>•    this, super</p>
+<p>•    new</p>
+<p>•    true, false, null</p>
+<p>注意：正常使用不能只遵守规则，必须按照规范来写，即使用大小驼峰命名法。</p>
+<h2 id="24">2.4 字符串输出</h2>
+<p>1）基本语法</p>
+<p>（1）字符串，通过+号连接。</p>
+<p>（2）重复字符串拼接。</p>
+<p>（3）printf用法：字符串，通过%传值。</p>
+<p>（4）字符串模板（插值字符串）：通过$获取变量值。</p>
+<p>​    （5）长字符串  原始字符串</p>
+<p>2）案例实操</p>
+<pre><code class="language-scala">package com.atguigu.chapter02
+
+object Test02_Str {
+  def main(args: Array[String]): Unit = {
+
+    //    （1）字符串，通过+号连接
+    System.out.println()
+    println(&quot;hello&quot; + &quot;world&quot;)
+
+    //    （2）重复字符串拼接
+    println(&quot;linhailinhai&quot; * 200)
+
+    //    （3）printf用法：字符串，通过%传值。
+    printf(&quot;name: %s age: %d\n&quot;, &quot;linhai&quot;, 8)
+
+    //    （4）字符串模板（插值字符串）：通过$获取变量值
+    val name = &quot;linhai&quot;
+    val age = 8
+
+    val s1 = s&quot;name: $name,age:${age}&quot;
+    println(s1)
+
+    val s2 = s&quot;name: ${name + 1},age:${age + 2}&quot;
+    println(s2)
+
+
+    //    （5）长字符串  原始字符串
+    println(&quot;我&quot; +
+      &quot;是&quot; +
+      &quot;一首&quot; +
+      &quot;诗&quot;)
+
+    //多行字符串，在Scala中，利用三个双引号包围多行字符串就可以实现。
+    // 输入的内容，带有空格、\t之类，导致每一行的开始位置不能整洁对齐。
+    //应用scala的stripMargin方法，在scala中stripMargin默认是“|”作为连接符，
+    // 在多行换行的行头前面加一个“|”符号即可。
+    println(
+      &quot;&quot;&quot;我
+        |是
+        |一首
+        |诗
+        |&quot;&quot;&quot;.stripMargin)
+
+    &quot;&quot;&quot;
+      |select id,
+      |       age
+      |from  user_info
+      |&quot;&quot;&quot;.stripMargin
+
+
+    s&quot;&quot;&quot;
+       |${name}
+       |${age}
+       |&quot;&quot;&quot;.stripMargin
+  }
+}
+</code></pre>
+<h2 id="25">2.5 数据类型（重点）</h2>
+<p><center><strong>Java基本数据类型</strong></center>
+<img alt="trigger" src="https://s2.loli.net/2022/11/03/ZkR5u8XGrWCtN2f.png" width="width" />
+<center><strong>Scala基本数据类型</strong></center>
+<img alt="trigger" src="https://s2.loli.net/2022/11/03/mDWZv4fLIXCYkTy.png" width="width" /></p>
+<pre><code class="language-scala">object Test03_Type {
+  def main(args: Array[String]): Unit = {   
+    // 所有的代码都是代码块
+    // 表示运行一段代码  同时将最后一行的结果作为返回值
+    // 千万不要写return
+    val i: Int = {
+      println(&quot;我是代码块&quot;)
+      10 + 10
+    }
+
+    // 代码块为1行的时候  大括号可以省略
+    val i1: Int = 10 + 10
+
+    // 如果代码块没有计算结果  返回类型是unit
+    val unit: Unit = {
+      println(&quot;hello&quot;)
+      println(&quot;我是代码块&quot;)
+    }
+
+
+    // 当代码块没办法完成计算的时候  返回值类型为nothing
+    //    val value: Nothing = {
+    //      println(&quot;hello&quot;)
+    //      throw new RuntimeException
+//    }
+}
+}
+</code></pre>
+<h2 id="27-byteshortintlong">2.7 整数类型（Byte、Short、Int、Long）</h2>
+<p>Scala的整数类型就是用于存放整数值的，比如12，30，3456等等。</p>
+<p>1）整型分类</p>
+<table>
+<thead>
+<tr>
+<th><strong>数据类型</strong></th>
+<th><strong>描述</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Byte [1]</td>
+<td>8位有符号补码整数。数值区间为 -128 到 127</td>
+</tr>
+<tr>
+<td>Short [2]</td>
+<td>16位有符号补码整数。数值区间为 -32768 到 32767</td>
+</tr>
+<tr>
+<td>Int [4]</td>
+<td>32位有符号补码整数。数值区间为 -2147483648 到 2147483647</td>
+</tr>
+<tr>
+<td>Long [8]</td>
+<td>64位有符号补码整数。数值区间为 -9223372036854775808 到 9223372036854775807 = 2的(64-1)次方-1</td>
+</tr>
+</tbody>
+</table>
+<p>2）案例实操</p>
+<p>（1）Scala各整数类型有固定的表示范围和字段长度，不受具体操作的影响，以保证Scala程序的可移植性。</p>
+<pre><code class="language-scala">object Test03_Type {
+  def main(args: Array[String]): Unit = {
+
+    // 整数类型
+    val i1 = 1
+
+    val l = 1L
+
+    // （1）Scala各整数类型有固定的表示范围和字段长度，不受具体操作的影响，以保证Scala程序的可移植性。
+    val b1: Byte = 2
+//    val b0: Byte = 128
+
+    val b2: Byte = 1 + 1
+    println(b2)
+
+    val i2 = 1
+
+    //（2）编译器对于常量值的计算 能够直接使用结果进行编译
+    // 但是如果是变量值 编译器是不知道变量的值的 所以判断不能将大类型的值赋值给小的类型
+    //    val b3: Byte = i2 + 1
+    //    println(b3)
+
+    // （3）Scala程序中变量常声明为Int型，除非不足以表示大数，才使用Long
+    val l1 = 2200000000L
+  }
+}
+</code></pre>
+<h2 id="28-floatdouble">2.8 浮点类型（Float、Double）</h2>
+<p>Scala的浮点类型可以表示一个小数，比如123.4f，7.8，0.12等等。</p>
+<p>1）浮点型分类</p>
+<table>
+<thead>
+<tr>
+<th><strong>数据类型</strong></th>
+<th><strong>描述</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Float [4]</td>
+<td>32 位, IEEE 754标准的单精度浮点数</td>
+</tr>
+<tr>
+<td>Double [8]</td>
+<td>64       位 IEEE 754标准的双精度浮点数</td>
+</tr>
+</tbody>
+</table>
+<p>2）案例实操</p>
+<p>Scala的浮点型常量默认为Double型，声明Float型常量，须后加‘f’或‘F’。</p>
+<pre><code class="language-scala">object Test03_Type{
+
+    def main(args: Array[String]): Unit = {
+
+    // 浮点数介绍
+    // 默认使用double
+    val d: Double = 3.14
+
+    // 如果使用float 在末尾添加f
+    val fl = 3.14f
+
+    // 浮点数计算有误差
+    println(0.1 / 3.3)
+    }
+}
+</code></pre>
+<p>//运行的结果</p>
+<pre><code class="language-scala">0.030303030303030307
+</code></pre>
+<h2 id="29-char">2.9 字符类型（Char）</h2>
+<p>1）基本说明</p>
+<p>字符类型可以表示单个字符，字符类型是Char。</p>
+<p>2）案例实操</p>
+<p>（1）字符常量是用单引号 ' ' 括起来的单个字符。</p>
+<p>（2）\t ：一个制表位，实现对齐的功能</p>
+<p>（3）\n ：换行符</p>
+<p>（4）\ ：表示\</p>
+<p>（5）\" ：表示"</p>
+<pre><code class="language-scala">object Test03_Type{
+
+    def main(args: Array[String]): Unit = {
+
+    //    （1）字符常量是用单引号 ' ' 括起来的单个字符。
+    val c1: Char = 'a'
+    val c2: Char = 65535
+
+    //    （2）\t ：一个制表位，实现对齐的功能
+    val c3: Char = '\t'
+
+    //    （3）\n ：换行符
+    val c4: Char = '\n'
+    println(c3 + 0)
+    println(c4 + 0)
+
+    //    （4）\\ ：表示\
+    val c5: Char = '\\'
+    println(c5 + 0)
+
+    //    （5）\&quot; ：表示&quot;
+    val c6: Char = '\&quot;'
+    println(c6 + 0)
+  }
+}
+</code></pre>
+<h2 id="210-boolean">2.10 布尔类型：Boolean</h2>
+<p>1）基本说明</p>
+<p>（1）布尔类型也叫Boolean类型，Booolean类型数据只允许取值true和false</p>
+<p>（2）boolean类型占1个字节。</p>
+<p>2）案例实操</p>
+<pre><code class="language-scala">object Test03_Type{
+
+    def main(args: Array[String]): Unit = {
+
+        val bo1: Boolean = true
+        val bo2: Boolean = false
+    }
+}
+</code></pre>
+<p>2.11 Unit类型、Null类型和 Nothing类型（重点）</p>
+<table>
+<thead>
+<tr>
+<th><strong>数据类型</strong></th>
+<th><strong>描述</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Unit</strong></td>
+<td>表示无值，和其他语言中void等同。用作不返回任何结果的方法的结果类型。Unit只有一个实例值，写成()。</td>
+</tr>
+<tr>
+<td><strong>Null</strong></td>
+<td>null , Null 类型只有一个实例值null</td>
+</tr>
+<tr>
+<td><strong>Nothing</strong></td>
+<td>Nothing类型在Scala的类层级最低端；它是任何其他类型的子类型。   当一个函数，我们确定没有正常的返回值，可以用Nothing来指定返回类型，这样有一个好处，就是我们可以把返回的值（异常）赋给其它的函数或者变量（兼容性）</td>
+</tr>
+</tbody>
+</table>
+<p>2）案例实操</p>
+<p>（1）Unit类型用来标识过程，也就是没有明确返回值的函数。</p>
+<p>由此可见，Unit类似于Java里的void。Unit只有一个实例——<strong>( )</strong>，这个实例也没有实质意义。</p>
+<pre><code class="language-scala">object Test03_Type{
+
+    def main(args: Array[String]): Unit = {
+
+
+    // unit
+    val unit1: Unit = {
+      10
+      println(&quot;1&quot;)
+    }
+    println(unit1)
+
+    // 如果标记对象的类型是unit的话  后面有返回值也没法接收
+    // unit虽然是数值类型  但是可以接收引用数据类型   因为都是表示不接收返回值
+    val i3: Unit = &quot;aa&quot;
+    println(i3)
+  }
+}
+</code></pre>
+<p>（2）Null类只有一个实例对象，Null类似于Java中的<strong>null</strong>引用。<strong>Null</strong>可以赋值给任意引用类型（<strong>AnyRef），但是不能赋值给值类型（AnyVal）。</strong></p>
+<pre><code class="language-scala">object Test03_Type {
+
+    def main(args: Array[String]): Unit = {
+
+    // scala当中使用的字符串就是java中的string
+    val aa: String = &quot;aa&quot;
+
+    // null
+    var aa1: String = &quot;aa&quot;
+
+    aa1 = &quot;bb&quot;
+    aa1 = null
+    if (aa1 != null) {
+      val strings: Array[String] = aa1.split(&quot;,&quot;)
+    }
+
+    // 值类型不能等于null,idea不会识别报错  编译器会报错
+    var i4 = 10
+    //    i4 = null
+    }
+}
+</code></pre>
+<p>（3）Nothing，可以作为没有正常返回值的方法的返回类型，非常直观的告诉你这个方法不会正常返回，而且由于Nothing是其他任意类型的子类，他还能跟要求返回值的方法兼容。</p>
+<pre><code class="language-scala">object Test03_Type {
+
+    def main(args: Array[String]): Unit = {
+
+    val value: Nothing = {
+      println(&quot;hello&quot;)
+      1 + 1
+      throw new RuntimeException()
+    }    
+    }
+}
+</code></pre>
+<h2 id="212">2.12 类型转换</h2>
+<p>Java的隐式转换规则：</p>
+<pre><code class="language-scala">public class TestCast {
+    public static void main(String[] args) {
+        byte n = 23;
+        test(n);
+    }
+
+    public static void test(byte b) {
+        System.out.println(&quot;bbbb&quot;);
+    }
+
+    public static void test(short b) {
+        System.out.println(&quot;ssss&quot;);
+    }
+
+    public static void test(char b) {
+        System.out.println(&quot;cccc&quot;);
+    }
+
+    public static void test(int b) {
+        System.out.println(&quot;iiii&quot;);
+    }
+}
+</code></pre>
+<h3 id="2121">2.12.1 数值类型自动转换</h3>
+<p>当Scala程序在进行赋值或者运算时，精度小的类型自动转换为精度大的数值类型，这个就是自动类型转换（隐式转换）。数据类型按精度（容量）大小排序为：</p>
+<p><img alt="trigger" src="https://s2.loli.net/2022/11/03/UtJswpQyi2qbLhX.png#pic_left" width="width" /></p>
+<p>1）基本说明</p>
+<p>（1）自动提升原则：有多种类型的数据混合运算时，系统首先自动将所有数据转换成精度大的那种数据类型，然后再进行计算。</p>
+<p>（2）把精度大的数值类型赋值给精度小的数值类型时，就会报错，反之就会进行自动类型转换。</p>
+<p>（3）（byte，short）和char之间不会相互自动转换。</p>
+<p>（4）byte，short，char他们三者可以计算，在计算时首先转换为int类型。</p>
+<p>2）案例实操</p>
+<pre><code class="language-scala">object Test04_TypeCast {
+    def main(args: Array[String]): Unit = {
+
+    //    （1）自动提升原则：有多种类型的数据混合运算时，
+    //    系统首先自动将所有数据转换成精度大的那种数据类型，然后再进行计算。
+
+    val fl: Float = 1 + 1L + 3.14f
+    val d: Double = 1 + 1L + 3.14f + 3.14
+
+    //    （2）把精度大的数值类型赋值给精度小的数值类型时，就会报错，反之就会进行自动类型转换。
+    val i = 10
+    val b: Double = i
+
+    //    （3）（byte，short）和char之间不会相互自动转换。
+    // 因为byte和short是有符号的数值,而char是无符号的
+    val b1: Byte = 10
+    val c1: Char = 20
+
+    //    （4）byte，short，char他们三者可以计算，在计算时首先转换为int类型。
+    val b2: Byte = 20
+    //    val i1: Byte = b1 + b2
+    val i1: Int = 1100000000
+    val i2: Int = 1200000000
+    // 超出范围的int值计算会造成结果错误
+    val i3: Int = i1 + i2
+    println(i3)
+
+    }
+}
+</code></pre>
+<p>​   <strong><font color='red'>注意：Scala还提供了非常强大的隐式转换机制（隐式函数，隐式类等），我们放在高级部分专门用一个章节来讲解。</font></strong></p>
+<h3 id="2122">2.12.2 强制类型转换</h3>
+<p>1）基本说明</p>
+<p>自动类型转换的逆过程，将精度大的数值类型转换为精度小的数值类型。使用时要加上强制转函数，但可能造成精度降低或溢出，格外要注意。</p>
+<pre><code class="language-scala">Java  :  int num = (int)2.5
+Scala :  var num : Int = 2.7.toInt
+</code></pre>
+<p>2）案例实操</p>
+<p>（1）将数据由高精度转换为低精度，就需要使用到强制转换。</p>
+<p>（2）强转符号只针对于最近的操作数有效，往往会使用小括号提升优先级。</p>
+<pre><code class="language-scala">object Test04_TypeCast {
+
+    def main(args: Array[String]): Unit = {
+
+    // 强制类型转换
+    val d1 = 2.999
+    //    （1）将数据由高精度转换为低精度，就需要使用到强制转换
+    println((d1 + 0.5).toInt)
+
+
+    //    （2）强转符号只针对于最近的操作数有效，往往会使用小括号提升优先级
+    println((10 * 3.5 + 6 * 1.5).toInt)    
+    }
+}
+</code></pre>
+<h3 id="2123-string">2.12.3 数值类型和String类型间转换</h3>
+<p>1）基本说明</p>
+<p>在程序开发中，我们经常需要将基本数值类型转成String类型。或者将String类型转成基本数值类型。</p>
+<p>2）案例实操</p>
+<p>（1）基本类型转String类型（语法：将基本类型的值+"" 即可）。</p>
+<p>（2）String类型转基本数值类型（语法：s1.toInt、s1.toFloat、s1.toDouble、s1.toByte、s1.toLong、s1.toShort）。</p>
+<pre><code class="language-scala">object Test04_TypeCast {
+
+    def main(args: Array[String]): Unit = {
+    //    （1）基本类型转String类型（语法：将基本类型的值+&quot;&quot; 即可）
+    val string: String = 10.0.toString
+    println(string)
+
+    val str: String = 1 + &quot;&quot;
+
+    //    （2）String类型转基本数值类型（语法：s1.toInt、s1.toFloat、s1.toDouble、s1.toByte、s1.toLong、s1.toShort）
+    val double: Double = &quot;3.14&quot;.toDouble
+
+    println(double + 1)
+    println(double.toInt)
+
+    // 不能直接将小数类型的字符串转换为整数  需要先转换为double再转换int
+    //    println(&quot;3.14&quot;.toInt)
+
+    // 标记为f的float数能够识别
+//    println(&quot;12.6f&quot;.toFloat)    
+}
+}
+</code></pre>
+<p><strong>扩展面试题数值存储机制介绍：</strong></p>
+<pre><code class="language-scala">object Test04_TypeCast {
+    def main(args: Array[String]): Unit = {
+
+        // 将int值130强转为byte  值为多少
+        // 0000 0000 ..16.. 1000 0010   =&gt; 表示int的130
+        val i4 = 130
+
+        // 1000 0010
+        println(i4.toByte)
+    }
+}
+</code></pre>
+<h1 id="3">第3章 运算符</h1>
+<p>Scala运算符的使用和Java运算符的使用基本相同，只有个别细节上不同。</p>
+<h2 id="31">3.1 算术运算符</h2>
+<p>1）基本语法</p>
+<table>
+<thead>
+<tr>
+<th>运算符</th>
+<th>运算</th>
+<th>范例</th>
+<th>结果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>+</td>
+<td>正号</td>
+<td>+3</td>
+<td>3</td>
+</tr>
+<tr>
+<td>-</td>
+<td>负号</td>
+<td>b=4;   -b</td>
+<td>-4</td>
+</tr>
+<tr>
+<td>+</td>
+<td>加</td>
+<td>5+5</td>
+<td>10</td>
+</tr>
+<tr>
+<td>-</td>
+<td>减</td>
+<td>6-4</td>
+<td>2</td>
+</tr>
+<tr>
+<td>*</td>
+<td>乘</td>
+<td>3*4</td>
+<td>12</td>
+</tr>
+<tr>
+<td>/</td>
+<td>除</td>
+<td>5/5</td>
+<td>1</td>
+</tr>
+<tr>
+<td>%</td>
+<td>取模(取余)</td>
+<td>7%5</td>
+<td>2</td>
+</tr>
+<tr>
+<td>+</td>
+<td>字符串相加</td>
+<td>“He”+”llo”</td>
+<td>“Hello”</td>
+</tr>
+</tbody>
+</table>
+<h2 id="32">3.2 关系运算符（比较运算符）</h2>
+<p>1）基本语法</p>
+<table>
+<thead>
+<tr>
+<th>运算符</th>
+<th>运算</th>
+<th>范例</th>
+<th>结果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>==</td>
+<td>相等于</td>
+<td>4==3</td>
+<td>false</td>
+</tr>
+<tr>
+<td>!=</td>
+<td>不等于</td>
+<td>4！=3</td>
+<td>true</td>
+</tr>
+<tr>
+<td>&lt;</td>
+<td>小于</td>
+<td>4&lt;3</td>
+<td>false</td>
+</tr>
+<tr>
+<td>&gt;</td>
+<td>大于</td>
+<td>4&gt;3</td>
+<td>true</td>
+</tr>
+<tr>
+<td>&lt;=</td>
+<td>小于等于</td>
+<td>4&lt;=3</td>
+<td>false</td>
+</tr>
+<tr>
+<td>&gt;=</td>
+<td>大于等于</td>
+<td>4&gt;=3</td>
+<td>true</td>
+</tr>
+</tbody>
+</table>
+<p>2）案例实操</p>
+<p>​        （1）需求1</p>
+<pre><code class="language-scala">object Test01_Operation{
+
+    def main(args: Array[String]): Unit = {
+
+        // 测试：&gt;、&gt;=、&lt;=、&lt;、==、!=
+        var a: Int = 2
+        var b: Int = 1
+
+        println(a &gt; b)      // true
+        println(a &gt;= b)     // true
+        println(a &lt;= b)     // false
+        println(a &lt; b)      // false
+        println(&quot;a==b&quot; + (a == b))    // false
+        println(a != b)     // true
+    }
+}
+</code></pre>
+<p>（2）需求2：Java和Scala中关于==的区别</p>
+<p>Java：</p>
+<p>==比较两个变量本身的值，即两个对象在内存中的首地址；</p>
+<p>​        equals比较字符串中所包含的内容是否相同。</p>
+<pre><code class="language-scala">public static void main(String[] args) {
+
+    String s1 = &quot;abc&quot;;
+    String s2 = new String(&quot;abc&quot;);
+
+    System.out.println(s1 == s2);
+
+    System.out.println(s1.equals(s2));
+}
+输出结果：
+false
+true
+</code></pre>
+<p>Scala：==更加类似于Java中的equals，参照jd工具</p>
+<pre><code class="language-scala">def main(args: Array[String]): Unit = {
+
+    val s1 = &quot;abc&quot;
+
+    val s2 = new String(&quot;abc&quot;)
+
+    println(s1 == s2)
+    println(s1.eq(s2))
+}
+
+输出结果：
+true
+false
+</code></pre>
+<h2 id="33">3.3 逻辑运算符</h2>
+<p>1）基本语法</p>
+<p>用于连接多个条件（一般来讲就是关系表达式），最终的结果也是一个Boolean值。</p>
+<p>假定：变量A为true，B为false</p>
+<table>
+<thead>
+<tr>
+<th>运算符</th>
+<th>描述</th>
+<th>实例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&amp;&amp;</td>
+<td>逻辑与</td>
+<td>(A   &amp;&amp; B) 运算结果为 false</td>
+</tr>
+<tr>
+<td>||</td>
+<td>逻辑或</td>
+<td>(A || B) 运算结果为 true</td>
+</tr>
+<tr>
+<td>!</td>
+<td>逻辑非</td>
+<td>!(A   &amp;&amp; B) 运算结果为 true</td>
+</tr>
+</tbody>
+</table>
+<p>2）案例实操</p>
+<pre><code class="language-scala">object Test01_Operation {
+    def main(args: Array[String]): Unit = {
+
+        // 测试：&amp;&amp;、||、!
+        var a = true
+        var b = false
+
+        println(&quot;a&amp;&amp;b=&quot; + (a &amp;&amp; b))     // a&amp;&amp;b=false
+        println(&quot;a||b=&quot; + (a || b))     // a||b=true
+        println(&quot;!(a&amp;&amp;b)=&quot; + (!(a &amp;&amp; b))) // !(a&amp;&amp;b)=true
+    }
+}
+
+扩展避免逻辑与空指针异常
+def isNotEmpty(String s){
+    //如果按位与，s为空，会发生空指针
+    return s!=null &amp;&amp; !&quot;&quot;.equals(s.trim());
+}
+</code></pre>
+<h2 id="34">3.4 赋值运算符</h2>
+<p>1）基本语法</p>
+<p>赋值运算符就是将某个运算后的值，赋给指定的变量。</p>
+<table>
+<thead>
+<tr>
+<th>运算符</th>
+<th>描述</th>
+<th>实例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>=</td>
+<td>简单的赋值运算符，将一个表达式的值赋给一个左值</td>
+<td>C = A + B 将 A + B 表达式结果赋值给 C</td>
+</tr>
+<tr>
+<td>+=</td>
+<td>相加后再赋值</td>
+<td>C   += A 等于 C = C + A</td>
+</tr>
+<tr>
+<td>-=</td>
+<td>相减后再赋值</td>
+<td>C -= A 等于 C = C - A</td>
+</tr>
+<tr>
+<td>*=</td>
+<td>相乘后再赋值</td>
+<td>C   *= A 等于 C = C * A</td>
+</tr>
+<tr>
+<td>/=</td>
+<td>相除后再赋值</td>
+<td>C /= A 等于 C = C / A</td>
+</tr>
+<tr>
+<td>%=</td>
+<td>求余后再赋值</td>
+<td>C   %= A 等于 C = C % A</td>
+</tr>
+<tr>
+<td>&lt;&lt;=</td>
+<td>左移后赋值</td>
+<td>C &lt;&lt;= 2等于 C = C   &lt;&lt; 2</td>
+</tr>
+<tr>
+<td>&gt;&gt;=</td>
+<td>右移后赋值</td>
+<td>C   &gt;&gt;= 2 等于 C = C &gt;&gt; 2</td>
+</tr>
+<tr>
+<td>&amp;=</td>
+<td>按位与后赋值</td>
+<td>C &amp;= 2    等于 C = C &amp; 2</td>
+</tr>
+<tr>
+<td>^=</td>
+<td>按位异或后赋值</td>
+<td>C   ^= 2  等于 C = C ^ 2</td>
+</tr>
+<tr>
+<td>|=</td>
+<td>按位或后赋值</td>
+<td>C |= 2    等于 C = C | 2</td>
+</tr>
+</tbody>
+</table>
+<p>注意：Scala中没有++、--操作符，可以通过+=、-=来实现同样的效果；</p>
+<p>2）案例实操</p>
+<pre><code class="language-scala">object Test01_Operation {
+
+    def main(args: Array[String]): Unit = {
+
+        var r1 = 10
+
+        r1 += 1 // 没有++
+        r1 -= 2 // 没有--
+    }
+}
+</code></pre>
+<h2 id="35">3.5 位运算符</h2>
+<p>1）基本语法</p>
+<p>​        下表中变量 a 为 60，b 为 13。</p>
+<table>
+<thead>
+<tr>
+<th>运算符</th>
+<th>描述</th>
+<th>实例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&amp;</td>
+<td>按位与运算符</td>
+<td>(a &amp; b) 输出结果 12 ，二进制解释：   0000 1100</td>
+</tr>
+<tr>
+<td>|</td>
+<td>按位或运算符</td>
+<td>(a | b) 输出结果 61 ，二进制解释： 0011 1101</td>
+</tr>
+<tr>
+<td>^</td>
+<td>按位异或运算符</td>
+<td>(a ^ b) 输出结果 49 ，二进制解释：   0011 0001</td>
+</tr>
+<tr>
+<td>~</td>
+<td>按位取反运算符</td>
+<td>(~a ) 输出结果 -61 ，二进制解释： 1100 0011， 在一个有符号二进制数的补码形式。</td>
+</tr>
+<tr>
+<td>&lt;&lt;</td>
+<td>左移动运算符</td>
+<td>a &lt;&lt; 2 输出结果 240 ，二进制解释：   0011 0000</td>
+</tr>
+<tr>
+<td>&gt;&gt;</td>
+<td>右移动运算符</td>
+<td>a &gt;&gt; 2 输出结果 15 ，二进制解释： 0000 1111</td>
+</tr>
+<tr>
+<td>&gt;&gt;&gt;</td>
+<td>无符号右移</td>
+<td>a &gt;&gt;&gt;2 输出结果 15, 二进制解释:   0000 1111</td>
+</tr>
+</tbody>
+</table>
+<p>2）案例实操</p>
+<pre><code class="language-scala">object Test01_Operation {
+
+    def main(args: Array[String]): Unit = {
+
+        // 测试：1000 &lt;&lt; 1 =&gt;10000
+        var n1 :Int =8
+
+        n1 = n1 &lt;&lt; 1
+        println(n1)
+    }
+}
+</code></pre>
+<h2 id="36-scala">3.6 Scala运算符本质</h2>
+<p>在Scala中其实是没有运算符的，所有运算符都是方法。</p>
+<p>（1）当调用对象的方法时，点.可以省略</p>
+<p>（2）如果函数参数只有一个，或者没有参数，()可以省略</p>
+<pre><code class="language-scala">object Test01_Operation {
+    def main(args: Array[String]): Unit = {
+
+        // 标准的加法运算
+        val i:Int = 1.+(1)
+
+        // （1）当调用对象的方法时，.可以省略
+        val j:Int = 1 + (1)
+
+        // （2）如果函数参数只有一个，或者没有参数，()可以省略
+        val k:Int = 1 + 1
+
+        println(1.toString())
+        println(1 toString())
+        println(1 toString)
+    }
+}
+</code></pre>
+<h1 id="4">第4章 流程控制</h1>
+<h2 id="41-if-else">4.1 分支控制if-else</h2>
+<p>让程序有选择的的执行，分支控制有三种：单分支、双分支、多分支</p>
+<p>1）案例实操</p>
+<p>（1）需求1：需求：输入年龄，如果年龄小于18岁，则输出“童年”。如果年龄大于等于18且小于等于60，则输出“中年”，否则，输出“老年”。</p>
+<pre><code class="language-scala">object Test01_If {
+    def main(args: Array[String]): Unit = {
+
+        println(&quot;input age&quot;)
+        var age = StdIn.readInt()
+
+        if (age &lt; 18){
+            println(&quot;童年&quot;)
+        }else if(age&gt;=18 &amp;&amp; age&lt;60){
+            println(&quot;中年&quot;)
+        }else{
+            println(&quot;老年&quot;)
+        }
+    }
+}
+</code></pre>
+<p>（2）需求2：Scala中if
+else表达式其实是有返回值的，具体返回值取决于满足条件的代码体的最后一行内容。</p>
+<pre><code class="language-scala">object Test01_If {
+    def main(args: Array[String]): Unit = {
+
+        println(&quot;input age&quot;)
+        var age = StdIn.readInt()
+
+        val res :String = if (age &lt; 18){
+            &quot;童年&quot;
+        }else if(age&gt;=18 &amp;&amp; age&lt;60){
+            &quot;中年&quot;
+        }else{
+            &quot;老年&quot;
+        }
+
+        println(res)
+    }
+}
+</code></pre>
+<p>（3）需求3：Scala中返回值类型不一致，取它们共同的祖先类型。</p>
+<pre><code class="language-scala">object Test01_If {
+    def main(args: Array[String]): Unit = {
+
+        println(&quot;input age&quot;)
+        var age = StdIn.readInt()
+
+        val res:Any = if (age &lt; 18){
+            &quot;童年&quot;
+        }else if(age&gt;=18 &amp;&amp; age&lt;60){
+            &quot;中年&quot;
+        }else{
+            100
+        }
+
+        println(res)
+    }
+}
+</code></pre>
+<p>（4）需求4：Java中的三元运算符可以用if else实现</p>
+<p>如果大括号{}内的逻辑代码只有一行，大括号可以省略。如果省略大括号，if只对最近的一行逻辑代码起作用。</p>
+<pre><code class="language-scala">object Test01_If {
+
+    def main(args: Array[String]): Unit = {
+
+        // Java
+        // int result = flag?1:0
+
+        // Scala
+        println(&quot;input age&quot;)
+        var age = StdIn.readInt()
+        val res:Any = if (age &lt; 18)  &quot;童年&quot; else &quot;成年&quot;
+&quot;不起作用&quot;
+
+        println(res)
+    }
+}
+</code></pre>
+<h2 id="42-switch">4.2 Switch分支结构</h2>
+<p>在Scala中没有Switch，而是使用模式匹配来处理。</p>
+<p>模式匹配涉及到的知识点较为综合，因此我们放在后面讲解。</p>
+<h2 id="43-for">4.3 For循环控制</h2>
+<p>Scala也为for循环这一常见的控制结构提供了非常多的特性，这些for循环的特性被称为for推导式或for表达式。</p>
+<h3 id="431">4.3.1 基本语法</h3>
+<p>1）基本语法</p>
+<pre><code class="language-SCALA">object Test02_ForLoop {
+  def main(args: Array[String]): Unit = {
+    // scala中的for循环基础语法
+    for (i &lt;- 0 to 5) {
+      println(i)
+    }
+
+    for (i &lt;- 0 until 5) {
+      println(i)
+    }
+
+    // for循环的本质
+    // to是整数的方法  返回结果是一个集合
+    // 使用变量i 循环遍历一遍 后面集合的内容
+    val inclusive: Range.Inclusive = 0.to(5)
+
+    // 增强for循环
+    for (i &lt;- Array(1, 2, 3, 4)) {
+      println(i)
+}
+}
+</code></pre>
+<h3 id="431_1">4.3.1 补充语法</h3>
+<p>补充语法有：</p>
+<p>（1）循环守卫</p>
+<p>（2）循环步长</p>
+<p>（3）嵌套循环</p>
+<p>（4）引入变量</p>
+<p>（5）循环返回值</p>
+<p>（6）倒序打印</p>
+<pre><code class="language-scala">object Test02_ForLoop {
+  def main(args: Array[String]): Unit = {
+
+    // 循环守卫
+    for (i &lt;- 0 to 10) {
+      if (i &gt; 5) {
+        println(i)
+      }
+    }
+
+    for (i &lt;- 0 to 10 if i &gt; 5) {
+      println(i)
+    }
+
+    // 循环步长
+    for (i &lt;- 0 to 10 by 2) {
+      println(i)
+    }
+
+    for (i &lt;- 0.0 to 10 by 0.1) {
+      println(i)
+    }
+
+    for (i &lt;- 10 to 0 by -1) {
+      println(i)
+    }
+
+    // 嵌套循环
+    for (i &lt;- 0 to 4) {
+      for (j &lt;- 0 to 3) {
+        print(s&quot;$i : $j \t&quot;)
+      }
+      println()
+    }
+
+
+    for (i &lt;- 0 to 4; j &lt;- 0 to 3) {
+      print(s&quot;$i : $j \t&quot;)
+      if (j == 3) {
+        println()
+      }
+    }
+
+    // 引入变量
+    for (i &lt;- 0 to 4) {
+      val j = i * 2 + 18
+      println(j)
+    }
+
+
+    for (i &lt;- 0 to 4; j = i * 2 + 18) {
+      println(j)
+    }
+
+    for {i &lt;- 0 to 4
+         j = i * 2 + 18} {
+      println(j)
+    }
+
+    // 循环返回值
+    val ints: immutable.IndexedSeq[Int] = for (i &lt;- 0 to 3) yield {
+      10
+    }
+
+    // 倒序打印
+    for (i &lt;- 0 to 10 reverse){
+      println(i)
+    }
+  }
+}
+</code></pre>
+<h2 id="45-whiledowhile">4.5 While和do..While循环控制</h2>
+<p>While和do..While的使用和Java语言中用法相同。</p>
+<h3 id="451-while">4.5.1 While循环控制</h3>
+<p>1）基本语法</p>
+<p>循环变量初始化</p>
+<p>while (循环条件) {</p>
+<p>​      循环体(语句)</p>
+<p>​      循环变量迭代</p>
+<p>}</p>
+<p>说明：</p>
+<p>（1）循环条件是返回一个布尔值的表达式</p>
+<p>（2）while循环是先判断再执行语句</p>
+<p>（3）与for语句不同，while语句没有返回值，即整个while语句的结果是Unit类型()</p>
+<p>（4）因为while中没有返回值，所以当要用该语句来计算并返回结果时，就不可避免的使用变量，而变量需要声明在while循环的外部，那么就等同于循环的内部对外部的变量造成了影响，所以不推荐使用，而是推荐使用for循环。</p>
+<p>2）案例实操</p>
+<pre><code class="language-scala">object Test03_While {
+
+  def main(args: Array[String]): Unit = {
+
+    var i = 0
+    while (i &lt; 5) {
+      println(i)
+      i += 1
+    }
+
+    while (i &lt; 5) {
+      println(i)
+      i += 1
+}
+}
+</code></pre>
+<h3 id="452-dowhile">4.5.2 do..while循环控制</h3>
+<p>1）基本语法</p>
+<p>循环变量初始化;</p>
+<p>do{</p>
+<p>​       循环体(语句)</p>
+<p>​       循环变量迭代</p>
+<p>} while(循环条件)</p>
+<p>​        说明</p>
+<p>（1）循环条件是返回一个布尔值的表达式</p>
+<p>（2）do..while循环是先执行，再判断</p>
+<p>2）案例实操</p>
+<pre><code class="language-scala">object Test03_While {
+  def main(args: Array[String]): Unit = {
+    var i = 0
+    // do while 一定会执行一次  不管条件是否成立
+    do {
+      println(i)
+}while(i &gt; 100)
+  }
+
+}
+</code></pre>
+<h2 id="46">4.6 循环中断</h2>
+<p>1）基本说明</p>
+<p>Scala内置控制结构特地<strong>去掉了</strong><strong>break</strong><strong>和</strong><strong>continue</strong>，是为了更好的适应<strong>函数式编程</strong>，推荐使用函数式的风格解决break和continue的功能，而不是一个关键字。Scala中使用breakable控制结构来实现break和continue功能。</p>
+<p>2）案例实操</p>
+<p>需求1：采用异常的方式退出循环</p>
+<pre><code class="language-scala">def main(args: Array[String]): Unit = {
+
+    try {
+        for (elem &lt;- 1 to 10) {
+            println(elem)
+            if (elem == 5) throw new RuntimeException
+        }
+    }catch {
+        case e =&gt;
+    }
+
+    println(&quot;正常结束循环&quot;)
+}
+</code></pre>
+<p>需求2：采用Scala自带的函数，退出循环</p>
+<pre><code class="language-scala">import scala.util.control.Breaks
+
+def main(args: Array[String]): Unit = {
+
+    Breaks.breakable(
+        for (elem &lt;- 1 to 10) {
+            println(elem)
+            if (elem == 5) Breaks.break()
+        }
+    )
+
+    println(&quot;正常结束循环&quot;)
+}
+</code></pre>
+<p>​        需求3：对break进行省略</p>
+<pre><code class="language-scala">import scala.util.control.Breaks._
+
+object TestBreak {
+
+    def main(args: Array[String]): Unit = {
+
+        breakable {
+            for (elem &lt;- 1 to 10) {
+                println(elem)
+                if (elem == 5) break
+            }
+        }
+
+        println(&quot;正常结束循环&quot;)
+    }
+}
+</code></pre>
+<h1 id="5">第5章 函数式编程</h1>
+<p>函数式编程和面向对象编程同样属于编程思想概念。区别在于函数式编程思想的抽象程度更高。</p>
+<h2 id="51">5.1 函数基础</h2>
+<h3 id="511">5.1.1 函数基本语法</h3>
+<p>1）基本语法</p>
+<p><img alt="trigger" src="https://s2.loli.net/2022/11/03/ola3ZGxXO1qRmgU.png#pic_left" width="width" /></p>
+<h3 id="512">5.1.2 函数和方法的区别</h3>
+<p>1）核心概念</p>
+<p>（1）为完成某一功能的程序语句的集合，称为函数。</p>
+<p>（2）类中的函数称之方法。</p>
+<p>2）案例实操</p>
+<p>（1）Scala语言可以在任何的语法结构中声明任何的语法</p>
+<p>（2）函数没有重载和重写的概念；方法可以进行重载和重写</p>
+<p>（3）Scala中函数可以嵌套定义</p>
+<pre><code class="language-scala">object Test01_FuncAndMethod {
+  def main(args: Array[String]): Unit = {
+
+    // 定义了一个函数
+    // 函数不允许重载
+    def sayHi(name: String): Unit = {
+      println(s&quot;hi ${name}&quot;)
+    }
+
+//    def sayHi(name: String, age: Int): Unit = {
+//      println(s&quot;hi  $age 岁的 $name&quot;)
+//    }
+
+    sayHi(&quot;linhai&quot;)
+
+    sayHi1(&quot;linhai&quot;, 28)
+
+    // 在函数当中也能够创建函数
+    def sayHi2(name: String): Unit = {
+      def changeName(): String ={
+        s&quot;$name 大帅哥&quot;
+      }
+
+      println(s&quot;hi ${changeName()}&quot;)
+    }
+
+    sayHi2(&quot;linhai&quot;)
+  }
+
+    // 定义在类当中的叫做方法
+    def sayHi1(name:String):Unit = {
+      println(s&quot;hi ${name}&quot;)
+    }
+
+    def sayHi1(name:String, age:Int) :Unit ={
+
+    // 在方法当中也可以定义函数
+      def changeName(): String ={
+        s&quot;$name 大帅哥&quot;
+      }
+      println(s&quot;hi  $age 岁的 ${changeName()}&quot;)
+    }
+}
+</code></pre>
+<h3 id="513">5.1.3 函数参数</h3>
+<p>1）案例实操</p>
+<p>（1）可变参数</p>
+<p>（2）如果参数列表中存在多个参数，那么可变参数一般放置在最后</p>
+<p>（3）参数默认值，一般将有默认值的参数放置在参数列表的后面</p>
+<p>（4）带名参数</p>
+<pre><code class="language-scala">object Test03_FunArgs {
+
+  def main(args: Array[String]): Unit = {
+
+    // (1)可变参数
+    def sayHi(names:String*):Unit = {
+      println(s&quot;hi $names&quot;)
+      // 可变参数在函数值本质是一个数组
+      for (elem &lt;- names) {
+
+      }
+    }
+
+    sayHi()
+    sayHi(&quot;linhai&quot;)
+    sayHi(&quot;linhai&quot;,&quot;jinlian&quot;)
+
+    // 可变参数使用:
+    // (2)可变参数必须在参数列表的最后
+    def sayHi1(sex: String,names:String*):Unit = {
+      println(s&quot;hi $names&quot;)
+    }
+
+    // (3)参数默认值
+    def sayHi2(name:String = &quot;linhai&quot;):Unit = {
+      println(s&quot;hi ${name}&quot;)
+    }
+
+    sayHi2(&quot;linhai&quot;)
+    sayHi2()
+
+
+    // 可变参数在使用的时候 可以不在最后
+    def sayHi3( name:String = &quot;linhai&quot; , age:Int):Unit = {
+      println(s&quot;hi ${name}&quot;)
+}
+
+    // (4)带名参数
+    sayHi3(age = 10)
+  }
+}
+</code></pre>
+<h3 id="514">5.1.4 函数至简原则（重点）</h3>
+<p>函数至简原则：能省则省</p>
+<p>1）至简原则细节</p>
+<p>​        常用化简写法：</p>
+<p>（1）return可以省略，Scala会使用函数体的最后一行代码作为返回值</p>
+<p>（2）如果函数体只有一行代码，可以省略花括号</p>
+<p>（3）返回值类型如果能够推断出来，那么可以省略（:和返回值类型一起省略）</p>
+<p>特别注意事项：</p>
+<p>（4）如果有return，则不能省略返回值类型，必须指定</p>
+<p>（5）如果函数明确声明unit，那么即使函数体中使用return关键字也不起作用</p>
+<p>（6）Scala如果期望是无返回值类型，可以省略等号</p>
+<p>（7）如果函数无参，但是声明了参数列表，那么调用时，小括号，可加可不加</p>
+<p>（8）如果函数没有参数列表，那么小括号可以省略，调用时小括号必须省略</p>
+<p>修改为匿名函数：</p>
+<p>（9）如果不关心名称，只关心逻辑处理，那么函数名（def）可以省略</p>
+<p>2）案例实操</p>
+<pre><code class="language-scala">object Test04_FuncSimply {
+
+  def main(args: Array[String]): Unit = {
+
+    // 定义一个原函数
+    def func0(x: Int, y: Int): Int = {
+      println(&quot;func0的调用&quot;)
+      if (x &lt; 20) {
+        return x + y
+      }
+      2 * x + 3 * y
+    }
+
+    println(func0(10, 20))
+
+    //    （1）return可以省略，Scala会使用函数体的最后一行代码作为返回值
+    def func1(x: Int, y: Int): Int = {
+      println(&quot;func1的调用&quot;)
+      x + y
+    }
+
+    val i: Int = func1(10, 20)
+    println(i)
+
+
+    //    （2）如果函数体只有一行代码，可以省略花括号
+    // 如果不写大括号 默认有效范围只有一行
+    def func2(x: Int, y: Int): Int = x + y
+
+
+    //    （3）返回值类型如果能够推断出来，那么可以省略（:和返回值类型一起省略）
+    def func3(x: Int, y: Int) = x + y
+
+
+    //    （4）如果有return，则不能省略返回值类型，必须指定
+    def func4(x: Int, y: Int): Int = {
+      if (x &lt; 20) {
+        return x + y
+      }
+      2 * x + 3 * y
+    }
+
+    func4(10, 20)
+
+    //    （5）如果函数明确声明unit，那么即使函数体中使用return关键字也不起作用
+    def func5(x: Int, y: Int): Unit = return x + y
+
+    val unit: Unit = func5(10, 20)
+
+    //    （6）Scala如果期望是无返回值类型，可以省略等号
+    def func6(x: Int, y: Int) {
+      println(x + y)
+    }
+
+
+    //    （7）如果函数无参，但是声明了参数列表，那么调用时，小括号，可加可不加
+    def func7(): Unit = {
+      println(&quot;hello&quot;)
+    }
+
+    func7()
+    func7
+
+    //    （8）如果函数没有参数列表，那么小括号可以省略，调用时小括号必须省略
+    def func8 {
+      println(&quot;hello&quot;)
+    }
+
+    func8
+
+    //    （9）如果不关心名称，只关心逻辑处理，那么函数名（def）可以省略
+    def func9(x: Int, y: Int) = x + y
+
+
+    val function: (Int, Int) =&gt; Int = (x: Int, y: Int) =&gt; x + y
+
+  }
+}
+</code></pre>
+<h3 id="515">5.1.5 匿名函数化简</h3>
+<p>1）说明</p>
+<p>没有名字的函数就是匿名函数。</p>
+<p>(x:Int)=&gt;{函数体}</p>
+<p>x：表示输入参数类型；Int：表示输入参数类型；函数体：表示具体代码逻辑</p>
+<p>2）案例实操</p>
+<p>​        需求1：传递的函数有一个参数</p>
+<p>传递匿名函数至简原则：</p>
+<p>（1）参数的类型可以省略，会根据形参进行自动的推导</p>
+<p>（2）类型省略之后，发现只有一个参数，则圆括号可以省略；其他情况：没有参数和参数超过1的永远不能省略圆括号。</p>
+<p>（3）匿名函数如果只有一行，则大括号也可以省略</p>
+<p>（4）如果参数只出现一次，且按照顺序出现则参数省略且后面参数可以用_代替</p>
+<p>不能化简为下划线的情况： 1.化简之后只有一个下划线  2.化简后的函数存在嵌套</p>
+<pre><code class="language-scala">def main(args: Array[String]): Unit = {
+    val f0: (Int, Int) =&gt; Int = (x: Int, y: Int) =&gt; x + y
+
+    //    （1）参数的类型可以省略，会根据形参进行自动的推导
+    val f1: (Int, Int) =&gt; Int = (x, y) =&gt; x + y
+
+    //    （2）类型省略之后，发现只有一个参数，则圆括号可以省略；
+    //    其他情况：没有参数和参数超过1的永远不能省略圆括号。
+    val f2: (Int, Int) =&gt; Int = (x, y) =&gt; x + y
+    val f3: Int =&gt; Int = x =&gt; x + 22
+
+    val f4: () =&gt; Int = () =&gt; 10
+
+
+    //    （3）匿名函数如果只有一行，则大括号也可以省略
+    val f5: (Int, Int) =&gt; Int = (x, y) =&gt; {
+      println(&quot;匿名函数&quot;)
+      x + y
+    }
+
+    //    （4）如果参数只出现一次，且按照顺序出现，则参数省略且后面参数可以用_代替
+    val f6: (Int, Int) =&gt; Int = _ + _
+
+
+    // 化简为_的条件
+    // 1. 传入的参数类型可以推断 所以可以省略
+    val f7: (Int, Int) =&gt; Int = (x, y) =&gt; y - x
+
+    // 2. 参数必须只使用一次  使用的顺序必要和定义的顺序一样
+    val f8: (Int, Int) =&gt; Int = -_ + _
+
+
+    // 如果化简为匿名函数  只剩下一个_  则不可以化简
+    val function: String =&gt; String = _ + &quot;&quot;
+    val str: String = function(&quot;linhai&quot;)
+    val function1: String =&gt; String = a =&gt; a
+
+
+    // 如果化简的下划线在函数里面  也会报错
+//    val function1: String =&gt; Unit = println(_ + &quot;hi&quot;)
+
+    val function2: String =&gt; Unit = println
+    function2(&quot;linhai&quot;)
+}
+</code></pre>
+<h2 id="52">5.2 函数高级</h2>
+<h3 id="521">5.2.1 高阶函数</h3>
+<p>在Scala中，函数是一等公民。怎么体现的呢？</p>
+<p>对于一个函数我们可以：定义函数、调用函数。</p>
+<pre><code class="language-scala">object Test06_HighFunc {
+  def main(args: Array[String]): Unit = {
+
+    def sayHi(name: String): String = {
+      println(s&quot;hi $name&quot;)
+      s&quot;hi $name&quot;
+    }
+
+sayHi(&quot;linhai&quot;)
+}
+</code></pre>
+<p>1）函数还有更高阶的用法</p>
+<p>（1）函数可以作为值进行传递</p>
+<p>（2）函数可以作为参数进行传递</p>
+<p>（3）函数可以作为函数返回值返回</p>
+<p>2）以下为演示：</p>
+<p>（1）函数可以作为值进行传递</p>
+<pre><code class="language-scala">object Test06_HighFunc{
+
+    def main(args: Array[String]): Unit = {
+
+     //    1）函数可以作为值进行传递
+    val func1: String = sayHi(&quot;linhai&quot;)
+    // 在被调用函数sayHi 后面加上 _，相当于把函数当成一个整体，传递给变量func2
+    val func2 = sayHi _
+
+    // 如果明确变量类型，那么不使用下划线也可以将函数作为整体传递给变量
+    val func3: String =&gt; String = sayHi
+
+    func2(&quot;jinlian&quot;)
+    func3(&quot;dalang&quot;)
+
+    }
+}
+</code></pre>
+<p>（2）函数可以作为参数进行传递</p>
+<pre><code class="language-scala">def main(args: Array[String]): Unit = {
+
+    //    2）函数可以作为参数进行传递
+    def sumAB(a: Int, b: Int): Int = a + b
+
+    def difAB(a: Int, b: Int): Int = a - b
+
+    // 给两个数 ,之后按照传入的公式进行计算
+    def funcAB(a: Int, b: Int, func: (Int, Int) =&gt; Int): Int = {
+      func(a, b)
+    }
+
+
+    val i: Int = funcAB(10, 20, difAB)
+    println(i)
+
+
+funcAB(10, 20, 2 * _ / 4 *_)
+
+// 写一个MR  需要写3部分
+// 1. map类  map方法
+// 2. reduce类  reduce方法
+// 3. drive类  驱动
+def mapReduce(data:String,map:(String) =&gt; Int,reduce:(Int) =&gt; String):String ={
+      // 使用map读取数据
+      val i2: Int = map(data)
+      // shuffle
+      println(&quot;走shuffle&quot;)
+      // 对shuffle后的数据进行聚合
+      val result: String = reduce(i2)
+      result
+    }
+
+    // 实现一个mr程序
+    val str: String = mapReduce(&quot;hello world&quot;,
+      (data: String) =&gt; data.length, (data: Int) =&gt; data + &quot;reduce之后&quot;)
+    println(str)
+
+  }
+}
+</code></pre>
+<p>（3）函数可以作为函数返回值返回</p>
+<pre><code class="language-scala">def main(args: Array[String]): Unit = {
+    //    3）函数可以作为函数返回值返回
+    def sumByX(x:Int) = {
+      def sumXY(y: Int): Int = {
+        x + y
+      }
+
+      sumXY _
+    }
+
+    val function: Int =&gt; Int = sumByX(10)
+    println(function)
+    val i1: Int = function(20)
+    println(i1)
+
+    val i2: Int = sumByX(10)(20)
+println(i2)
+
+// 高阶函数的第三种用法化简
+// 过度化简  不利于读懂
+def sumXY1(x: Int): Int =&gt; Int =  x + _
+}
+</code></pre>
+<h3 id="523">5.2.3 函数柯里化&amp;闭包</h3>
+<p><strong>闭包：</strong>函数式编程的标配</p>
+<p>1）说明</p>
+<p>闭包：如果一个函数，访问到了它的外部（局部）变量的值，那么这个函数和他所处的环境，称为闭包。</p>
+<p>函数柯里化：把一个参数列表的多个参数，变成多个参数列表。</p>
+<p>2）案例实操</p>
+<p>​        （1）闭包</p>
+<pre><code class="language-scala">object Test07_Closer{
+
+    def main(args: Array[String]): Unit = {
+        // 两个数相加  泛用性更强
+        def sumAB(a:Int,b:Int) :Int = a + b
+
+        // 确定一个数是4  适用性更强
+        def sumByFour(b:Int) :Int = 4 + b
+        def sumByFive(b:Int) :Int = 5 + b
+
+        // 定义一个函数 动态确定一个参数
+        def sumByA(a:Int): Int =&gt; Int = {
+          def sumAB(b:Int):Int = a + b
+          sumAB _
+        }
+
+
+        val sumByFour1: Int =&gt; Int = sumByA(4)
+        val sumByFive1: Int =&gt; Int = sumByA(5)
+
+    //添加闭包之后的mapReduce程序
+    def mapReduce(data:String)(map:(String) =&gt; Int)(reduce:(Int) =&gt; String):String ={
+      // 使用map读取数据
+      val i2: Int = map(data)
+      // shuffle
+      println(&quot;走shuffle&quot;)
+      // 对shuffle后的数据进行聚合
+      val result: String = reduce(i2)
+      result
+    }
+
+    // 先提供数据
+    // 表示提供了当前数据的结果  后续可以重复使用  添加map方法和reduce方法
+    val function: (String =&gt; Int) =&gt; (Int =&gt; String) =&gt; String = mapReduce(&quot;data&quot;)
+
+
+    // 填写map方法
+    // 经过当前map方法处理之后的结果
+    val function1: (Int =&gt; String) =&gt; String = function((s: String) =&gt; s.length)
+
+    // 填写reduce方法
+    val result: String = function1((i: Int) =&gt; i + &quot;经过reduce聚合&quot;)
+    val result1: String = function1((i: Int) =&gt; i + &quot;经过另外一种reduce聚合&quot;)
+    }
+}
+</code></pre>
+<h3 id="524">5.2.4 递归</h3>
+<p>1）说明</p>
+<p>​        一个函数/方法在函数/方法体内又调用了本身，我们称之为递归调用。</p>
+<p>2）案例实操</p>
+<pre><code class="language-scala">object Test08_Recursion {
+  def main(args: Array[String]): Unit = {
+
+    // 阶乘
+    var n = 5
+    var res = 1
+    for (i &lt;- 1 to n) {
+      res *= i
+    }
+
+    println(res)
+
+    // 递归
+    // 1. 调用自身
+    // 2. 跳出条件
+    // 3. 填入的参数必须有规律
+    // 4. 递归必须声明函数返回值类型
+    def rec(n: Int): Int = {
+      if (n == 1) 1 else rec(n - 1) * n
+    }
+
+    println(rec(5))
+
+
+    // 尾递归优化
+    @tailrec
+    def rec1(n: Int, res: Int = 1): Int = {
+    if (n == 1) res else rec1(n - 1,res * n)
+    }
+
+    println(rec1(5))
+  }
+}
+</code></pre>
+<h3 id="525">5.2.5 控制抽象</h3>
+<p>1）值调用：把计算后的值传递过去</p>
+<p>2）名调用：把代码传递过去</p>
+<pre><code class="language-scala">object Test09_ControlAbs {
+  def main(args: Array[String]): Unit = {
+
+    // 值调用
+    def sayHi(name:String):Unit = {
+
+      println(&quot;sayHi的调用&quot;)
+      println(s&quot;hi $name&quot;)
+      println(s&quot;hi $name&quot;)
+    }
+
+    sayHi({
+      println(&quot;代码块-字符串&quot;)
+      &quot;linhai&quot;
+    })
+
+
+    println(&quot;=======================&quot;)
+    // 名调用    =&gt; String
+    def sayHi1(name: =&gt; String):Unit = {
+      println(&quot;sayHi1的调用&quot;)
+      println(s&quot;hi $name&quot;)
+      println(s&quot;hi $name&quot;)
+    }
+
+    var n = 1
+    sayHi1({
+      println(&quot;代码块-字符串1&quot;)
+      n += 1
+      &quot;linhai&quot; + n
+    })
+
+  }
+}
+</code></pre>
+<p>注意：Java只有值调用；Scala既有值调用，又有名调用。</p>
+<p>自定义一个While循环。</p>
+<pre><code class="language-scala">object TestFunction {
+
+    def main(args: Array[String]): Unit = {
+
+        var i:Int = 1
+        myWhile(i &lt;= 10){
+            println(i)
+            i +=1
+        }
+    }
+
+    def myWhile(condition: =&gt;Boolean)(op: =&gt;Unit):Unit={
+
+        if (condition){
+            op
+            myWhile(condition)(op)
+        }
+    }
+}
+</code></pre>
+<h3 id="526">5.2.6 惰性函数</h3>
+<p>1）说明</p>
+<p>当<strong>函数返回值被声明为lazy时</strong>，函数的<strong>执行将被推迟</strong>，直到我们<strong>首次对此取值，该函数才会执行</strong>。这种函数我们称之为惰性函数。</p>
+<p>2）案例实操</p>
+<pre><code class="language-scala">object Test10_Lazy {
+  def main(args: Array[String]): Unit = {
+
+    def sumAB(a:Int,b:Int):Int = {
+      println(&quot;sumAB调用&quot;)
+      a + b
+    }
+    lazy val n = sumAB(10,20)
+
+    println(&quot;分隔符===================&quot;)
+
+    println(n)
+  }
+}
+</code></pre>
+<p>输出结果：</p>
+<pre><code class="language-scala">分隔符===================
+sumAB调用
+30
+</code></pre>
+<p>注意：lazy不能修饰var类型的变量。</p>
+<h1 id="6">第6章 面向对象</h1>
+<p>Scala的面向对象思想和Java的面向对象思想和概念是一致的。</p>
+<p>Scala中语法和Java不同，补充了更多的功能。</p>
+<h2 id="61-scala">6.1 Scala包</h2>
+<p>1）基本语法</p>
+<p>package 包名.类名</p>
+<p>2）Scala包的三大作用（和Java一样）</p>
+<p>（1）区分相同名字的类</p>
+<p>（2）当类很多时，可以很好的管理类</p>
+<p>（3）控制访问范围</p>
+<h3 id="611">6.1.1 包的命名</h3>
+<p>1）命名规则</p>
+<p>只能包含数字、字母、下划线、小圆点.，但不能用数字开头，也不要使用关键字。</p>
+<p>2）案例实操</p>
+<pre><code class="language-scala">demo.class.exec1  //错误，因为 class 关键字
+demo.12a    //错误，数字开头
+</code></pre>
+<p>3）命名规范</p>
+<p>一般是小写字母+小圆点。</p>
+<p><strong>com.公司名.项目名.业务模块名</strong></p>
+<p>4）案例实操</p>
+<pre><code class="language-scala">com.atguigu.oa.model  
+com.atguigu.oa.controller
+com.sohu.bank.order 
+</code></pre>
+<h3 id="612">6.1.2 包对象</h3>
+<p>在Scala中可以为每个包定义一个同名的包对象，定义在包对象中的成员，作为其对应包下所有class和object的共享变量，可以被直接访问。</p>
+<p>1）定义</p>
+<pre><code class="language-scala">package object chapter06{
+    val shareValue=&quot;share&quot;
+    def shareMethod()={}
+}
+</code></pre>
+<p>2）说明</p>
+<p>（1）若使用Java的包管理风格，则包对象一般定义在其对应包下的package.scala文件中，包对象名与包名保持一致。</p>
+<p><img alt="trigger" src="https://s2.loli.net/2022/11/03/KeSPhvBb4oVyIwW.png#pic_left" width="width" /></p>
+<h3 id="614">6.1.4 导包说明</h3>
+<p>说明：</p>
+<table>
+<thead>
+<tr>
+<th>import   com.atguigu.Fruit</th>
+<th>引入com.atguigu包下Fruit（class和object）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>import com.atguigu._</td>
+<td>引入com.atguigu下的所有成员</td>
+</tr>
+<tr>
+<td>import   com.atguigu.Fruit._</td>
+<td>引入Fruit(object)的所有成员</td>
+</tr>
+<tr>
+<td>import com.atguigu.{Fruit,Vegetable}</td>
+<td>引入com.atguigu下的Fruit和Vegetable</td>
+</tr>
+<tr>
+<td>import   com.atguigu.{Fruit=&gt;Shuiguo}</td>
+<td>引入com.atguigu包下的Fruit并更名为Shuiguo</td>
+</tr>
+<tr>
+<td>import com.atguigu.{Fruit=&gt;Shuiguo,_}</td>
+<td>引入com.atguigu包下的所有成员，并将Fruit更名为Shuiguo</td>
+</tr>
+<tr>
+<td>import   com.atguigu.{Fruit=&gt;<em>,</em>}</td>
+<td>引入com.atguigu包下屏蔽Fruit类</td>
+</tr>
+<tr>
+<td>new <em>root</em>.java.util.HashMap</td>
+<td>引入的Java的绝对路径</td>
+</tr>
+</tbody>
+</table>
+<p>2）补充</p>
+<p>Scala中的三个默认导入分别是</p>
+<p><strong>import java.lang._</strong></p>
+<p><strong>import scala._</strong></p>
+<p><strong>import scala.Predef._</strong></p>
+<p>注意scala.<em>是包含scala.Predef.</em>，但是两者有区别，前者是导入scala包里面的所有类和对象，后者是导入Predef伴生对象中的所有属性和方法（等同于静态属性和方法）。</p>
+<h2 id="62">6.2 类和对象</h2>
+<p>类：可以看成一个模板</p>
+<p>对象：表示具体的事物</p>
+<h3 id="621">6.2.1 定义类</h3>
+<p>0）回顾：Java中的类</p>
+<p>​        如果类是public的，则必须和文件名一致。</p>
+<p>​        一般，一个.java有一个public类</p>
+<p>注意：Scala中没有public，一个.scala中可以写多个类。</p>
+<p>1）基本语法</p>
+<p><strong>[修饰符] class</strong> <strong>类名</strong> <strong>{</strong></p>
+<p>​    <strong>类体</strong></p>
+<p><strong>}</strong> </p>
+<p>说明</p>
+<p>（1）Scala语法中，类并不声明为public，所有这些类都具有公有可见性（即默认就是public）</p>
+<p>（2）一个Scala源文件可以包含多个类</p>
+<p>2）案例实操</p>
+<pre><code class="language-scala">package com.atguigu.chapter06
+
+//（1）Scala语法中，类并不声明为public，所有这些类都具有公有可见性（即默认就是public）
+class Person {
+
+}
+
+//（2）一个Scala源文件可以包含多个类
+class Teacher{
+
+}
+</code></pre>
+<h3 id="622">6.2.2 属性和封装</h3>
+<p>属性是类的一个组成部分。</p>
+<p>封装就是把抽象出的数据和对数据的操作封装在一起，数据被保护在内部，程序的其它部分只有通过被授权的操作（成员方法），才能对数据进行操作。Java封装操作如下，</p>
+<p>（1）将属性进行私有化</p>
+<p>（2）提供一个公共的set方法，用于对属性赋值</p>
+<p>（3）提供一个公共的get方法，用于获取属性的值</p>
+<p>Scala中的public属性，底层实际为private，并通过get方法（obj.field()）和set方法（obj.field_=(value)）对其进行操作。所以Scala并不推荐将属性设为private，再为其设置public的get和set方法的做法。但由于很多Java框架都利用反射调用getXXX和setXXX方法，有时候为了和这些框架兼容，也会为Scala的属性设置getXXX和setXXX方法（通过@BeanProperty注解实现）。</p>
+<p>1）基本语法</p>
+<p><strong>[修饰符] var|val 属性名称 [：类型] =属性值</strong></p>
+<p>注：Bean属性（@BeanPropetry），可以自动生成规范的setXxx/getXxx方法</p>
+<p>2）案例实操</p>
+<pre><code class="language-scala">package com.atguigu.scala.test
+
+import scala.beans.BeanProperty
+
+object Test02_Class {
+  def main(args: Array[String]): Unit = {
+    val person0 = new Person02
+    val student0 = new Student02
+
+    person0.age = 10
+
+
+    person0.getName
+    person0.getAge
+    person0.setAge(20)
+
+  }
+}
+
+// scala中一个文件可以由多个public的类
+// 默认的访问权限就是public
+// 但是同一个包内部只能有一个相同名称的类
+class Person02{
+  // 属性分两种
+  // 可变和不可变
+  // 不推荐大家自己写封装的东西
+  // 因为scala可以通过修改属性的val 和var 来控制读写权限
+  @BeanProperty
+  var age:Int = _
+
+  // val 只能生成get方法
+  @BeanProperty
+  val name:String = &quot;zhangsan&quot;
+
+
+}
+
+class Student02{
+
+}
+</code></pre>
+<h3 id="623">6.2.3 访问权限</h3>
+<p>1）说明</p>
+<p>在Java中，访问权限分为：public， protected，默认,和private 。在Scala中，你可以通过类似的修饰符达到同样的效果。但是使用上有区别。</p>
+<p>（1）Scala 中属性和方法的默认访问权限为public，但Scala中无public关键字。</p>
+<p>（2）private为私有权限，只在类的内部和伴生对象中可用。</p>
+<p>（3）protected为受保护权限，Scala中受保护权限比Java中更严格，同类、子类可以访问，同包无法访问。</p>
+<p>（4）private[包名]增加包访问权限，包名下的其他类也可以使用</p>
+<p>2）案例实操</p>
+<pre><code class="language-scala">package chapter06
+object Test04_Access {
+  def main(args: Array[String]): Unit = {
+
+    // 同一个包都可以访问的到
+    Person04.name1
+
+    // 受保护的权限  同一个包也无法访问
+//    Person04.name2
+
+    // 访问公共的权限
+    Person04.name3
+  }
+}
+
+
+class Person04{
+  val nameClass = Person04.name
+
+  val name1Class = Person04.name1
+
+  // 受保护的权限
+  protected val name2:String = &quot;受保护的权限&quot;
+}
+
+object Person04{
+  // 私有的权限能够在当前类和当前伴生对象中调用
+  private val name:String = &quot;私有权限&quot;
+
+  // 包访问权限
+  private[chapter06] val name1:String = &quot;包访问权限&quot;
+
+  // public的权限
+  val name3:String = &quot;公共的权限&quot;
+}
+</code></pre>
+<p>不同包的调用:</p>
+<pre><code class="language-scala">package chapter06Test
+
+import chapter06.Person04
+
+/**
+ * @author yhm
+ * @create 2021-09-15 16:11
+ */
+object Test04_Access {
+  def main(args: Array[String]): Unit = {
+    // 不同的包里面无法访问name1  包访问权限
+//    Person04.name1
+
+    // 不同的包也能访问到公共的权限
+    Person04.name3
+  }
+}
+
+class Student04 extends Person04{
+  // 即使不是一个包  继承的子类也能够访问到受保护的权限
+  val name2Class = name2
+}
+</code></pre>
+<h3 id="624">6.2.4 方法</h3>
+<p>1）基本语法</p>
+<p><strong>def</strong> <strong>方法名(参数列表) [：返回值类型] = {</strong> </p>
+<p>​        <strong>方法体</strong></p>
+<p><strong>}</strong></p>
+<p>2）案例实操</p>
+<pre><code class="language-scala">class Person {
+
+    def sum(n1:Int, n2:Int) : Int = {
+        n1 + n2
+    }
+}
+
+object Person {
+
+    def main(args: Array[String]): Unit = {
+
+        val person = new Person()
+
+        println(person.sum(10, 20))
+    }
+}
+</code></pre>
+<h3 id="625">6.2.5 构造器</h3>
+<p>和Java一样，Scala构造对象也需要调用构造方法，并且可以有任意多个构造方法。</p>
+<p>Scala类的构造器包括：<strong>主构造器和辅助构造器</strong></p>
+<p>1）基本语法</p>
+<p>class 类名<strong>(形参列表)</strong> {  <strong>//</strong> <strong>主构造器</strong></p>
+<p>// 类体</p>
+<p>def  this(形参列表) {  // 辅助构造器</p>
+<p>}</p>
+<p>def  this(形参列表) {  //辅助构造器可以有多个...</p>
+<p>}</p>
+<p>} </p>
+<p>说明：</p>
+<p>（1）辅助构造器，函数的名称this，可以有多个，编译器通过参数的个数及类型来区分。</p>
+<p>（2）辅助构造方法不能直接构建对象，必须直接或者间接调用主构造方法。</p>
+<p>（3）构造器调用其他另外的构造器，要求被调用构造器必须提前声明。</p>
+<p>2）案例实操</p>
+<p>（1）如果主构造器无参数，小括号可省略，构建对象时调用的构造方法的小括号也可以省略。</p>
+<pre><code class="language-scala">package chapter06
+
+object Test06_Constructor {
+  def main(args: Array[String]): Unit = {
+    val person0 = new Person06(&quot;zhangsan&quot;)
+    val person01 = new Person06()
+
+    println(person01.name1)
+
+    val person02 = new Person06(&quot;lisi&quot;, 18)
+  }
+}
+
+
+// 主构造器  直接写在类的定义后面  可以添加参数  可以使用权限修饰符
+//class Person06 private(name:String){
+//  val name1 = name
+//}
+
+class Person06 (name:String){
+  println(&quot;调用主构造器&quot;)
+
+  val name1 = name
+  var age:Int = _
+
+  // 两个辅助构造器  再互相调用的时候 只能是下面的辅助构造器调用上面的辅助构造器
+
+  def this(){
+    // 辅助构造器的第一行 必须直接或简介的调用主构造器
+    // 直接调用主构造器
+    this(&quot;zhangsan&quot;)
+    println(&quot;调用辅助构造器1&quot;)
+  }
+
+  def this(name:String,age1:Int){
+    // 间接调用主构造器
+    this()
+    this.age = age1
+    println(&quot;调用辅助构造器2&quot;)
+  }
+}
+</code></pre>
+<h3 id="626">6.2.6 构造器参数</h3>
+<p>1）说明</p>
+<p>Scala类的主构造器函数的形参包括三种类型：未用任何修饰、var修饰、val修饰</p>
+<p>（1）未用任何修饰符修饰，这个参数就是一个局部变量，底层有属性的特性</p>
+<p>（2）var修饰参数，作为类的成员属性使用，可以修改</p>
+<p>（3）val修饰参数，作为类只读属性使用，不能修改</p>
+<p>2）案例实操</p>
+<pre><code class="language-scala">package chapter06
+
+object Test07_ConstructorArgs {
+  def main(args: Array[String]): Unit = {
+    val person0 = new Person07(&quot;zhangsan&quot;,11,&quot;男&quot;)
+
+    println(person0.name)
+
+    println(person0.age)
+
+    println(person0.sex)
+  }
+
+}
+
+// 主构造器参数 分为3类:
+// 没有修饰符 : 作为构造方法中的传入参数使用
+// val 修饰 : 会自动生产同名的属性 并且定义为val
+// var 修饰 : 会自动生产同名的属性 并且定义为var
+class Person07 (name1:String,val age:Int,var sex:String){
+    val name = name1
+    //  val age = age
+    //  var sex = sex
+}
+</code></pre>
+<h2 id="63">6.3 继承</h2>
+<p>1）基本语法</p>
+<p>scala中的继承本质上是继承一个父类的构造器。</p>
+<pre><code class="language-scala">package chapter06
+
+object Test08_Inherit {
+  def main(args: Array[String]): Unit = {
+    // 子类继承父类的属性和方法
+    val student0 = new Student08
+
+    println(student0.name)
+    println(student0.age)
+    student0.sayHi
+    println(&quot;===========================&quot;)
+
+    val student01 = new Student08(&quot;lisi&quot;)
+  }
+}
+
+
+class Person08 () {
+  println(&quot;调用父类的主构造器&quot;)
+
+  var name  = &quot;person&quot;
+  var age = 18
+  def sayHi: Unit ={
+    println(&quot;hi person&quot;)
+  }
+
+
+  def this(name:String){
+    this()
+    this.name = name
+    println(&quot;调用父类的辅助构造器&quot;)
+  }
+}
+
+// 子类继承
+// scala中的继承本质上是继承一个父类的构造器
+class Student08 (name:String) extends Person08 (name:String){
+  println(&quot;调用子类的主构造器&quot;)
+
+  def this(){
+    this(&quot;zhangsan&quot;)
+//    this.name = name
+    println(&quot;调用子类的辅助构造器&quot;)
+  }
+}
+</code></pre>
+<h2 id="64">6.4 抽象属性和抽象方法</h2>
+<h3 id="641">6.4.1 抽象属性和抽象方法</h3>
+<p><strong>1）基本语法</strong></p>
+<p>​        （1）定义抽象类：abstract class Person{} //通过abstract关键字标记抽象类</p>
+<p>​        （2）定义抽象属性：val|var name:String //一个属性没有初始化，就是抽象属性</p>
+<p>​        （3）定义抽象方法：def  hello():String //只声明而没有实现的方法，就是抽象方法</p>
+<p><strong>案例实操：</strong></p>
+<pre><code class="language-scala">package chapter06
+
+object Test09_AbstractClass {
+  def main(args: Array[String]): Unit = {
+    val person01:Person09 = new Student09
+
+    person01.sayHi()
+
+  }
+}
+
+// 抽象的属性只能存在于抽象的类中
+// 抽象类的使用有两种方法 :
+// 使用子类继承抽象类
+// 使用匿名子类
+abstract class Person09{
+  val name:String
+  var age:Int
+
+  def sayHi():Unit
+}
+
+class Student09 extends Person09{
+
+  override val name: String = &quot;student&quot;
+  override var age: Int = 18
+
+  override def sayHi(): Unit = {
+    println(&quot;hi student&quot;)
+  }
+}
+</code></pre>
+<p><strong>2）继承 &amp; 重写</strong></p>
+<p>（1）如果父类为抽象类，那么子类需要将抽象的属性和方法实现，否则子类也需声明为抽象类</p>
+<p>（2）重写非抽象方法需要用override修饰，重写抽象方法则可以不加override。</p>
+<p>（3）子类中调用父类的方法使用super关键字</p>
+<p>（4）子类对抽象属性进行实现，父类抽象属性可以用var修饰；</p>
+<p>子类对非抽象属性重写，父类非抽象属性只支持val类型，而不支持var。</p>
+<p>因为var修饰的为可变变量，子类继承之后就可以直接使用，没有必要重写  </p>
+<pre><code class="language-scala">abstract class Person06 {
+  // 抽象属性
+  // 本质就是不写等号   属性自带封装  自带方法
+  val name: String
+  var age:Int
+
+  def sayHi():Unit
+
+  val name1:String = &quot;person&quot;
+  var age1:Int = 10
+
+  def sayHi1():Unit = {
+    println(&quot;hi person&quot;)
+  }
+}
+
+//  （1）如果父类为抽象类，那么子类需要将抽象的属性和方法实现，否则子类也需声明为抽象类
+class Student06 extends Person06 {
+
+  override val name: String = &quot;lisi&quot;
+  override var age: Int = 18
+  //  （2）重写非抽象方法需要用override修饰，重写抽象方法则可以不加override。
+  def sayHi(): Unit = {
+    println(&quot;hi&quot;)
+  }
+
+  override def sayHi1(): Unit = {
+    //  （3）子类中调用父类的方法使用super关键字
+    super.sayHi1()
+    println(&quot;hi student&quot;)
+  }
+
+  //  （4）子类对抽象属性进行实现，父类抽象属性可以用var修饰；
+  //  子类对非抽象属性重写，父类非抽象属性只支持val类型，而不支持var。
+  //  因为var修饰的为可变变量，子类继承之后就可以直接使用，没有必要重写
+  override val name1: String = &quot;student&quot;
+  age1 = 18
+}
+</code></pre>
+<p>多态使用时，scala能够重写属性，所以属性和方法都是动态绑定，而Java中只有方法为动态绑定。</p>
+<p><strong>Scala</strong></p>
+<pre><code class="language-scala">class Person {
+    val name: String = &quot;person&quot;
+
+    def hello(): Unit = {
+        println(&quot;hello person&quot;)
+    }
+}
+
+class Teacher extends Person {
+
+    override val name: String = &quot;teacher&quot;
+
+    override def hello(): Unit = {
+        println(&quot;hello teacher&quot;)
+    }
+}
+
+object Test {
+    def main(args: Array[String]): Unit = {
+        val teacher: Teacher = new Teacher()
+        println(teacher.name)
+        teacher.hello()
+
+        val teacher1:Person = new Teacher
+        println(teacher1.name)
+        teacher1.hello()
+    }
+}
+</code></pre>
+<p><strong>Java</strong></p>
+<pre><code class="language-java">class Person {
+
+    public String name = &quot;person&quot;;
+    public void hello() {
+        System.out.println(&quot;hello person&quot;);
+    }
+
+}
+class Teacher extends Person {
+
+public String name = &quot;teacher&quot;;
+
+    @Override
+    public void hello() {
+        System.out.println(&quot;hello teacher&quot;);
+    }
+
+}
+public class TestDynamic {
+public static void main(String[] args) {
+
+        Teacher teacher = new Teacher();
+        Person teacher1 = new Teacher();
+
+        System.out.println(teacher.name);
+        teacher.hello();
+
+        System.out.println(teacher1.name);
+        teacher1.hello();
+    }
+}
+</code></pre>
+<p>结果对比</p>
+<p>&emsp;&emsp;&emsp;<strong>Scala&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Java</strong></p>
+<p><img alt="trigger" src="https://s2.loli.net/2022/11/03/XjwaVpshKWeLdNz.png#pic_left" width="width" />
+<img alt="trigger" src="https://s2.loli.net/2022/11/03/Zzrofi4UVdKJxuD.png#pic_right" width="width" /></p>
+<h3 id="642">6.4.2 匿名子类</h3>
+<p>1）说明</p>
+<p>Java一样，可以通过包含带有定义或重写的代码块的方式创建一个匿名的子类。</p>
+<p>2）案例实操</p>
+<pre><code class="language-scala">// 可以使用匿名子类直接调用抽象类
+// 匿名子类自动使用多态
+val person0: Person06 = new Person06 {
+
+  override val name: String = &quot;匿名子类&quot;
+  override var age: Int = _
+
+  override def sayHi(): Unit = {
+    info()
+    println(&quot;hi 匿名子类&quot;)
+  }
+  // 多态无法调用子类独有的属性和方法
+  // 外部无法使用
+  def info():Unit = {
+    println(s&quot;$age + $name&quot;)
+  }
+}
+</code></pre>
+<h2 id="65">6.5 单例对象（伴生对象）</h2>
+<p>Scala语言是完全面向对象的语言，所以并没有静态的操作（即在Scala中没有静态的概念）。但是为了能够和Java语言交互（因为Java中有静态概念），就产生了一种特殊的对象来模拟类对象，该对象为<strong>单例对象</strong>。若单例对象名与类名一致，则称该单例对象这个类的<strong>伴生对象</strong>，这个类的所有“静态”内容都可以放置在它的伴生对象中声明。</p>
+<h3 id="651">6.5.1 单例对象语法</h3>
+<p>1）基本语法</p>
+<p><strong>object</strong> Person{</p>
+<p>​        <strong>val</strong> country:String="China"</p>
+<p>}</p>
+<p>2）说明</p>
+<p>（1）单例对象采用object关键字声明</p>
+<p>（2）单例对象对应的类称之为伴生类，伴生对象的名称应该和伴生类名一致。</p>
+<p>（3）单例对象中的属性和方法都可以通过伴生对象名（类名）直接调用访问。</p>
+<p>3）案例实操</p>
+<pre><code class="language-scala">//（1）伴生对象采用object关键字声明
+object Person {
+    var country: String = &quot;China&quot;
+}
+
+//（2）伴生对象对应的类称之为伴生类，伴生对象的名称应该和伴生类名一致。
+class Person {
+    var name: String = &quot;bobo&quot;
+}
+
+object Test {
+    def main(args: Array[String]): Unit = {
+        //（3）伴生对象中的属性和方法都可以通过伴生对象名（类名）直接调用访问。
+        println(Person.country)
+    }
+}
+</code></pre>
+<h3 id="652-apply">6.5.2 apply方法</h3>
+<p>1）说明</p>
+<p>（1）通过伴生对象的apply方法，实现不使用new方法创建对象。</p>
+<p>（2）如果想让主构造器变成私有的，可以在()之前加上private。</p>
+<p>（3）apply方法可以重载。</p>
+<p>（4）Scala中<strong>obj</strong><strong>（</strong><strong>arg</strong><strong>）</strong>的语句实际是在调用该对象的<strong>apply</strong>方法，即obj.apply（arg）。用以统一面向对象编程和函数式编程的风格。</p>
+<p>（5）当使用new关键字构建对象时，调用的其实是类的构造方法，当直接使用类名构建对象时，调用的其实时伴生对象的apply方法。</p>
+<p>2）案例实操</p>
+<pre><code class="language-scala">package chapter06
+
+object Test11_Apply {
+
+  def main(args: Array[String]): Unit = {
+
+    //    val person1 = new Person11
+    val person1: Person11 = Person11.getPerson11
+
+    // 如果调用的方法是apply的话  方法名apply可以不写
+    val person11: Person11 = Person11()
+
+    val zhangsan: Person11 = Person11(&quot;zhangsan&quot;)
+
+    // 类的apply方法调用
+    person11()
+  }
+}
+
+
+class Person11 private() {
+  var name:String = _
+  def this(name:String){
+    this()
+    this.name = name
+  }
+
+  def apply(): Unit = println(&quot;类的apply方法调用&quot;)
+}
+
+
+object Person11 {
+  // 使用伴生对象的方法来获取对象实例
+  def getPerson11: Person11 = new Person11
+
+  // 伴生对象的apply方法
+  def apply(): Person11 = new Person11()
+
+  // apply方法的重载
+  def apply(name: String): Person11 = new Person11(name)
+ }
+}
+</code></pre>
+<p>注意：也可以创建其它类型对象，并不一定是伴生类对象</p>
+<h2 id="66-trait">6.6 特质（Trait）</h2>
+<p>Scala语言中，采用特质trait（特征）来代替接口的概念，也就是说，多个类具有相同的特质（特征）时，就可以将这个特质（特征）独立出来，采用关键字trait声明。</p>
+<p>Scala中的trait中即<strong>可以有抽象属性和方法，也可以有具体的属性和方法</strong>，<strong>一个类可以混入（mixin）多个特质</strong>。这种感觉类似于Java中的抽象类。</p>
+<p>Scala引入trait特征，第一可以替代Java的接口，第二个也是对单继承机制的一种补充。</p>
+<h3 id="661">6.6.1 特质声明</h3>
+<p>1）基本语法</p>
+<p>通过查看字节码，可以看到特质=抽象类+接口</p>
+<pre><code class="language-scala">trait 特质名 {
+    trait主体
+}
+</code></pre>
+<h3 id="662">6.6.2 特质基本语法</h3>
+<p>一个类具有某种特质（特征），就意味着这个类满足了这个特质（特征）的所有要素，所以在使用时，也采用了extends关键字，如果有多个特质或存在父类，那么需要采用with关键字连接。</p>
+<p>1）基本语法：</p>
+<p><strong>没有父类</strong>：class  类名 <strong>extends</strong>  特质1   <strong>with</strong>    特质2   <strong>with</strong>   特质3 …</p>
+<p><strong>有父类</strong>：class  类名  <strong>extends</strong>  父类   <strong>with</strong>  特质1   <strong>with</strong>   特质2  <strong>with</strong> 特质3…</p>
+<p>2）说明</p>
+<p>​        （1）类和特质的关系：使用继承的关系。</p>
+<p>​        （2）当一个类去继承特质时，第一个连接词是extends，后面是with。</p>
+<p>​        （3）如果一个类在同时继承特质和父类时，应当把父类写在extends后。</p>
+<p>3）案例实操</p>
+<p>（1）特质可以同时拥有抽象方法和具体方法</p>
+<p>（2）一个类可以混入（mixin）多个特质</p>
+<p>（3）所有的Java接口都可以当做Scala特质使用</p>
+<p>（4）<strong>动态混入</strong>：可灵活的扩展类的功能</p>
+<p><strong>（4.1）动态混入：创建对象时混入trait，而无需使类混入该trait</strong></p>
+<p>（4.2）如果混入的trait中有未实现的方法，则需要实现</p>
+<pre><code class="language-scala">object Test14_TraitMixin {
+
+  def main(args: Array[String]): Unit = {
+
+    val student1 = new Student14
+    println(student1.name1)
+    println(student1.age1)
+
+    println(student1.name)
+    println(student1.age)
+
+    //（4）动态混入：可灵活的扩展类的功能
+    //（4.1）动态混入：创建对象时混入trait，而无需使类混入该trait
+    //（4.2）如果混入的trait中有未实现的方法，则需要实现
+    // 只有当前创建的一个对象具有混入的特质  类是没有的
+
+    val teacher1: Teacher14 with Age14 = new Teacher14 with Age14 {
+      override val name = &quot;teacher&quot;
+      override var age = 18
+    }
+  }
+}
+
+
+trait Age14{
+  val name:String
+  var age:Int
+
+  val name1:String = &quot;age&quot;
+  var age1:Int = 10
+}
+
+
+abstract class Person14{
+  val name:String = &quot;person&quot;
+  var age:Int = 18
+
+  val name1:String = &quot;person1&quot;
+  //  var age1:Int = 11
+}
+
+// 继承的时候 父类和特质不能有相同的具体属性  会发生冲突报错
+// 报错的如果是val 常量 可以通过重写解决  如果是var 变量  只能去修改父类或者特质
+// 如果继承的属性 一个是抽象的一个是非抽象的  不会发生冲突  需要注意var的属性不能重写
+class Student14 extends Person14 with Age14{
+  override val name: String = &quot;student&quot;
+  age = 19
+
+  // 通过重写解决
+  override val name1: String = &quot;student&quot;
+  age1 = 18
+}
+
+
+//（3）所有的Java接口都可以当做Scala特质使用
+class Teacher14 extends java.io.Serializable{
+
+}
+</code></pre>
+<h3 id="663">6.6.3特质和抽象类的区别</h3>
+<p>（1）优先使用特质。一个类扩展多个特质是很方便的，但却只能扩展一个抽象类。</p>
+<p>（2）如果你需要构造函数参数，使用抽象类。因为抽象类可以定义带参数的构造函数，而特质不行（有无参构造）。</p>
+<h2 id="67">6.7 扩展</h2>
+<h3 id="671">6.7.1 类型检查和转换</h3>
+<p>1）说明</p>
+<p>（1）obj.isInstanceOf[T]：判断obj是不是T类型。</p>
+<p>（2）obj.asInstanceOf[T]：将obj强转成T类型。</p>
+<p>（3）classOf获取类模板。</p>
+<p>2）案例实操</p>
+<pre><code class="language-scala">object Test15_Extends {
+  def main(args: Array[String]): Unit = {
+    // 判断对象的类型  以及转换对象的类型
+    // 只有多态会使用到
+    val person1: Person15 = new Student15
+    //    person1.sayHi()
+
+    // 想要调用子类独有的属性和方法  需要对其进行转换  转换为对应的子类才行
+    val student1: Student15 = person1.asInstanceOf[Student15]
+
+    student1.sayHi()
+
+    // 即使在多态中  也会存在多个子类  不能直接转换  需要先判断
+    if (person1.isInstanceOf[Teacher15]) {
+      val teacher1: Teacher15 = person1.asInstanceOf[Teacher15]
+      teacher1.sayHi1()
+    }
+
+    // 调用固定的方法  返回类模板
+val value: Class[Student15] = classOf[Student15]
+}
+}
+</code></pre>
+<h3 id="672">6.7.2 枚举类和应用类</h3>
+<p>1）说明</p>
+<p>​        枚举类：需要继承Enumeration</p>
+<p>​        应用类：需要继承App</p>
+<p>2）案例实操</p>
+<pre><code class="language-scala">object Test {
+    def main(args: Array[String]): Unit = {
+
+        println(Color.RED)
+    }
+}
+
+// 枚举类
+object Color extends Enumeration {
+    val RED = Value(1, &quot;red&quot;)
+    val YELLOW = Value(2, &quot;yellow&quot;)
+    val BLUE = Value(3, &quot;blue&quot;)
+}
+
+// 应用类
+object Test20 extends App {
+    println(&quot;xxxxxxxxxxx&quot;);
+}
+</code></pre>
+<h3 id="673-type">6.7.3 Type定义新类型</h3>
+<p>1）说明</p>
+<p>使用type关键字可以定义新的数据数据类型名称，本质上就是类型的一个别名。</p>
+<p>2）案例实操</p>
+<pre><code class="language-scala">object Test {
+
+    def main(args: Array[String]): Unit = {
+
+        type S=String
+        var v:S=&quot;abc&quot;
+        def test():S=&quot;xyz&quot;
+    }
+}
+</code></pre>
+<h1 id="7">第7章 集合</h1>
+<h2 id="71">7.1 集合简介</h2>
+<p>​        （1）Scala的集合有三大类：序列Seq、集Set、映射Map，所有的集合都扩展自Iterable特质。</p>
+<p>（2）对于几乎所有的集合类，Scala都同时提供了<strong>可变</strong>和<strong>不可变</strong>的版本，分别位于以下两个包。</p>
+<p>不可变集合：scala.collection.<strong>immutable</strong></p>
+<p>可变集合：  scala.collection.<strong>mutable</strong></p>
+<p>​        （3）Scala不可变集合，就是指该集合对象不可修改，每次修改就会返回一个新对象，而不会对原对象进行修改。类似于java中的String对象。</p>
+<p>（4）可变集合，就是这个集合可以直接对原对象进行修改，而不会返回新的对象。类似于java中StringBuilder对象。</p>
+<p><strong>建议：在操作集合的时候，不可变用符号，可变用方法。</strong></p>
+<h3 id="711">7.1.1 不可变集合继承图</h3>
+<p><img alt="trigger" src="https://i.postimg.cc/ncQTP3Jr/image.png#pic_left" width="width" /></p>
+<p>1）Set、Map是Java中也有的集合。</p>
+<p>2）Seq是Java没有的，我们发现List归属到Seq了，因此这里的List就和Java不是同一个概念了。.</p>
+<p>3）我们前面的for循环有一个 1 to 3，就是IndexedSeq下的Range。</p>
+<p>4）String也是属于IndexedSeq。</p>
+<p>5）我们发现经典的数据结构比如Queue和Stack被归属到LinearSeq（线性序列）。</p>
+<p>6）大家注意Scala中的Map体系有一个SortedMap，说明Scala的Map可以支持排序。</p>
+<p>7）IndexedSeq和LinearSeq的区别。</p>
+<p>（1）<strong>IndexedSeq</strong>是通过索引来查找和定位，因此速度快，比如String就是一个索引集合，通过索引即可定位。</p>
+<p>（2）<strong>LinearSeq</strong>是线型的，即有头尾的概念，这种数据结构一般是通过遍历来查找。</p>
+<h3 id="712">7.1.2 可变集合继承图</h3>
+<p><img alt="trigger" src="https://s2.loli.net/2022/11/03/Che8OiTczoqldvn.png#pic_left" width="width" /></p>
+<h2 id="72">7.2 数组</h2>
+<h3 id="721">7.2.1 不可变数组</h3>
+<p>1）第一种方式定义数组</p>
+<p>定义：val arr1 = new Array<a href="10">Int</a></p>
+<p>（1）new是关键字。</p>
+<p>（2）[Int]是指定可以存放的数据类型，如果希望存放任意数据类型，则指定Any。</p>
+<p>（3）(10)，表示数组的大小，确定后就不可以变化。</p>
+<p>2）案例实操</p>
+<pre><code class="language-scala">package chapter07
+
+object Test01_Array {
+  def main(args: Array[String]): Unit = {
+    // 创建不可变数组
+    val array = new Array[Int](10)
+    // 也可以使用伴生对象的apply方法
+    val array1: Array[Int] = Array(1, 2, 3, 4)
+
+    // 遍历读取array
+    //    println(array)
+
+    for (elem &lt;- array1) {
+      println(elem)
+    }
+
+    // 使用迭代器遍历数组
+    val iterator: Iterator[Int] = array1.iterator
+
+    while(iterator.hasNext){
+      val i: Int = iterator.next()
+      println(i)
+    }
+
+    println(&quot;===========================&quot;)
+
+    // scala函数式编程的写法
+    def myPrint(i:Int):Unit = {
+      println(i)
+    }
+
+    // 放入自定义出来的函数
+    array1.foreach(myPrint)
+    // 直接使用匿名函数
+    array1.foreach( i =&gt; println(i * 2) )
+    // 最简单的打印形式 直接使用系统的函数
+    array1.foreach(println)
+
+    // 修改数组的元素
+    println(array1(0))
+    array1(0) = 10
+    println(array1(0))
+
+    // 添加元素
+    // array1保持不变
+    val array2: Array[Int] = array1 :+ 1
+  }
+}
+</code></pre>
+<h3 id="722">7.2.2 可变数组</h3>
+<p>1）定义变长数组</p>
+<p>val arr01 = ArrayBuffer<a href="3, 2, 5">Any</a></p>
+<p>（1）[Any]存放任意数据类型</p>
+<p>（2）(3, 2, 5)初始化好的三个元素</p>
+<p>（3）ArrayBuffer需要引入scala.collection.mutable.ArrayBuffer</p>
+<p>2）案例实操</p>
+<p>（1）ArrayBuffer是有序的集合。</p>
+<p>（2）增加元素使用的是append方法()，支持可变参数。</p>
+<pre><code class="language-scala">package chapter07
+
+import scala.collection.mutable
+import scala.collection.mutable.ArrayBuffer
+
+object Test02_ArrayBuffer {
+  def main(args: Array[String]): Unit = {
+    // 可变数组
+    // 默认使用的集合都是不可变的
+    // 使用可变集合 需要自己提前导包
+    val arrayBuffer: ArrayBuffer[Int] = new ArrayBuffer[Int]()
+    val arrayBuffer1: ArrayBuffer[Int] = ArrayBuffer(1, 2, 3, 4)
+
+
+    // 向可变数组中添加元素
+    arrayBuffer.append(10)
+    arrayBuffer1.appendAll(Array(1,2,3,4))
+
+    // 遍历打印
+    arrayBuffer.foreach(println)
+    arrayBuffer1.foreach(println)
+
+    println(arrayBuffer1)
+
+
+    // 修改元素
+    arrayBuffer1.update(0,100)
+    arrayBuffer1(1) = 200
+    println(arrayBuffer1)
+
+    // 查看元素
+    println(arrayBuffer1(0))
+
+    // 删除元素
+    arrayBuffer1.remove(0)
+    println(arrayBuffer1)
+    arrayBuffer1.remove(1,3)
+    println(arrayBuffer1)
+  }
+}
+</code></pre>
+<h3 id="723">7.2.3 不可变数组与可变数组的转换</h3>
+<p>1）说明</p>
+<p>arr1.toBuffer  //<strong>不可变数组转可变数组</strong></p>
+<p>arr2.toArray  //<strong>可变数组转不可变数组</strong></p>
+<p>（1）arr2.toArray返回结果才是一个不可变数组，arr2本身没有变化。</p>
+<p>（2）arr1.toBuffer返回结果才是一个可变数组，arr1本身没有变化。</p>
+<p>2）案例实操</p>
+<pre><code class="language-scala">// 可变数组和不可变数组的转换和关系
+// 不可变
+val ints: Array[Int] = Array(1, 2, 3, 4)
+// 可变
+val ints1: ArrayBuffer[Int] = ArrayBuffer(5, 6, 7, 8)
+
+// 不可变的用符号
+val b: Array[Int] = ints :+ 1
+
+ints.foreach(println)
+b.foreach(println)
+
+// 可变的用方法
+ints1.append(1)
+println(ints1)
+
+val ints2: ArrayBuffer[Int] = ints1 :+ 2
+println(ints1)
+
+// 可变数组转换为不可变数组
+val array: Array[Int] = ints1.toArray
+//    array.append
+
+// 不可变数组转可变数组
+// 结果用多态表示
+val buffer: mutable.Buffer[Int] = ints.toBuffer
+val buffer1: ArrayBuffer[Int] = buffer.asInstanceOf[ArrayBuffer[Int]]
+buffer.append(1)
+</code></pre>
+<h3 id="724">7.2.4 多维数组</h3>
+<p>1）多维数组定义</p>
+<p>val arr = Array.ofDim<a href="3,4">Double</a></p>
+<p>说明：二维数组中有三个一维数组，每个一维数组中有四个元素。</p>
+<p>2）案例实操</p>
+<pre><code class="language-scala">package chapter07
+
+object Test03_ArrayDim {
+  def main(args: Array[String]): Unit = {
+    // 多维数组
+    val arrayDim = new Array[Array[Int]](3)
+
+    arrayDim(0) = Array(1,2,3,4)
+    arrayDim(1) = Array(1,2,3,4)
+    arrayDim(2) = Array(1,2,3,4)
+
+    for (array &lt;- arrayDim) {
+      for (elem &lt;- array) {
+        print(elem + &quot;\t&quot;)
+      }
+      println()
+    }
+
+
+    // scala中的方法
+    val arrayDim1: Array[Array[Int]] = Array.ofDim[Int](3, 4)
+
+    arrayDim1(0)(1) = 100
+    for (array &lt;- arrayDim1) {
+      for (elem &lt;- array) {
+        print(elem + &quot;\t&quot;)
+      }
+      println()
+    }
+  }
+}
+</code></pre>
+<h2 id="73-seqlist">7.3 Seq集合（List）</h2>
+<h3 id="731-list">7.3.1 不可变List</h3>
+<p>1）说明</p>
+<p>（1）List默认为不可变集合</p>
+<p>（2）创建一个List（数据有顺序，可重复）
+ （3）遍历List</p>
+<p>（4）List增加数据</p>
+<p>（5）集合间合并：将一个整体拆成一个一个的个体，称为扁平化
+ （6）取指定数据
+ （7）空集合Nil</p>
+<p>2）案例实操</p>
+<pre><code class="language-scala">object Test04_List {
+  def main(args: Array[String]): Unit = {
+
+    //    （1）List默认为不可变集合
+    //    （2）创建一个List（数据有顺序，可重复）
+    val list: List[Any] = List(1,1,1, 1.0, &quot;hello&quot;, 'c')
+    val list3 = List(1, 2, 3, 4)
+
+
+    //    （3）遍历List
+    list.foreach(println)
+
+    //    （4）List增加数据
+    val list1: List[Any] = list :+ 1
+    println(list1)
+
+    val list2: List[Int] = 2 :: list3
+    println(list2)
+
+    val list5: List[Any] = list2 :: list3
+    println(list5)
+
+
+    //    （5）集合间合并：将一个整体拆成一个一个的个体，称为扁平化
+    val list4: List[Int] = list2 ::: list3
+    println(list4)
+
+    //    （6）取指定数据
+    val i: Int = list4(0)
+
+    //    （7）空集合Nil
+    val list6: List[Int] = 1 :: 2 :: 3 :: 4 :: Nil
+  }
+}
+</code></pre>
+<h3 id="732-listbuffer">7.3.2 可变ListBuffer</h3>
+<p>1）说明</p>
+<p>（1）创建一个可变集合ListBuffer</p>
+<p>（2）向集合中添加数据</p>
+<p>（3）删除元素</p>
+<p>（4）查看修改元素</p>
+<p>2）案例实操</p>
+<pre><code class="language-scala">import scala.collection.mutable.ListBuffer
+
+object Test05_ListBuffer {
+  def main(args: Array[String]): Unit = {
+    // （ 1）可变list创建
+    val listBuffer = new ListBuffer[Int]()
+
+    val listBuffer1: ListBuffer[Int] = ListBuffer(1, 2, 3, 4)
+
+    // （ 2）增加元素
+    listBuffer1.append(5)
+    listBuffer1.prepend(0)
+
+    println(listBuffer1)
+
+    // （ 3）删除元素
+    listBuffer1.remove(0)
+    println(listBuffer1)
+
+    // （ 4）查看修改
+    listBuffer1(0) = 1
+  }
+}
+</code></pre>
+<h2 id="74-set">7.4 Set集合</h2>
+<p>默认情况下，Scala使用的是不可变集合，如果你想使用可变集合，需要引用 scala.collection.mutable.Set包。</p>
+<h3 id="741-set">7.4.1 不可变Set</h3>
+<p>1）说明</p>
+<p>（1）Set默认是不可变集合</p>
+<p>（2）数据无序不可重复</p>
+<p>（3）默认使用hash set</p>
+<p>2）案例实操</p>
+<pre><code class="language-scala">object Test06_Set {
+  def main(args: Array[String]): Unit = {
+
+    // (1) 创建set  使用伴生对象的apply方法
+    val set: Set[Int] = Set(4, 3, 2, 1)
+    val set1 = Set(1, 2, 3, 4, 2, 8, 4, 3, 7)
+
+    // (2) set的特点 无序不可重复
+    println(set)
+
+    // (3) 默认使用hash set
+    // 如果元素少于等于4个  会创建特定类型的set
+    println(set.isInstanceOf[HashSet[Int]])
+
+    val hashSet: HashSet[Int] = HashSet(1, 2, 3, 4, 5)
+
+    // 不可变使用符号
+    val set2: Set[Int] = set + 1
+    println(set2)
+
+    // 作用 判断集合是否包含某个元素
+val bool: Boolean = set.contains(2)
+}
+}
+</code></pre>
+<h3 id="742-mutableset">7.4.2 可变mutable.Set</h3>
+<p>1）说明</p>
+<p>（1）创建可变集合mutable.Set</p>
+<p>（2）集合添加元素</p>
+<p>（3）删除数据</p>
+<p>2）案例实操</p>
+<pre><code class="language-scala">object Test06_Set {
+  def main(args: Array[String]): Unit = {
+    // (1)可变的set
+    val set3: mutable.Set[Int] = mutable.Set(1, 2, 3, 4, 4, 3, 2, 1)
+
+    // 同样数据不可重复且无序
+    println(set3)
+
+    // (2) 添加元素
+    // 会使用返回值来告诉你有没有加入进去
+    val bool1: Boolean = set3.add(5)
+    println(set3)
+
+    // 遍历查询set
+    set3.foreach(println)
+
+    // (3)删除元素  填写的不是下标是删除的元素
+    val bool2: Boolean = set3.remove(3)
+    println(set3)
+  }
+}
+</code></pre>
+<h2 id="75-map">7.5 Map集合</h2>
+<p>Scala中的Map和Java类似，<strong>也是一个散列表</strong>，它存储的内容也是键值对（<strong>key-value</strong><strong>）</strong>映射。</p>
+<h3 id="751-map">7.5.1 不可变Map</h3>
+<p>1）说明 </p>
+<p>（1）创建不可变集合Map</p>
+<p>（2）循环打印</p>
+<p>（3）读取数据</p>
+<p>2）案例实操</p>
+<pre><code class="language-scala">object Test07_Map {
+  def main(args: Array[String]): Unit = {
+
+    // (1) 创建不可变map
+    val map: Map[String, Int] = Map(&quot;hello&quot; -&gt; 1, &quot;world&quot; -&gt; 2)
+    val map1 = Map((&quot;hello&quot;, 1), (&quot;world&quot;, 2))
+
+    // (2) 遍历打印map
+    for (elem &lt;- map) {
+      println(elem)
+    }
+
+    map.foreach(println)
+
+    val keys: Iterable[String] = map.keys
+    keys.foreach(println)
+
+    val values: Iterable[Int] = map.values
+
+    // 直接打印map
+    println(map)
+
+
+    // key是无序不可重复的
+    val map2 = Map( (&quot;z&quot;, 3),(&quot;a&quot;, 1), (&quot;a&quot;, 2), (&quot;c&quot;, 3),(&quot;f&quot;,4),(&quot;d&quot;,5))
+    println(map2)
+
+
+    // (3) 获取value的值
+    val option: Option[Int] = map2.get(&quot;a&quot;)
+    println(option)
+
+
+    if (!map2.get(&quot;m&quot;).isEmpty) {
+      val value: Int = map2.get(&quot;m&quot;).get
+    }
+
+    // option有区分是否有数据的方法 使用getOrElse  如果为None  去默认值
+    option.getOrElse(1)
+
+
+    // 如果不确认存在
+    val i: Int = map2.getOrElse(&quot;m&quot;, 10)
+
+    // 如果确认存在的话
+    val i1: Int = map2(&quot;a&quot;)
+    }
+}
+</code></pre>
+<h3 id="752-map">7.5.2 可变Map</h3>
+<p>1）说明</p>
+<p>（1）创建可变集合</p>
+<p>（2）向集合增加数据</p>
+<p>（3）修改数据</p>
+<p>（4）删除数据</p>
+<p>2）案例实操</p>
+<pre><code class="language-scala">object Test07_Map {
+
+  def main(args: Array[String]): Unit = {
+
+    // (1) 创建可变map
+    val map3: mutable.Map[String, Int] = mutable.Map((&quot;z&quot;, 3), (&quot;a&quot;, 1), (&quot;a&quot;, 2), (&quot;c&quot;, 3), (&quot;f&quot;, 4), (&quot;d&quot;, 5))
+
+    // (2) 可变map可以使用put方法放入元素
+    map3.put(&quot;z&quot;,10)
+    println(map3)
+
+    // (3) 修改元素的方法
+    map3.update(&quot;z&quot;,20)
+    map3(&quot;z&quot;) = 30
+
+    // (4) 删除元素
+    map3.remove(&quot;z&quot;)
+  }
+}
+</code></pre>
+<h2 id="76">7.6 元组</h2>
+<p>1）说明</p>
+<p>元组也是可以理解为一个容器，可以存放各种相同或不同类型的数据。说的简单点，就是将多个无关的数据封装为一个整体，称为元组。</p>
+<p>注意：元组中最大只能有22个元素。</p>
+<p>2）案例实操</p>
+<p>（1）声明元组的方式：（元素1，元素2，元素3）。</p>
+<p>（2）访问元组。</p>
+<p>（3）Map中的键值对其实就是元组,只不过元组的元素个数为2，称之为对偶。</p>
+<pre><code class="language-scala">object TestTuple {
+
+    def main(args: Array[String]): Unit = {
+
+        //（1）声明元组的方式：(元素1，元素2，元素3)
+        val tuple: (Int, String, Boolean) = (40,&quot;bobo&quot;,true)
+
+        //（2）访问元组
+        //（2.1）通过元素的顺序进行访问，调用方式：_顺序号
+        println(tuple._1)
+        println(tuple._2)
+        println(tuple._3)
+
+        //（2.2）通过索引访问数据
+        println(tuple.productElement(0))
+
+        //（2.3）通过迭代器访问数据
+        for (elem &lt;- tuple.productIterator) {
+            println(elem)
+        }
+
+        //（3）Map中的键值对其实就是元组,只不过元组的元素个数为2，称之为对偶
+        val map = Map(&quot;a&quot;-&gt;1, &quot;b&quot;-&gt;2, &quot;c&quot;-&gt;3)
+        val map1 = Map((&quot;a&quot;,1), (&quot;b&quot;,2), (&quot;c&quot;,3))
+
+        map.foreach(tuple=&gt;{println(tuple._1 + &quot;=&quot; + tuple._2)})
+    }
+}
+</code></pre>
+<h2 id="77">7.7 集合常用函数</h2>
+<h3 id="771">7.7.1 基本属性和常用操作</h3>
+<p>1）说明</p>
+<p>（1）获取集合长度</p>
+<p>（2）获取集合大小</p>
+<p>（3）循环遍历</p>
+<p>（4）迭代器</p>
+<p>（5）生成字符串</p>
+<p>（6）是否包含</p>
+<p>2）案例实操</p>
+<pre><code class="language-scala">object TestList {
+
+  def main(args: Array[String]): Unit = {
+
+    val list: List[Int] = List(1, 2, 3, 4, 5, 6, 7)
+
+    //（1）获取集合长度
+    println(list.length)
+
+    //（2）获取集合大小,等同于length
+    println(list.size)
+
+    //（3）循环遍历
+    list.foreach(println)
+
+    //（4）迭代器
+    for (elem &lt;- list.itera tor) {
+      println(elem)
+    }
+
+    //（5）生成字符串
+    println(list.mkString(&quot;,&quot;))
+
+    //（6）是否包含
+    println(list.contains(3))
+  }
+}
+</code></pre>
+<h3 id="772">7.7.2 衍生集合</h3>
+<p>1）说明</p>
+<p>（1）获取集合的头</p>
+<p>（2）获取集合的尾（不是头的就是尾）</p>
+<p>（3）集合最后一个数据</p>
+<p>（4）集合初始数据（不包含最后一个）</p>
+<p>（5）反转</p>
+<p>（6）取前（后）n个元素</p>
+<p>（7）去掉前（后）n个元素</p>
+<p>（8）并集</p>
+<p>（9）交集</p>
+<p>（10）差集</p>
+<p>（11）拉链</p>
+<p>（12）滑窗</p>
+<p>2）案例实操</p>
+<pre><code class="language-scala">object TestList {
+
+  def main(args: Array[String]): Unit = {
+
+    val list1: List[Int] = List(1, 2, 3, 4, 5, 6, 7)
+    val list2: List[Int] = List(4, 5, 6, 7, 8, 9, 10)
+
+    //（1）获取集合的头
+    println(list1.head)
+
+    //（2）获取集合的尾（不是头的就是尾）
+    println(list1.tail)
+
+    //（3）集合最后一个数据
+    println(list1.last)
+
+    //（4）集合初始数据（不包含最后一个）
+    println(list1.init)
+
+    //（5）反转
+    println(list1.reverse)
+
+    //（6）取前（后）n个元素
+    println(list1.take(3))
+    println(list1.takeRight(3))
+
+    //（7）去掉前（后）n个元素
+    println(list1.drop(3))
+    println(list1.dropRight(3))
+
+    //（8）并集
+    println(list1.union(list2))
+
+    //（9）交集
+    println(list1.intersect(list2))
+
+    //（10）差集
+    println(list1.diff(list2))
+
+    //（11）拉链 注:如果两个集合的元素个数不相等，那么会将同等数量的数据进行拉链，多余的数据省略不用
+    println(list1.zip(list2))
+
+    //（12）滑窗
+    list1.sliding(2, 5).foreach(println)
+  }
+}
+</code></pre>
+<h3 id="773">7.7.3 集合计算初级函数</h3>
+<p>1）说明</p>
+<p>​        （1）求和</p>
+<p>​        （2）求乘积</p>
+<p>​        （3）最大值</p>
+<p>​        （4）最小值</p>
+<p>​        （5）排序</p>
+<p>2）实操</p>
+<pre><code class="language-scala">object Test11_LowFunc {
+
+  def main(args: Array[String]): Unit = {
+
+    val list: List[Int] = List(1, 5, -3, 4, 2, -7, 6)
+    val list1: ListBuffer[Int] = ListBuffer(1, 5, -3, 4, 2, -7, 6)
+
+    //    （1）求和
+    val sum: Int = list.sum
+    println(sum)
+
+    //    （2）求乘积
+    val product: Int = list.product
+    println(product)
+
+    //    （3）最大值
+    val max: Int = list.max
+
+    //    （4）最小值
+    val min: Int = list.min
+
+    //    （5）排序
+    val sorted: List[Int] = list.sorted
+    println(list)
+    println(sorted)
+
+    // 修改排序规则 从大到小
+    val ints: List[Int] = list.sorted(Ordering[Int].reverse)
+    println(ints)
+
+    // 对元组进行排序
+    val tuples = List((&quot;hello&quot;, 10), (&quot;world&quot;, 2), (&quot;scala&quot;, 9), (&quot;haha&quot;, 4),(&quot;hello&quot;, 1))
+
+    // 按照元组的默认字典序排列
+    val sorted1: List[(String, Int)] = tuples.sorted
+    println(sorted1)
+
+    // 按照后面数字从小到大排序
+    val tuples1: List[(String, Int)] = tuples.sortBy((tuple: (String, Int)) =&gt; tuple._2)
+    println(tuples1)
+
+    // 按照后面数字从大到小排序
+    val tuples2: List[(String, Int)] = tuples.sortBy((tuple: (String, Int)) =&gt; tuple._2)(Ordering[Int].reverse)
+    println(tuples2)
+
+    tuples.sortBy( _._2 )
+
+    // 自定义排序规则
+    val tuples3: List[(String, Int)] = tuples.sortWith((left: (String, Int), right: (String, Int)) =&gt; left._2 &gt; right._2)
+    println(tuples3)
+
+
+    val tuples4: List[(String, Int)] = tuples.sortWith(_._2 &gt; _._2)
+    println(tuples4)
+  }
+}
+</code></pre>
+<p>1）sorted</p>
+<p>对一个集合进行自然排序，通过传递隐式的Ordering。</p>
+<p>2）sortBy</p>
+<p>对一个属性或多个属性进行排序，通过它的类型。</p>
+<p>3）sortWith</p>
+<p>基于函数的排序，通过一个comparator函数，实现自定义排序的逻辑。</p>
+<h3 id="774">7.7.4 集合计算高级函数</h3>
+<p>1）说明</p>
+<p>（1）过滤</p>
+<p>​      遍历一个集合并从中获取满足指定条件的元素组成一个新的集合。</p>
+<p>（2）<strong>转化/映射（map）</strong></p>
+<p>​       将集合中的每一个元素映射到某一个函数。</p>
+<p>（3）扁平化</p>
+<p>（4）扁平化+映射 注：flatMap相当于先进行map操作，在进行flatten操作。</p>
+<p>​        集合中的每个元素的子元素映射到某个函数并返回新集合。</p>
+<p>（5）<strong>分组（groupBy）</strong>       </p>
+<p>​        <strong>按照指定的规则对集合的元素进行分组。</strong></p>
+<p>（6）简化（归约）</p>
+<p>​    （7）折叠</p>
+<p>2）实操</p>
+<pre><code class="language-scala">object TestList {
+
+    def main(args: Array[String]): Unit = {
+
+        val list: List[Int] = List(1, 2, 3, 4, 5, 6, 7, 8, 9)
+
+        val nestedList: List[List[Int]] = List(List(1, 2, 3), List(4, 5, 6), List(7, 8, 9))
+
+        val wordList: List[String] = List(&quot;hello world&quot;, &quot;hello atguigu&quot;, &quot;hello scala&quot;)
+
+        //（1）过滤
+        println(list.filter(x =&gt; x % 2 == 0))
+
+        //（2）转化/映射
+        println(list.map(x =&gt; x + 1))
+
+        //（3）扁平化
+        println(nestedList.flatten)
+
+        //（4）扁平化+映射 注：flatMap相当于先进行map操作，在进行flatten操作
+        println(wordList.flatMap(x =&gt; x.split(&quot; &quot;)))
+
+        //（5）分组
+        println(list.groupBy(x =&gt; x % 2))
+    }
+}
+</code></pre>
+<p><strong>3）Reduce方法</strong></p>
+<p>Reduce简化（归约） ：通过指定的逻辑将集合中的数据进行聚合，从而减少数据，最终获取结果。</p>
+<p>​    案例实操。</p>
+<pre><code class="language-scala">object TestReduce {
+
+    def main(args: Array[String]): Unit = {
+
+        val list = List(1,2,3,4)
+
+        // 将数据两两结合，实现运算规则
+        val i: Int = list.reduce( (x,y) =&gt; x-y )
+        println(&quot;i = &quot; + i)
+
+        // 从源码的角度，reduce底层调用的其实就是reduceLeft
+        //val i1 = list.reduceLeft((x,y) =&gt; x-y)
+
+        // ((4-3)-2-1) = -2
+        val i2 = list.reduceRight((x,y) =&gt; x-y)
+        println(i2)
+    }
+}
+</code></pre>
+<p><strong>4）Fold方法</strong></p>
+<p>Fold折叠：化简的一种特殊情况，可以添加初始值</p>
+<p>​    （1）案例实操：fold基本使用</p>
+<pre><code class="language-scala">object TestFold {
+
+    def main(args: Array[String]): Unit = {
+
+        val list = List(1,2,3,4)
+
+        // fold方法使用了函数柯里化，存在两个参数列表
+        // 第一个参数列表为 ： 零值（初始值）
+        // 第二个参数列表为： 简化规则
+
+        // fold底层其实为foldLeft
+        val i = list.foldLeft(1)((x,y)=&gt;x-y)
+
+        val i1 = list.foldRight(10)((x,y)=&gt;x-y)
+
+        println(i)
+        println(i1)
+    }
+}
+</code></pre>
+<h3 id="775-wordcount">7.7.5 WordCount案例</h3>
+<p>1）需求</p>
+<p>​        单词计数：将集合中出现的相同的单词，进行计数，取计数排名前三的结果。</p>
+<p>2）需求分析</p>
+<p><img alt="trigger" src="https://s2.loli.net/2022/11/03/sdGQuUCk4mwWyN2.png#pic_left" width="width" /></p>
+<p>3）案例实操</p>
+<pre><code class="language-scala">object TestWordCount {
+
+    def main(args: Array[String]): Unit = {
+
+        // 单词计数：将集合中出现的相同的单词，进行计数，取计数排名前三的结果
+        val stringList = List(&quot;Hello Scala Hbase kafka&quot;, &quot;Hello Scala Hbase&quot;, &quot;Hello Scala&quot;, &quot;Hello&quot;)
+
+        // （1）将每一个字符串转换成一个一个单词
+        val wordList: List[String] = stringList.flatMap(str=&gt;str.split(&quot; &quot;))
+        //println(wordList)
+
+        // （2）将相同的单词放置在一起
+        val wordToWordsMap: Map[String, List[String]] = wordList.groupBy(word=&gt;word)
+        //println(wordToWordsMap)
+
+        // （3）对相同的单词进行计数
+        // (word, list) =&gt; (word, count)
+        val wordToCountMap: Map[String, Int] = wordToWordsMap.map(tuple=&gt;(tuple._1, tuple._2.size))
+
+        //（4）对计数完成后的结果进行排序（降序）
+        val sortList: List[(String, Int)] = wordToCountMap.toList.sortWith {
+            (left, right) =&gt; {
+                left._2 &gt; right._2
+            }
+        }
+
+        // （5）对排序后的结果取前3名
+        val resultList: List[(String, Int)] = sortList.take(3)
+
+        println(resultList)
+    }
+}
+</code></pre>
+<h2 id="78">7.8 队列</h2>
+<p>1）说明</p>
+<p>Scala也提供了队列（Queue）的数据结构，队列的特点就是先进先出。进队和出队的方法分别为enqueue和dequeue。</p>
+<p>2）案例实操</p>
+<pre><code class="language-scala">object TestQueue {
+
+    def main(args: Array[String]): Unit = {
+
+        val que = new mutable.Queue[String]()
+
+        que.enqueue(&quot;a&quot;, &quot;b&quot;, &quot;c&quot;)
+
+        println(que.dequeue())
+        println(que.dequeue())
+        println(que.dequeue())
+    }
+}
+</code></pre>
+<h2 id="79">7.9 并行集合</h2>
+<p>1）说明</p>
+<p>Scala为了充分使用多核CPU，提供了并行集合（有别于前面的串行集合），用于多核环境的并行计算。</p>
+<p>2）案例实操</p>
+<pre><code class="language-scala">object TestPar {
+
+    def main(args: Array[String]): Unit = {
+
+        val result1 = (0 to 100).map{case _ =&gt; Thread.currentThread.getName}
+
+        val result2 = (0 to 100).par.map{case _ =&gt; Thread.currentThread.getName}
+
+        println(result1)
+        println(result2)
+    }
+}
+</code></pre>
+<h1 id="8">第8章 模式匹配</h1>
+<p>Scala中的模式匹配类似于Java中的switch语法</p>
+<pre><code class="language-scala">int i = 10
+switch (i) {
+    case 10 :
+    System.out.println(&quot;10&quot;);
+    break;
+
+    case 20 : 
+    System.out.println(&quot;20&quot;);
+    break;
+
+    default : 
+    System.out.println(&quot;other number&quot;);
+    break;
+}
+</code></pre>
+<p>但是scala从语法中补充了更多的功能，所以更加强大。</p>
+<h2 id="81">8.1 基本语法</h2>
+<p>模式匹配语法中，采用match关键字声明，每个分支采用case关键字进行声明，当需要匹配时，会从第一个case分支开始，如果匹配成功，那么执行对应的逻辑代码，如果匹配不成功，继续执行下一个分支进行判断。如果所有case都不匹配，那么会执行case _分支，类似于Java中default语句。</p>
+<pre><code class="language-scala">object TestMatchCase {
+
+  def main(args: Array[String]): Unit = {
+
+    var a: Int = 10
+    var b: Int = 20
+    var operator: Char = 'd'
+
+    var result = operator match {
+      case '+' =&gt; a + b
+      case '-' =&gt; a - b
+      case '*' =&gt; a * b
+      case '/' =&gt; a / b
+      case _ =&gt; &quot;illegal&quot;
+    }
+
+    println(result)
+  }
+}
+</code></pre>
+<p>1）说明</p>
+<p>（1）如果所有case都不匹配，那么会执行case _ 分支，类似于Java中default语句，若此时没有case _ 分支，那么会抛出MatchError。</p>
+<p>（2）每个case中，不需要使用break语句，自动中断case。</p>
+<p>（3）match case语句可以匹配任何类型，而不只是字面量。</p>
+<p>（4）=&gt; 后面的代码块，直到下一个case语句之前的代码是<strong>作为一个整体执行</strong>，可以使用{}括起来，也可以不括。</p>
+<h2 id="82">8.2 模式匹配常见用法</h2>
+<h3 id="821">8.2.1 匹配类型</h3>
+<p>1）说明</p>
+<p>需要进行类型判断时，可以使用前文所学的isInstanceOf[T]和asInstanceOf[T]，也可使用模式匹配实现同样的功能。</p>
+<p>2）案例实操</p>
+<pre><code class="language-scala">object Test02_MatchValue {
+
+  def main(args: Array[String]): Unit = {
+
+    // 匹配类型
+    def func2(x:Any):String ={
+      x match {
+        case i:Int =&gt; &quot;整数&quot;
+        case c:Char =&gt; &quot;字符&quot;
+        case s:String =&gt; &quot;字符串&quot;
+        case _ =&gt; &quot;其他&quot;
+      }
+    }
+
+    println(func2(1515))
+    println(func2('\t'))
+    println(func2(&quot;1515&quot;))
+  }
+}
+</code></pre>
+<h3 id="822">8.2.2 匹配对象及样例类</h3>
+<p>1）基本语法</p>
+<pre><code class="language-scala">object Test05_MatchObject {
+  def main(args: Array[String]): Unit = {
+    val zhangsan = new Person05(&quot;zhangsan&quot;, 18)
+
+    zhangsan match {
+      case Person05(&quot;zhangsan&quot;,18) =&gt; println(&quot;找到张三啦&quot;)
+      case _ =&gt; println(&quot;你不是zhangsan&quot;)
+    }
+  }
+}
+
+
+class Person05 (val name:String,var age:Int){
+
+}
+
+object Person05{
+  // 创建对象的方法
+  def apply(name: String, age: Int): Person05 = new Person05(name, age)
+
+  // 解析对象的方法
+  def unapply(arg: Person05): Option[(String, Int)] = {
+    // 如果解析的参数为null
+    if (arg == null ) None else Some((arg.name,arg.age))
+  }
+}
+</code></pre>
+<p>小结</p>
+<p>Ø  val user = Person05("zhangsan",11)，该语句在执行时，实际调用的是Person05伴生对象中的<strong>apply</strong>方法，因此不用<strong>new关键字</strong>就能构造出相应的对象。</p>
+<p>Ø  当将Person05 <strong>("zhangsan", 11)</strong>写在case后时[case User("zhangsan", 11) =&gt; "yes"]，会默认调用<strong>unapply</strong>方法(对象提取器)，<strong>user作为unapply方法的参数</strong>，unapply方法将user对象的name和age属性提取出来，与User("zhangsan", 11)中的属性值进行匹配</p>
+<p>Ø  case中对象的unapply方法(提取器)返回Some，且所有属性均一致，才算匹配成功,属性不一致，或返回None，则匹配失败。</p>
+<p>Ø  若只提取对象的一个属性，则提取器为<strong>unapply</strong>(obj:Obj):<strong>Option[T]</strong></p>
+<p>若提取对象的多个属性，则提取器为<strong>unapply</strong>(obj:Obj):<strong>Option[(T1,T2,T3…)]</strong></p>
+<p>若提取对象的可变个属性，则提取器为<strong>unapplySeq</strong>(obj:Obj):<strong>Option[Seq[T]]</strong></p>
+<p><strong>2）样例类</strong></p>
+<p>​        （1）语法：</p>
+<p>​                 <strong>case class</strong> Person05 (name: String, age: Int)</p>
+<p>​        （2）说明</p>
+<p>​        1样例类仍然是类，和普通类相比，只是其自动生成了伴生对象，并且伴生对象中自动提供了一些常用的方法，如<strong>apply</strong>、<strong>unapply</strong>、<strong>toString</strong>、equals、hashCode和copy。</p>
+<p>​        2样例类是为模式匹配而优化的类，因为其默认提供了unapply方法，因此，样例类可以直接使用模式匹配，而无需自己实现unapply方法。</p>
+<p>​        3构造器中的每一个参数都成为val，除非它被显式地声明为var（不建议这样做）</p>
+<p>（3）实操</p>
+<p>上述匹配对象的案例使用样例类会节省大量代码</p>
+<pre><code>case class Person05(var name: String, age: Int)
+</code></pre>
+<h2 id="83">8.3 偏函数中的模式匹配</h2>
+<p>偏函数也是函数的一种，通过偏函数我们可以方便的对输入参数做更精确的检查。例如该偏函数的输入类型为List[Int]，而我们需要的是第一个元素是0的集合，这就是通过模式匹配实现的。</p>
+<p><strong>1）</strong> <strong>偏函数定义</strong></p>
+<pre><code class="language-scala">val second: PartialFunction[List[Int], Option[Int]] = {
+    case x :: y :: _ =&gt; Some(y)
+}
+</code></pre>
+<p><img alt="trigger" src="https://s2.loli.net/2022/11/03/NE3a4oVgkFMeI1S.png#pic_left" width="width" /></p>
+<p><strong>注</strong>：该偏函数的功能是返回输入的List集合的第二个元素。</p>
+<p><strong>2）偏函数原理</strong></p>
+<p>上述代码会被scala编译器翻译成以下代码，与普通函数相比，只是多了一个用于参数检查的函数——isDefinedAt，其返回值类型为Boolean。</p>
+<pre><code class="language-scala">val second = new PartialFunction[List[Int], Option[Int]] {
+
+    //检查输入参数是否合格
+    override def isDefinedAt(list: List[Int]): Boolean = list match {
+        case x :: y :: _ =&gt; true
+        case _ =&gt; false
+    }
+
+    //执行函数逻辑
+    override def apply(list: List[Int]): Option[Int] = list match {
+        case x :: y :: _ =&gt; Some(y)
+    }
+}
+</code></pre>
+<p><strong>3）偏函数使用</strong></p>
+<p>偏函数不能像second(List(1,2,3))这样直接使用，因为这样会直接调用apply方法，而应该调用applyOrElse方法，如下</p>
+<pre><code class="language-scala">second.applyOrElse(List(1,2,3), (_: List[Int]) =&gt; None
+</code></pre>
+<p>applyOrElse方法的逻辑为 <strong>if</strong> (<strong>ifDefinedAt(</strong>list<strong>)</strong>) <strong>apply(</strong>list<strong>)</strong> else default。如果输入参数满足条件，即isDefinedAt返回true，则执行apply方法，否则执行defalut方法，default方法为参数不满足要求的处理逻辑。</p>
+<p><strong>3）</strong> <strong>案例实操</strong></p>
+<p><strong>（1）需求</strong></p>
+<p>将该List(1,2,3,4,5,6,"test")中的Int类型的元素加一，并去掉字符串。</p>
+<p><strong>（2）实操</strong></p>
+<pre><code class="language-scala">object Test06_PartitionFunc {
+
+  def main(args: Array[String]): Unit = {
+
+    // 将该List(1,2,3,4,5,6,&quot;test&quot;)中的Int类型的元素加一，并去掉字符串。
+    val list = List(1, 2, 3, 4, 5, 6, &quot;test&quot;)
+
+    // 步骤一: 过滤掉字符串
+    val list1: List[Any] = list.filter((a: Any) =&gt; a match {
+      case s: String =&gt; false
+      case i: Int =&gt; true
+    })
+
+    // 步骤二: 对int值加一
+    val list2: List[Int] = list1.map((a: Any) =&gt; {
+      a match {
+        case i: Int =&gt; i + 1
+      }
+    })
+
+    println(list2)
+
+    val list3: List[Int] = list.collect({
+      case i: Int =&gt; i + 1
+    })
+
+    println(list3)
+
+    val value:PartialFunction[Any, Int] =  {
+      case i: Int =&gt; i + 1
+    }
+
+    // 函数的定义 需要多写一个math关键字
+    // 偏函数将match关键字省略
+    val function: Any =&gt; Int = (a: Any) =&gt; a match {
+      case i: Int =&gt; i + 1
+}
+  }
+}
+</code></pre>
+<p>方法一：</p>
+<p>List(1,2,3,4,5,6,"test").<strong>filter</strong>(<em>.isInstanceOf[Int]).<strong>map</strong>(</em>.asInstanceOf[Int] + 1).foreach(println)</p>
+<p>方法二：</p>
+<p>List(1, 2, 3, 4, 5, 6, "test").<strong>collect</strong> <strong>{ case x: Int =&gt; x + 1 }</strong>.foreach(println)</p>
+<h2 id="84">8.4 下划线的使用总结</h2>
+<p>附加内容：下划线的使用总结。</p>
+<p>（1）用于类中的var属性，使用默认值。</p>
+<p>（2）用于高阶函数的第一种用法，表示函数自身。</p>
+<p>（3）匿名函数化简，用下划线代替变量。</p>
+<p>（4）用于导包下的所有内容。</p>
+<p>（5）用于起别名时表示匿名。</p>
+<p>（6）用于模式匹配表示任意数据。</p>
+<pre><code class="language-scala">object Test01_Extends {
+
+  def main(args: Array[String]): Unit = {
+
+    // 下滑线的使用总结
+    //    （2）用于高阶函数的第一种用法，表示函数自身
+    def sayHi(name: String): Unit = {
+      println(s&quot;hi $name&quot;)
+    }
+
+    val function: String =&gt; Unit = sayHi _
+
+    //    （3）匿名函数化简，用下划线代替变量
+    val function1: (Int, Int) =&gt; Int = (a: Int, b: Int) =&gt; a + b
+    val function2: (Int, Int) =&gt; Int = _ + _
+
+
+    //    （4）用于导包下的所有内容
+    import scala.util.control.Breaks._
+
+    //    （5）用于起别名时表示匿名
+    import scala.util.control.{Breaks =&gt; _}
+    //    Breaks
+
+    //     （6）用于模式匹配表示任意数据
+    10 match {
+      case 10 =&gt; println(10)
+      case _ =&gt; println(&quot;其他数据&quot;)
+    }
+  }
+}
+
+class Person01 {
+  //    （1）用于类中的var属性，使用默认值
+  var name: String = _
+}
+</code></pre>
+<h1 id="9">第9章 异常</h1>
+<p>语法处理上和<strong>Java</strong><strong>类似</strong>，但是又不尽相同。</p>
+<h2 id="91-java">9.1 Java异常处理</h2>
+<pre><code class="language-scala">public class ExceptionDemo {
+
+    public static void main(String[] args) {
+
+        try {
+            int a = 10;
+            int b = 0;
+            int c = a / b;
+        }catch (ArithmeticException e){
+// catch时，需要将范围小的写到前面
+            e.printStackTrace();
+        }catch (Exception e){
+            e.printStackTrace();
+        }finally {
+            System.out.println(&quot;finally&quot;);
+        }
+    }
+}
+</code></pre>
+<p>注意事项</p>
+<p>（1）Java语言按照try—catch—finally的方式来处理异常</p>
+<p>（2）不管有没有异常捕获，都会执行finally，因此通常可以在finally代码块中释放资源。</p>
+<p>（3）可以有多个catch，分别捕获对应的异常，这时需要把范围小的异常类写在前面，把范围大的异常类写在后面，否则编译错误。</p>
+<h2 id="92-scala">9.2 Scala异常处理</h2>
+<pre><code class="language-scala">def main(args: Array[String]): Unit = {
+
+    try {
+        var n= 10 / 0
+    }catch {
+        case ex: ArithmeticException=&gt;{
+            // 发生算术异常
+            println(&quot;发生算术异常&quot;)
+        }
+        case ex: Exception=&gt;{
+            // 对异常处理
+            println(&quot;发生了异常1&quot;)
+            println(&quot;发生了异常2&quot;)
+        }
+    }finally {
+        println(&quot;finally&quot;)
+    }
+}
+</code></pre>
+<p>（1）我们将可疑代码封装在try块中。在try块之后使用了一个catch处理程序来捕获异常。如果发生任何异常，catch处理程序将处理它，程序将不会异常终止。</p>
+<p>（2）Scala的异常的工作机制和Java一样，但是Scala没有“checked（编译期）”异常，即Scala没有编译异常这个概念，异常都是在运行的时候捕获处理。</p>
+<p>（3）异常捕捉的机制与其他语言中一样，如果有异常发生，catch子句是按次序捕捉的。因此，在catch子句中，越具体的异常越要靠前，越普遍的异常越靠后，如果把越普遍的异常写在前，把具体的异常写在后，在Scala中也不会报错，但这样是非常不好的编程风格。</p>
+<p>（4）finally子句用于执行不管是正常处理还是有异常发生时都需要执行的步骤，一般用于对象的清理工作，这点和Java一样。</p>
+<p>（5）用throw关键字，抛出一个异常对象。所有异常都是Throwable的子类型。throw表达式是有类型的，就是Nothing，因为Nothing是所有类型的子类型，所以throw表达式可以用在需要类型的地方</p>
+<pre><code class="language-scala">def test():Nothing = {
+    throw new Exception(&quot;不对&quot;)
+}
+</code></pre>
+<p>（6）Java提供了throws关键字来声明异常。可以使用方法定义声明异常。它向调用者函数提供了此方法可能引发此异常的信息。它有助于调用函数处理并将该代码包含在try-catch块中，以避免程序异常终止。在Scala中，可以使用throws注解来声明异常</p>
+<pre><code class="language-scala">def main(args: Array[String]): Unit = {
+    f11()
+}
+
+@throws(classOf[NumberFormatException])
+def f11()={
+    &quot;abc&quot;.toInt
+}
+</code></pre>
+<h1 id="10">第10章 隐式转换</h1>
+<p>​        <strong>当编译器第一次编译失败的时候，会在当前的环境中查找能让代码编译通过的方法，用于将类型进行转换，实现二次编译，用于拓展类的方法。</strong></p>
+<h2 id="101">10.1 隐式函数</h2>
+<p>1）说明</p>
+<p>​        隐式转换可以在不需改任何代码的情况下，扩展某个类的功能。</p>
+<p>2）案例实操</p>
+<p>​        需求：通过隐式转化为Int类型增加方法。</p>
+<pre><code class="language-scala">object Test02_Imp {
+  def main(args: Array[String]): Unit = {
+
+    // 隐式函数
+    // 将当前作用域下所有传入参数的类型   隐式转换为  返回值类型
+    implicit def changeInt(self: Int) = {
+      new MyRichInt(self)
+    }
+
+    val i: Int = 10
+
+
+    // 比较自身和传入参数的大小  返回较大的值
+    val value: Int = i.myMax(20)
+    println(value)
+
+
+    val i1: Int = i &lt;&lt; 2
+    println(i1)
+
+  }
+
+
+  // 隐式转换的目标
+  class MyRichInt(val self: Int) {
+
+    def myMax(i: Int): Int = {
+      if (i &gt; self) i else self
+    }
+
+    // 如果隐式转换和自身的方法冲突  会使用它自身的  因为不会编译失败
+    def &lt;&lt;(x: Int): Int = {
+      0
+    }
+  }
+}
+</code></pre>
+<h2 id="102">10.2 隐式参数</h2>
+<p>普通方法或者函数中的参数可以通过<strong>implicit</strong>关键字声明为隐式参数，调用该方法时，就可以传入该参数，编译器会在相应的作用域寻找符合条件的隐式值。</p>
+<p>1）说明</p>
+<p>（1）同一个作用域中，相同类型的隐式值只能有一个。</p>
+<p>（2）编译器按照隐式参数的类型去寻找对应类型的隐式值，与隐式值的名称无关。</p>
+<p>2）案例实操</p>
+<pre><code class="language-scala">// 隐式参数  在调用的时候不写括号
+implicit val s: String = &quot;lisi&quot;
+
+    def sayHi(implicit name: String = &quot;zhangsan&quot;): Unit = {
+      println(s&quot;hi $name&quot;)
+    }
+
+    // 默认填写的参数变成zhangsan
+    sayHi(&quot;linhai&quot;)
+
+    // 参数默认值
+    sayHi()
+
+    // 不写括号  是隐式参数
+    sayHi
+}
+</code></pre>
+<h1 id="11_1">第11章 泛型</h1>
+<h2 id="111">11.1 协变和逆变</h2>
+<p>1）语法</p>
+<p>class MyList[<strong>+T</strong>]{ //协变</p>
+<p>} </p>
+<p>class MyList[<strong>-T</strong>]{ //逆变</p>
+<p>}</p>
+<p>class MyList[<strong>T</strong>] //不变</p>
+<p>2）说明</p>
+<p>协变：Son是Father的子类，则MyList[Son] 也作为MyList[Father]的“子类”。</p>
+<p>逆变：Son是Father的子类，则MyList[Son]作为MyList[Father]的“父类”。</p>
+<p>不变：Son是Father的子类，则MyList[Father]与MyList[Son]“无父子关系”。</p>
+<p>3）实操</p>
+<pre><code class="language-scala">object Test03_Genericity {
+
+  def main(args: Array[String]): Unit = {
+    // 协变和逆变
+    var father: MyList[Father] = new MyList[Father]
+    var son: MyList[Son] = new MyList[Son]
+
+    // 多态
+    // T表示不变  没有父子关系
+    // +T 表示协变
+    // -T 表示逆变
+    //    father = son
+    //    son = father
+
+  }
+
+
+  class MyList[-T] {
+
+  }
+
+  class Father {
+
+  }
+
+  class Son extends Father {
+
+  }
+
+}
+</code></pre>
+<h2 id="112">11.2 泛型上下限</h2>
+<p>1）语法</p>
+<p>Class PersonList[<strong>T &lt;: Person]</strong>{ //泛型上限</p>
+<p>}</p>
+<p>Class PersonList[<strong>T &gt;: Person</strong>]{ //泛型下限</p>
+<p>}</p>
+<p>2）说明</p>
+<p>​        泛型的上下限的作用是对传入的泛型进行限定。 </p>
+<p>3）实操</p>
+<pre><code class="language-scala">object Test03_Genericity {
+
+  def main(args: Array[String]): Unit = {
+
+    // 泛型上限
+    val value = new MyList1(new Son03)
+    println(value)
+
+    // 泛型下限
+    // 几乎没有限制  因为可以填写any
+    val value1 = new MyList2(&quot;aaa&quot;)
+    val value2 = new MyList2(111)
+    println(value1)
+
+
+    val ints = List(1, 2, 3, 4)
+    ints.sortBy(i =&gt; i)
+  }
+}
+
+class Father03 {}
+
+class Son03 extends Father03 {}
+
+
+// 泛型上限  =&gt; 使用比较多
+class MyList1[T &lt;: Father03](x: T) {}
+
+// 泛型下限  =&gt; 没有用
+class MyList2[T &gt;: Father03](x: T) {}
+</code></pre>
+<h2 id="113">11.3 上下文限定</h2>
+<p>1）语法 </p>
+<p><strong>def</strong> f<a href="a: B"><strong>B: C</strong></a> = println(a) //等同于<strong>def</strong> f<a href="a:B"><strong>B</strong></a><strong>(implicit arg:C[B])</strong>=println(a)</p>
+<p>例如:</p>
+<p>def sortBy<a href="f: A =&gt; B">B</a>(implicit ord: Ordering[B]): Repr = sorted(ord on f)</p>
+<p>可以简写为:</p>
+<p>def sortBy<a href="f:A=&gt;B">B:Ordering</a> : Repr = sorted(ord on f)</p>
+<p>2）说明</p>
+<p>是一种同时使用泛型和隐式参数的简写形式。在判断填写的隐式参数时，需要判断具体的B的泛型。缩写之后方法内无法使用隐式参数名调用隐式参数，需要通过<strong>implicitly[Ordering[B]]</strong>获取隐式变量，如果此时无法查找到对应类型的隐式变量，会发生出错误。</p>
+<h1 id="12-idea">第12章 IDEA快捷键</h1>
+<p>1）快速生成程序入口：main</p>
+<pre><code class="language-scala">输入main-&gt;回车
+
+def main(args: Array[String]): Unit = {
+
+}
+</code></pre>
+<p>2）自动补全变量：.var</p>
+<pre><code class="language-scala">输入1.var-&gt;回车
+
+val i: Int = 2
+</code></pre>
+<p>3）快速打印：.sout</p>
+<pre><code class="language-scala">输入1.sout-&gt;回车
+
+println(1)
+</code></pre>
+<p>4）快速生成for循环：遍历对象.for</p>
+<pre><code class="language-scala">输入1 to 3.for
+
+for (elem &lt;- 1 to 3) {
+
+}
+</code></pre>
+<p>3） 查看当前文件的结构：Ctrl + F12</p>
+<p>4） 格式化当前代码：Ctrl + Shift + L</p>
+<p>5） 自动为当前代码补全变量声明：Ctrl + Shift + V</p>
+<p>更多请查看截图：</p>
+<p><img alt="trigger" src="https://s2.loli.net/2022/11/03/D6A9KiVvbehICfr.png" width="width" /></p>
+<p><img alt="trigger" src="https://s2.loli.net/2022/11/03/mudWjHTpfEZNsq6.png" width="width" /></p>
+<p><img alt="trigger" src="https://s2.loli.net/2022/11/03/ZmqChFES95keMXR.png" width="width" /></p>
+<p><img alt="trigger" src="https://s2.loli.net/2022/11/03/zR5fuUkBQIF8lPe.png" width="width" /></p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="../../Linux/Linux/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Linux" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Linux
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../Spark%E5%85%A5%E9%97%A8/" class="md-footer__link md-footer__link--next" aria-label="Next: Spark入门" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Spark入门
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2020 - 2022 Martin Donath
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+      
+      
+    
+    <a href="https://twitter.com/squidfunk" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d6c3db9e.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

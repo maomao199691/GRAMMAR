@@ -1,0 +1,3841 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.10">
+    
+    
+      
+        <title>Linux - maomao的笔记</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.472b142f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.08040f6c.min.css">
+        
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#vim" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="maomao的笔记" class="md-header__button md-logo" aria-label="maomao的笔记" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            maomao的笔记
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Linux
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent=""  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9h-1.9M20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69m-9.15 3.96h2.3L12 9l-1.15 3.65Z"/></svg>
+            </label>
+          
+        
+          
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent=""  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="maomao的笔记" class="md-nav__button md-logo" aria-label="maomao的笔记" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    maomao的笔记
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1">
+          目录
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="目录" data-md-level="1">
+        <label class="md-nav__title" for="__nav_1">
+          <span class="md-nav__icon md-icon"></span>
+          目录
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        maomao的个人笔记网站
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_2" type="checkbox" id="__nav_1_2" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1_2">
+          Linux语法
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Linux语法" data-md-level="2">
+        <label class="md-nav__title" for="__nav_1_2">
+          <span class="md-nav__icon md-icon"></span>
+          Linux语法
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Linux
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Linux
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#vim" class="md-nav__link">
+    VIM编辑器
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vim_1" class="md-nav__link">
+    VIM编辑器工作命令
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    目录和文件管理
+  </a>
+  
+    <nav class="md-nav" aria-label="目录和文件管理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    目录管理命令
+  </a>
+  
+    <nav class="md-nav" aria-label="目录管理命令">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    当前工作目录
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    列出当前目录内容（非常重要）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    目录的切换（非常重要）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    目录的创建和删除
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    移动和重命名
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    文件操作
+  </a>
+  
+    <nav class="md-nav" aria-label="文件操作">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    创建新文件
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    查看文件内容
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ln" class="md-nav__link">
+    ln软连接（不建议使用）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    文件复制（非常重要）
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    系统命令
+  </a>
+  
+    <nav class="md-nav" aria-label="系统命令">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    网络通讯
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    网络访问
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    日期操作
+  </a>
+  
+    <nav class="md-nav" aria-label="日期操作">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    时间日期类
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    显示当前时间
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    查看日历
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    用户和组管理
+  </a>
+  
+    <nav class="md-nav" aria-label="用户和组管理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    添加用户设置密码
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#etcpasswd" class="md-nav__link">
+    查看用户/etc/passwd 配置文件
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    用户切换
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sudo-etcsudoers" class="md-nav__link">
+    sudo 命令/etc/sudoers配置文件
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    创建用户组
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_23" class="md-nav__link">
+    修改组
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_24" class="md-nav__link">
+    删除用户组
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_25" class="md-nav__link">
+    权限
+  </a>
+  
+    <nav class="md-nav" aria-label="权限">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_26" class="md-nav__link">
+    介绍
+  </a>
+  
+    <nav class="md-nav" aria-label="介绍">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-cat-more-less" class="md-nav__link">
+    A、         读权限：读取文件内容，对文件执行cat ,more ,less这样的查看命令，对目录来说可以读取目录中文件列表
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b" class="md-nav__link">
+    B、          写权限：编辑、新增、修改文件内容
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c" class="md-nav__link">
+    C、          执行权限：进入目录，访问目录中的文件内容。
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d" class="md-nav__link">
+    D、         常见权限设置
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#e" class="md-nav__link">
+    E、          权限的尝试
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_27" class="md-nav__link">
+    权限设置
+  </a>
+  
+    <nav class="md-nav" aria-label="权限设置">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-chmod" class="md-nav__link">
+    （1）   修改文件权限 chmod
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-chown" class="md-nav__link">
+    （2）   修改文件拥有者 chown
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3chgrp" class="md-nav__link">
+    （3）改变所属组chgrp
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_28" class="md-nav__link">
+    管道和重定向
+  </a>
+  
+    <nav class="md-nav" aria-label="管道和重定向">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    （1）   重定向输出覆盖： &gt;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    （2）   重定向输出追加： &gt;&gt;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    （3）   管道 |
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_29" class="md-nav__link">
+    搜索命令
+  </a>
+  
+    <nav class="md-nav" aria-label="搜索命令">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#find" class="md-nav__link">
+    find命令
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#grep" class="md-nav__link">
+    grep和管道
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tar" class="md-nav__link">
+    章 压缩命令 tar
+  </a>
+  
+    <nav class="md-nav" aria-label="章 压缩命令 tar">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_30" class="md-nav__link">
+    压缩目录
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_31" class="md-nav__link">
+    解压缩目录
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_32" class="md-nav__link">
+    章 磁盘分区
+  </a>
+  
+    <nav class="md-nav" aria-label="章 磁盘分区">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#df" class="md-nav__link">
+    df 查看磁盘空间使用情况
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fdisk" class="md-nav__link">
+    fdisk 查看分区
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_33" class="md-nav__link">
+    进程
+  </a>
+  
+    <nav class="md-nav" aria-label="进程">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ps" class="md-nav__link">
+    ps 查看当前系统进程状态
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_34" class="md-nav__link">
+    系统健康状态
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#netstat" class="md-nav__link">
+    netstat 显示网络统计信息和端口占用情况
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_35" class="md-nav__link">
+    定时任务
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rpm" class="md-nav__link">
+    RPM软件包
+  </a>
+  
+    <nav class="md-nav" aria-label="RPM软件包">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rpm_1" class="md-nav__link">
+    RPM
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rpmrpm-qa" class="md-nav__link">
+    RPM查询命令（rpm -qa）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rpm-e" class="md-nav__link">
+    卸载命令（rpm -e）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rpmrpm-ivh" class="md-nav__link">
+    RPM安装命令（rpm -ivh）
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#yum" class="md-nav__link">
+    yum命令
+  </a>
+  
+    <nav class="md-nav" aria-label="yum命令">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#yum_1" class="md-nav__link">
+    修改网络YUM源
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#shell" class="md-nav__link">
+    Shell 概述
+  </a>
+  
+    <nav class="md-nav" aria-label="Shell 概述">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#shell_1" class="md-nav__link">
+    Shell脚本入门
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_36" class="md-nav__link">
+    变量
+  </a>
+  
+    <nav class="md-nav" aria-label="变量">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_37" class="md-nav__link">
+    系统预定义变量
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_38" class="md-nav__link">
+    自定义变量
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_39" class="md-nav__link">
+    特殊变量
+  </a>
+  
+    <nav class="md-nav" aria-label="特殊变量">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#n" class="md-nav__link">
+    $n
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_40" class="md-nav__link">
+    $
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_41" class="md-nav__link">
+    \(*、\)@
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_42" class="md-nav__link">
+    $?
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_43" class="md-nav__link">
+    运算符
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_44" class="md-nav__link">
+    条件判断
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_45" class="md-nav__link">
+    流程控制（重点）
+  </a>
+  
+    <nav class="md-nav" aria-label="流程控制（重点）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#if" class="md-nav__link">
+    if判断
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#case" class="md-nav__link">
+    case 语句
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#for" class="md-nav__link">
+    for 循环
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#while" class="md-nav__link">
+    while 循环
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#read" class="md-nav__link">
+    read 读取控制台输入
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_46" class="md-nav__link">
+    函数
+  </a>
+  
+    <nav class="md-nav" aria-label="函数">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_47" class="md-nav__link">
+    系统函数
+  </a>
+  
+    <nav class="md-nav" aria-label="系统函数">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basename" class="md-nav__link">
+    basename
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dirname" class="md-nav__link">
+    dirname
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_48" class="md-nav__link">
+    自定义函数
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_49" class="md-nav__link">
+    正则表达式入门
+  </a>
+  
+    <nav class="md-nav" aria-label="正则表达式入门">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_50" class="md-nav__link">
+    常规匹配
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_51" class="md-nav__link">
+    常用特殊字符
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_52" class="md-nav__link">
+    文本处理工具
+  </a>
+  
+    <nav class="md-nav" aria-label="文本处理工具">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cut" class="md-nav__link">
+    cut
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#awk" class="md-nav__link">
+    awk
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_3" type="checkbox" id="__nav_1_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1_3">
+          Spark语法
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Spark语法" data-md-level="2">
+        <label class="md-nav__title" for="__nav_1_3">
+          <span class="md-nav__icon md-icon"></span>
+          Spark语法
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Spark/Scala/" class="md-nav__link">
+        Scala
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Spark/Spark%E5%85%A5%E9%97%A8/" class="md-nav__link">
+        Spark入门
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Spark/SparkCore/" class="md-nav__link">
+        SparkCore
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Spark/SparkSQL/" class="md-nav__link">
+        SparkSQL
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Spark/SparkStreaming/" class="md-nav__link">
+        SparkStreaming
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Spark/Spark%E5%86%85%E6%A0%B8/" class="md-nav__link">
+        Spark内核
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Spark/Spark%E4%BC%98%E5%8C%96/" class="md-nav__link">
+        Spark优化
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_4" type="checkbox" id="__nav_1_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1_4">
+          Flink语法
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Flink语法" data-md-level="2">
+        <label class="md-nav__title" for="__nav_1_4">
+          <span class="md-nav__icon md-icon"></span>
+          Flink语法
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Flink/Flink/" class="md-nav__link">
+        Flink
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_5" type="checkbox" id="__nav_1_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1_5">
+          TiDB概述
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="TiDB概述" data-md-level="2">
+        <label class="md-nav__title" for="__nav_1_5">
+          <span class="md-nav__icon md-icon"></span>
+          TiDB概述
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../TiDB/Tidb%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/" class="md-nav__link">
+        TiDB
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#vim" class="md-nav__link">
+    VIM编辑器
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vim_1" class="md-nav__link">
+    VIM编辑器工作命令
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    目录和文件管理
+  </a>
+  
+    <nav class="md-nav" aria-label="目录和文件管理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    目录管理命令
+  </a>
+  
+    <nav class="md-nav" aria-label="目录管理命令">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    当前工作目录
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    列出当前目录内容（非常重要）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    目录的切换（非常重要）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    目录的创建和删除
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    移动和重命名
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    文件操作
+  </a>
+  
+    <nav class="md-nav" aria-label="文件操作">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    创建新文件
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    查看文件内容
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ln" class="md-nav__link">
+    ln软连接（不建议使用）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    文件复制（非常重要）
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    系统命令
+  </a>
+  
+    <nav class="md-nav" aria-label="系统命令">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    网络通讯
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    网络访问
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    日期操作
+  </a>
+  
+    <nav class="md-nav" aria-label="日期操作">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    时间日期类
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    显示当前时间
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    查看日历
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    用户和组管理
+  </a>
+  
+    <nav class="md-nav" aria-label="用户和组管理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    添加用户设置密码
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#etcpasswd" class="md-nav__link">
+    查看用户/etc/passwd 配置文件
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    用户切换
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sudo-etcsudoers" class="md-nav__link">
+    sudo 命令/etc/sudoers配置文件
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    创建用户组
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_23" class="md-nav__link">
+    修改组
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_24" class="md-nav__link">
+    删除用户组
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_25" class="md-nav__link">
+    权限
+  </a>
+  
+    <nav class="md-nav" aria-label="权限">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_26" class="md-nav__link">
+    介绍
+  </a>
+  
+    <nav class="md-nav" aria-label="介绍">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-cat-more-less" class="md-nav__link">
+    A、         读权限：读取文件内容，对文件执行cat ,more ,less这样的查看命令，对目录来说可以读取目录中文件列表
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b" class="md-nav__link">
+    B、          写权限：编辑、新增、修改文件内容
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c" class="md-nav__link">
+    C、          执行权限：进入目录，访问目录中的文件内容。
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d" class="md-nav__link">
+    D、         常见权限设置
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#e" class="md-nav__link">
+    E、          权限的尝试
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_27" class="md-nav__link">
+    权限设置
+  </a>
+  
+    <nav class="md-nav" aria-label="权限设置">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-chmod" class="md-nav__link">
+    （1）   修改文件权限 chmod
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-chown" class="md-nav__link">
+    （2）   修改文件拥有者 chown
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3chgrp" class="md-nav__link">
+    （3）改变所属组chgrp
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_28" class="md-nav__link">
+    管道和重定向
+  </a>
+  
+    <nav class="md-nav" aria-label="管道和重定向">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    （1）   重定向输出覆盖： &gt;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    （2）   重定向输出追加： &gt;&gt;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    （3）   管道 |
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_29" class="md-nav__link">
+    搜索命令
+  </a>
+  
+    <nav class="md-nav" aria-label="搜索命令">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#find" class="md-nav__link">
+    find命令
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#grep" class="md-nav__link">
+    grep和管道
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tar" class="md-nav__link">
+    章 压缩命令 tar
+  </a>
+  
+    <nav class="md-nav" aria-label="章 压缩命令 tar">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_30" class="md-nav__link">
+    压缩目录
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_31" class="md-nav__link">
+    解压缩目录
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_32" class="md-nav__link">
+    章 磁盘分区
+  </a>
+  
+    <nav class="md-nav" aria-label="章 磁盘分区">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#df" class="md-nav__link">
+    df 查看磁盘空间使用情况
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fdisk" class="md-nav__link">
+    fdisk 查看分区
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_33" class="md-nav__link">
+    进程
+  </a>
+  
+    <nav class="md-nav" aria-label="进程">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ps" class="md-nav__link">
+    ps 查看当前系统进程状态
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_34" class="md-nav__link">
+    系统健康状态
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#netstat" class="md-nav__link">
+    netstat 显示网络统计信息和端口占用情况
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_35" class="md-nav__link">
+    定时任务
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rpm" class="md-nav__link">
+    RPM软件包
+  </a>
+  
+    <nav class="md-nav" aria-label="RPM软件包">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rpm_1" class="md-nav__link">
+    RPM
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rpmrpm-qa" class="md-nav__link">
+    RPM查询命令（rpm -qa）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rpm-e" class="md-nav__link">
+    卸载命令（rpm -e）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rpmrpm-ivh" class="md-nav__link">
+    RPM安装命令（rpm -ivh）
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#yum" class="md-nav__link">
+    yum命令
+  </a>
+  
+    <nav class="md-nav" aria-label="yum命令">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#yum_1" class="md-nav__link">
+    修改网络YUM源
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#shell" class="md-nav__link">
+    Shell 概述
+  </a>
+  
+    <nav class="md-nav" aria-label="Shell 概述">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#shell_1" class="md-nav__link">
+    Shell脚本入门
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_36" class="md-nav__link">
+    变量
+  </a>
+  
+    <nav class="md-nav" aria-label="变量">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_37" class="md-nav__link">
+    系统预定义变量
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_38" class="md-nav__link">
+    自定义变量
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_39" class="md-nav__link">
+    特殊变量
+  </a>
+  
+    <nav class="md-nav" aria-label="特殊变量">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#n" class="md-nav__link">
+    $n
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_40" class="md-nav__link">
+    $
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_41" class="md-nav__link">
+    \(*、\)@
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_42" class="md-nav__link">
+    $?
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_43" class="md-nav__link">
+    运算符
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_44" class="md-nav__link">
+    条件判断
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_45" class="md-nav__link">
+    流程控制（重点）
+  </a>
+  
+    <nav class="md-nav" aria-label="流程控制（重点）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#if" class="md-nav__link">
+    if判断
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#case" class="md-nav__link">
+    case 语句
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#for" class="md-nav__link">
+    for 循环
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#while" class="md-nav__link">
+    while 循环
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#read" class="md-nav__link">
+    read 读取控制台输入
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_46" class="md-nav__link">
+    函数
+  </a>
+  
+    <nav class="md-nav" aria-label="函数">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_47" class="md-nav__link">
+    系统函数
+  </a>
+  
+    <nav class="md-nav" aria-label="系统函数">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basename" class="md-nav__link">
+    basename
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dirname" class="md-nav__link">
+    dirname
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_48" class="md-nav__link">
+    自定义函数
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_49" class="md-nav__link">
+    正则表达式入门
+  </a>
+  
+    <nav class="md-nav" aria-label="正则表达式入门">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_50" class="md-nav__link">
+    常规匹配
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_51" class="md-nav__link">
+    常用特殊字符
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_52" class="md-nav__link">
+    文本处理工具
+  </a>
+  
+    <nav class="md-nav" aria-label="文本处理工具">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cut" class="md-nav__link">
+    cut
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#awk" class="md-nav__link">
+    awk
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h2 id="vim">VIM编辑器</h2>
+<h2 id="vim_1">VIM编辑器工作命令</h2>
+<table>
+<thead>
+<tr>
+<th>语法</th>
+<th>功能描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>yy</td>
+<td>复制光标当前一行</td>
+</tr>
+<tr>
+<td>y数字y</td>
+<td>赋值一段（从第几行到第几行）</td>
+</tr>
+<tr>
+<td>p</td>
+<td>箭头移动到目的行粘贴</td>
+</tr>
+<tr>
+<td>u</td>
+<td>撤销上一步</td>
+</tr>
+<tr>
+<td>dd</td>
+<td>删除光标当前行</td>
+</tr>
+<tr>
+<td>d数字d</td>
+<td>删除光标（含）后多少行</td>
+</tr>
+<tr>
+<td>x</td>
+<td>剪切一个字母，相当于del</td>
+</tr>
+<tr>
+<td>X</td>
+<td>剪切一个字母，相当于Bcakspace</td>
+</tr>
+<tr>
+<td>yw</td>
+<td>复制一个词</td>
+</tr>
+<tr>
+<td>dw</td>
+<td>删除一个词</td>
+</tr>
+<tr>
+<td>shift+6(^)</td>
+<td>移动到行头</td>
+</tr>
+<tr>
+<td>shift+4($)</td>
+<td>移动到行尾</td>
+</tr>
+<tr>
+<td>1+shift+g</td>
+<td>移动到页头，数字</td>
+</tr>
+<tr>
+<td>shift+g</td>
+<td>移动到页尾</td>
+</tr>
+<tr>
+<td>数字+shift+g</td>
+<td>移动到目标行</td>
+</tr>
+</tbody>
+</table>
+<h1 id="_1">目录和文件管理</h1>
+<h2 id="_2">目录管理命令</h2>
+<h3 id="_3">当前工作目录</h3>
+<pre><code class="language-properties">print work directory 打印当前工作目录
+命令：pwd
+</code></pre>
+<h3 id="_4">列出当前目录内容（非常重要）</h3>
+<pre><code class="language-properties">ll 命令列出当前目录下的内容 内容是竖着展示的
+ls 命令列出当前目录下的内容 内容是横着展示的
+ll -a 命令列出当前目录下的内容，包括隐藏
+</code></pre>
+<h3 id="_5">目录的切换（非常重要）</h3>
+<p>切换目录的命令和windows是一样的，命令是 cd </p>
+<ul>
+<li>cd 要切换的目录名字即可，没有盘符</li>
+</ul>
+<pre><code>要进入的目录
+cd 目录名
+例如： cd /etc/xxx
+</code></pre>
+<ul>
+<li>cd .. 退出这个文件，返回到上一层文件夹</li>
+<li>cd ~ 波浪线，回家命令</li>
+</ul>
+<h3 id="_6">目录的创建和删除</h3>
+<ul>
+<li>创建目录：mkdir 目录名</li>
+<li>删除目录： rm 目录名 或者 文件名</li>
+<li>如果删除目录，添加参数 -r 递归</li>
+<li>删除目录，不要询问，直接删除，参数 -f</li>
+</ul>
+<pre><code class="language-properties">rm -rf 目录名
+</code></pre>
+<h3 id="_7">移动和重命名</h3>
+<ul>
+<li>重命名：mv</li>
+</ul>
+<pre><code class="language-properties">mv 老文件名或文件夹 新名字
+</code></pre>
+<ul>
+<li>移动就是剪切：mv</li>
+</ul>
+<pre><code class="language-properties">mv 老文件名或文件夹 另一个路径/新名字
+</code></pre>
+<h2 id="_8">文件操作</h2>
+<h3 id="_9">创建新文件</h3>
+<pre><code class="language-properties">touch 文件名
+创建后的文件是空的，什么也没有，可以使用vim编辑器
+</code></pre>
+<pre><code class="language-properties">vim 不存在的文件名
+编辑器编辑完后，保存文件，文件也会被
+</code></pre>
+<h3 id="_10">查看文件内容</h3>
+<ul>
+<li>cat 文件名</li>
+<li>一个屏幕显示不完整，显示最后的部分</li>
+<li>看完的文件，留在命令行了</li>
+<li>more 文件名</li>
+<li>显示了文件一部分，底部有百分比</li>
+<li>回车键 ，继续向后看</li>
+<li>看完的文件，留在命令行了</li>
+<li>空格键：显示下一屏幕</li>
+<li>less 文件名</li>
+<li>显示了文件一部分</li>
+<li>空格键，回车，pageDown,pageUp 继续向后看</li>
+<li>不打算看了，按q结束</li>
+<li>文件内容，不会留在屏幕</li>
+<li>head 文件名</li>
+<li>head -行数 文件名</li>
+<li>看文件开头的指定行数</li>
+<li>tail 文件名</li>
+<li>tail -行数 文件名</li>
+<li>看文件结尾的指定行数</li>
+</ul>
+<h3 id="ln">ln软连接（不建议使用）</h3>
+<p>软连接可以理解为快捷方式，有的目录名字比较长，不好记，可以利用快捷方式实现</p>
+<pre><code class="language-properties">ln -s videos s
+    目录名 软连接
+</code></pre>
+<p><strong>真实的目录，和软连接是同步更新的，过多占用硬盘资源</strong></p>
+<p><strong>删除软件连接 rm -rf 软件连接名字</strong></p>
+<h3 id="_11">文件复制（非常重要）</h3>
+<pre><code class="language-properties">cp 文件名 /路径/文件名
+cp 1.txt/ust/local/
+cp 1.txt/ust/local新的
+</code></pre>
+<pre><code class="language-properties">cp -r my /usr/local/newmy
+复制 递归 目录 /新路径/
+</code></pre>
+<h1 id="_12">系统命令</h1>
+<p>（1） 切换用户：su 用户名</p>
+<p>​   以其他用户身份使用系统，（类似windows10系统，有些程序以管理员身份执行）</p>
+<p>​   ① 从root用户切换到普通用户（使用安装centos时的普通用户centos）</p>
+<p>例如：以root用户登录系统，执行 su  centos</p>
+<p>​   注意命令提示符“#”变为“$” ,  root@localhost 变为 centos@localhost</p>
+<p>​   ② 从普通用户切换到root用户，需要输入root用户密码</p>
+<p>例如 su root</p>
+<p>​   Password输入密码，linux不显示输入的字符， 输入密码后直接按“Enter”.</p>
+<p>（2）清除屏幕：clear</p>
+<p>​   例如：clear</p>
+<p>​   ctrl+L</p>
+<p>（3）重启系统：reboot</p>
+<p>​   例如：reboot</p>
+<p>（4）关机：shutdown -h now</p>
+<p>​   例如：shutdown -h now</p>
+<p>（5）查看系统进程： ps -ef </p>
+<p>​   ps  [命令参数]</p>
+<p>​   常用参数：</p>
+<p>​   -e :显示当前所有进程</p>
+<p>​   -f :显示UID,PPID,C与STIME栏位信息</p>
+<p>​   UID:拥有改程序的用户</p>
+<p>​   PID:程序的进程id</p>
+<p>​   PPID:父进程的id</p>
+<p>​   C: CPU使用的资源百分比</p>
+<p>​   STIME :系统启动时间</p>
+<p>​   TTY：登录系统的终端位置（客户端的标识）</p>
+<p>​   TIME:使用掉的CPU时间</p>
+<p>​   CMD:进程是有哪些程序启动的</p>
+<p>​   ① 查看系统当前运行的进程（程序）</p>
+<p>​   例如：在任意位置执行ps  -ef</p>
+<p>（6） kill进程：kill</p>
+<p>​   例如：</p>
+<p>​   kill pid：杀掉进程</p>
+<p>​   kill -9 pid 强制杀掉进程</p>
+<pre><code>例如：先使用 ps -ef 查询进程id ， 然后再使用 kill pid ， 这是例子不要真的执行
+</code></pre>
+<h2 id="_13">网络通讯</h2>
+<p>（1）   查看ip信息： ifconfig</p>
+<p>​   语法 ifconfig</p>
+<p>​   例如：在任意位置输入 ifconfig</p>
+<p>（2）侧是网络连通：ping</p>
+<p>​   语法： ping  ip或者域名</p>
+<p>​   例如：ping  <a href="http://www.baidu.com">www.baidu.com</a></p>
+<p>​   查看之后，<strong>ctrl+C，退出查看</strong>，回到Linux命令行</p>
+<h2 id="_14">网络访问</h2>
+<p>（1）   curl ：使用url访问网络的文件传输工具。</p>
+<p>​   curl是利用URL语法在命令行方式下工作的开源文件传输工具</p>
+<p>​   常用来①：测试网络访问；②：模拟用户访问</p>
+<pre><code>抓取百度的首页内容
+</code></pre>
+<p>​   例如：curl  <a href="http://www.baidu.com">www.baidu.com</a></p>
+<p>（2）wget：下载</p>
+<p>​   wget linux上下载资源的工具，比如下载软件的安装包。一般软件都会给出一个下载地址</p>
+<p>​   语法：wget 下载的资源的地址</p>
+<p>​   例如：下载一个tomcat软件。</p>
+<p>​   首先要得到tomcat的下载地址，同浏览器下载tomcat，得到下载地址</p>
+<h1 id="_15">日期操作</h1>
+<h2 id="_16">时间日期类</h2>
+<p>基本语法</p>
+<p>data[OPTION]...[+FORMAT]</p>
+<table>
+<thead>
+<tr>
+<th>选项</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-d&lt;时间字符串&gt;</td>
+<td>显示指定的“时间字符串”表示的时间，而非当前时间</td>
+</tr>
+<tr>
+<td>-s&lt;日期时间&gt;</td>
+<td>设置系统日期时间</td>
+</tr>
+</tbody>
+</table>
+<p>参数说明</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&lt;+日期时间格式&gt;</td>
+<td>指定显示时使用的日期时间格式</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_17">显示当前时间</h2>
+<p>基本语法</p>
+<p>（1） date            (功能描述：显示当前时间)</p>
+<p>（2）date + %Y        (功能描述：显示当前年份)</p>
+<p>（3）date + %m        (功能描述：显示当前月份)</p>
+<p>（4）date + %d         (功能描述：显示当前是哪一天)</p>
+<p>（5）fate "+%Y-%m-%d %H:%M:%S"    (功能描述：显示年月日时分秒)</p>
+<h2 id="_18">查看日历</h2>
+<p>基本语法</p>
+<p>cal [选项]</p>
+<h1 id="_19">用户和组管理</h1>
+<h2 id="_20">添加用户设置密码</h2>
+<p>useradd 账户名，添加新的账户</p>
+<p>id 账户名，查询账户信息</p>
+<p>passwd 用户名，为账户设置密码</p>
+<p>userdel 账户名，删除账户</p>
+<h2 id="etcpasswd">查看用户/etc/passwd 配置文件</h2>
+<h2 id="_21">用户切换</h2>
+<ul>
+<li>su 用户名</li>
+<li>root 账户切换到其它账户，无需密码</li>
+<li>其它账户切换到root账户，需要密码</li>
+<li>su - 用户名</li>
+<li>显示用户上一次登录时间</li>
+<li>操作目录，会自动到达用户的目录下：/hmoe/用户名</li>
+<li>用户自己的环境变量有效</li>
+<li>输出环境变量 echo $PATH</li>
+</ul>
+<h2 id="sudo-etcsudoers">sudo 命令/etc/sudoers配置文件</h2>
+<p>sudo命令，提升账户权限，要执行的命令之前，添加sudo</p>
+<p>提升权限，必须经过root账户同意，修改配置文件</p>
+<pre><code class="language-properties">zhangsan ALL=(ALL)   NOPASSWD:ALL
+</code></pre>
+<h2 id="_22">创建用户组</h2>
+<p>创建用户组：groupadd 组名</p>
+<pre><code class="language-properties">groupadd 组名
+</code></pre>
+<h2 id="_23">修改组</h2>
+<p>用户添加到组中，张三现在的组（zhangsan），将张三用户，改到bigdata组</p>
+<p>usermod -g 组名 用户名</p>
+<pre><code class="language-properties">uermod -g bigdata zhangsan
+</code></pre>
+<h2 id="_24">删除用户组</h2>
+<pre><code class="language-properties">groupdel 组名
+</code></pre>
+<h1 id="_25">权限</h1>
+<h2 id="_26">介绍</h2>
+<p>权限指用户或程序能够对目录，文件执行的操作。</p>
+<p>执行ll 或 ls -l 显示文件和目录详细信息
+<center><strong>权限介绍</strong></center></p>
+<p><img alt="trigger" src="https://s2.loli.net/2022/11/03/8V5WovRa2m174zG.png" width="width" /></p>
+<p>- : 表示文件</p>
+<p>l : 软链接文件（windows快捷方式）</p>
+<p>d: 目录</p>
+<p>c: 字符设备文件，一次传输一个字节的设备被称为字符设备。例如键盘，鼠标</p>
+<p>linux权限机制采用UGO模式。其中 u(user)表示所属用户、g(group)表示所属组、o(other)表示除了所属用户、所属组之外的情况。</p>
+<p><img alt="trigger" src="https://i.postimg.cc/285fCJQ8/Linux.png" width="width" /></p>
+<h5 id="a-cat-more-less">A、         读权限：读取文件内容，对文件执行cat ,more ,less这样的查看命令，对目录来说可以读取目录中文件列表</h5>
+<p>r--read 读权限 4 </p>
+<h5 id="b">B、          写权限：编辑、新增、修改文件内容</h5>
+<p>w--write 写权限 2</p>
+<h5 id="c">C、          执行权限：进入目录，访问目录中的文件内容。</h5>
+<p>x--execute 执行权限 1</p>
+<p>1:执行</p>
+<p>2：写</p>
+<p>3：2+1 可写，可执行</p>
+<p>4：读</p>
+<p>5：4+1 可读，可执行</p>
+<p>6:4+2 可读，可写</p>
+<p>7:4+2+1 可读，可写，可执行</p>
+<h5 id="d">D、         常见权限设置</h5>
+<p>rwx= 4 + 2 + 1 = 7</p>
+<p>常见644、755、777、666三种权限</p>
+<p>创建文件用户就是文件的拥有者， 用户所在的组就是文件的所在组。除了创建文件的用户都是其他用户。root有最高的权限。</p>
+<h5 id="e">E、          权限的尝试</h5>
+<p>以root身份登录系统 ，执行cd / 切换到根目录，再执行 ls -l ,查看root目录的权限如下：
+<img alt="trigger" src="https://s2.loli.net/2022/11/03/NE4zalnTpU2m36w.png" width="width" /></p>
+<p>表明其他用户对root目录没有任何权限，查看目录内容都不行。</p>
+<p>实验：切换到centos普通用户，查看root目的内容
+<img alt="trigger" src="https://s2.loli.net/2022/11/03/4npfJvrAqPslBy3.png" width="width" /></p>
+<h2 id="_27">权限设置</h2>
+<h3 id="1-chmod">（1）   修改文件权限 chmod</h3>
+<p>chmod命令修改文件的权限：</p>
+<ul>
+<li>chmod 权限设置 文件名或者文件夹名</li>
+<li>权限设置（r 读 w 写 x 执行）</li>
+<li>设置拥有者权限，所属组权限，其它权限</li>
+<li>u 代表拥有者，g代表所属组，o代表其他</li>
+</ul>
+<pre><code class="language-properties">chmod u=rwx,g=rwx,o=rwx r.txt
+文件所有的权限都开放
+
+chmod u=rwx,g=,o= r.txt
+只有文件拥有者可以读，写，执行
+</code></pre>
+<ul>
+<li>权限设置的另一个写法，写数字 4 代表r，2 代表w ,1代表执行</li>
+<li>数字写求和</li>
+</ul>
+<pre><code class="language-properties">chmod 777 r.txt
+chmod u=rwx,g=rwx,o=rwx r.txt
+</code></pre>
+<h3 id="2-chown">（2）   修改文件拥有者 chown</h3>
+<p>语法：chown 新的拥有者用户 被修改的文件</p>
+<p>例如：修改原来root拥有的文件aa.txt 改为centos, 拥有者有操作的读写权限。</p>
+<p>​      chown  centos  aa.txt</p>
+<p><img alt="trigger" src="https://s2.loli.net/2022/11/03/1yPqN26YUEZ39FV.png#pic_left" width="width" /></p>
+<h3 id="3chgrp">（3）改变所属组chgrp</h3>
+<pre><code class="language-properties">chgrp 组名 
+</code></pre>
+<h1 id="_28">管道和重定向</h1>
+<h2 id="1">（1）   重定向输出覆盖： &gt;</h2>
+<p>向文件输出内容，文件不存在则新建文件再输出；文件存在先清空文件，再写入内容。</p>
+<p>例如： echo  “write some”  &gt;  t1.txt</p>
+<p><img alt="trigger" src="https://s2.loli.net/2022/11/03/l3CNQskyevwDjY4.png#pic_left" width="width" /></p>
+<h2 id="2">（2）   重定向输出追加： &gt;&gt;</h2>
+<p>向文件输出内容，文件不存在则新建文件再输出；文件存在，则新的内容追加到文件的后面。</p>
+<p>例如：echo  “hello new word”  &gt;&gt;  t1.txt</p>
+<p><img alt="trigger" src="https://s2.loli.net/2022/11/03/EvydIrK3zjOoMXT.png#pic_left" width="width" /></p>
+<p>存在文件t1.txt , 在原来内容的后面加入新的内容“hello new word”</p>
+<h2 id="3">（3）   管道 |</h2>
+<p>管道就是用“|”连接两个命令，<strong>以前面一个命令的输出作为后面命令的输入，用于把管道左边的输出作为右边的输入。</strong></p>
+<p>​      cat abc.txt | grep java</p>
+<p>例如：echo  “hello linux”  |  grep “linux”</p>
+<p><img alt="trigger" src="https://s2.loli.net/2022/11/03/ih9QBFJ7coqetUd.png#pic_left" width="width" /></p>
+<p>查看某个进程是否存在</p>
+<p>例如： ps  -ef  |  grep  “cat”</p>
+<p><img alt="trigger" src="https://s2.loli.net/2022/11/03/XY4ESKju3ZyWQil.png#pic_left" width="width" /></p>
+<h1 id="_29">搜索命令</h1>
+<h2 id="find">find命令</h2>
+<p>find /路径 -name "要查找的名字"</p>
+<pre><code class="language-properties">find /etc -name &quot;ss*&quot;
+指定目录下查询 ss 开头的
+
+find -name &quot;ss*&quot;
+在当前目录下查找
+</code></pre>
+<h2 id="grep">grep和管道</h2>
+<p>grep 搜索，| 管道，命令</p>
+<p>将上一次的输出，作为本次查找的输入使用</p>
+<pre><code class="language-properties">ll | grep ss
+cat 1.txt | grep 2022 
+</code></pre>
+<h1 id="tar">章 压缩命令 tar</h1>
+<table>
+<thead>
+<tr>
+<th>-c</th>
+<th>产生.tar打包文件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-v</td>
+<td>显示详细信息</td>
+</tr>
+<tr>
+<td>-f</td>
+<td>指定压缩后的文件名</td>
+</tr>
+<tr>
+<td>-z</td>
+<td>打包同时压缩</td>
+</tr>
+<tr>
+<td>-x</td>
+<td>解包.tar文件</td>
+</tr>
+<tr>
+<td>-C</td>
+<td>解压到指定目录</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_30">压缩目录</h2>
+<pre><code class="language-properties">将文件夹，打成压缩包
+tar -zcvf my.tar.gz my
+</code></pre>
+<h2 id="_31">解压缩目录</h2>
+<pre><code class="language-properties">解压缩
+tar -xvf my.tar.gz my
+解压缩，到指定目录去
+tar -xvf my.tar.gz -C /user/local/
+</code></pre>
+<h1 id="_32">章 磁盘分区</h1>
+<h2 id="df">df 查看磁盘空间使用情况</h2>
+<p>df：disk free 空余硬盘</p>
+<table>
+<thead>
+<tr>
+<th>选项</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-h</td>
+<td>以人们较易阅读的 GBytes,MBytes,KBytes 等格式自行显示</td>
+</tr>
+</tbody>
+</table>
+<p>[root@hadoop101 ~]# df -h</p>
+<p>Filesystem      Size  Used Avail Use% Mounted on</p>
+<p>/dev/sda2        15G  3.5G   11G  26% /</p>
+<p>tmpfs           939M  224K  939M   1% /dev/shm</p>
+<p>/dev/sda1       190M   39M  142M  22% /boot</p>
+<h2 id="fdisk">fdisk 查看分区</h2>
+<p>fdisk -l    (功能描述：查看磁盘分区详情)</p>
+<table>
+<thead>
+<tr>
+<th>选项</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-l</td>
+<td>显示所有硬盘的分区列表</td>
+</tr>
+</tbody>
+</table>
+<p>Device：分区序列</p>
+<p>Boot：引导</p>
+<p>Start：从X磁柱开始</p>
+<p>End：到Y磁柱结束</p>
+<p>Blocks：容量</p>
+<p>Id：分区类型ID</p>
+<p>System：分区类型</p>
+<h1 id="_33">进程</h1>
+<p>进程是正在执行的一个程序或命令，每一个进程都是一个运行的实体，都有自己的地址空间，并占用一定的系统资源。</p>
+<h2 id="ps">ps 查看当前系统进程状态</h2>
+<p>ps：process status 进程状态</p>
+<p>​   ps -aux | grep xxx      (功能描述：查看系统中所有进程)</p>
+<p>​   ps -ef | grep xxx          (功能描述：可以查看子父进程之间的关系)</p>
+<table>
+<thead>
+<tr>
+<th>选项</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-a</td>
+<td>选择所有进程</td>
+</tr>
+<tr>
+<td>-u</td>
+<td>显示所有用户的所有进程</td>
+</tr>
+<tr>
+<td>-x</td>
+<td>显示没有终端的进程</td>
+</tr>
+</tbody>
+</table>
+<p>（1） ps -aux显示信息说明</p>
+<p>USER：该进程是由哪个用户产生的</p>
+<p>PID：进程的ID号</p>
+<p>%CPU：该进程占用CPU资源的百分比，占用越高，进程越耗费资源；</p>
+<p>%MEM：该进程占用物理内存的百分比，占用越高，进程越耗费资源；</p>
+<p>VSZ：该进程占用虚拟内存的大小，单位KB;</p>
+<p>RSS：该进程占用实际物理内存的大小，单位KB;</p>
+<p>TTY：该进程是在哪个终端中运行的。其中tty1-tty7代表本地控制台终端，tty1-tty6是本地字符界面终端，tty7是图形终端。pts/0-255代表虚拟终端。</p>
+<p>STAT：进程状态。常见的状态有：R：运行、S：睡眠、T：停止状态、s：包含子进程、+：位于后台</p>
+<p>START：该进程的启动时间</p>
+<p>TIME：该进程占用CPU的运算时间，注意不是系统时间</p>
+<p>COMMAND：产生次进程的命令名</p>
+<p>（2）ps -ef显示信息说明</p>
+<p>UID：用户ID</p>
+<p>PID：进程ID</p>
+<p>PPID：父进程ID</p>
+<p>C：CPU用于计算执行优先级的因子。数值越大，表明进程是CPU密集型运算，执行优先级会降低；数值越小，表明进程是I/O密集型运算，执行优先级会提高。</p>
+<p>STIME：进启动的时间</p>
+<p>TTY：完整的终端名称</p>
+<p>TIME：CPU时间</p>
+<p>CMD：启动进程所用的命令和参数</p>
+<h2 id="_34">系统健康状态</h2>
+<table>
+<thead>
+<tr>
+<th>选项</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-d 秒数</td>
+<td>指定top命令每隔几秒更新。默认是3秒在top命令的交互模式当中可以执行的</td>
+</tr>
+<tr>
+<td>- i</td>
+<td>使top不显示任何闲置或者僵死进程</td>
+</tr>
+<tr>
+<td>- p</td>
+<td>通过指定监控进程ID来仅仅监控某个进程的状态</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>操作</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>P</td>
+<td>以CPU使用率排序，默认就是此项</td>
+</tr>
+<tr>
+<td>M</td>
+<td>以内存的使用率排序</td>
+</tr>
+<tr>
+<td>N</td>
+<td>以PID排序</td>
+</tr>
+<tr>
+<td>q</td>
+<td>退出top</td>
+</tr>
+</tbody>
+</table>
+<h2 id="netstat">netstat 显示网络统计信息和端口占用情况</h2>
+<p>​   netstat -anp | grep 进程号 (功能描述：查看该进程网络信息)</p>
+<p>​   netstat -nlp | grep 段括号     （功能描述：查看网络端口号占用情况）</p>
+<h1 id="_35">定时任务</h1>
+<p>crontab 定时任务设置</p>
+<p>crontab [选项]</p>
+<table>
+<thead>
+<tr>
+<th>选项</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-e</td>
+<td>编辑crontab定时任务</td>
+</tr>
+<tr>
+<td>-l</td>
+<td>查询crontab任务</td>
+</tr>
+<tr>
+<td>-r</td>
+<td>删除当前用户所有的crontab任务</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>项目</th>
+<th></th>
+<th>范围</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>第一个“*”</td>
+<td>一小时当中的第几分钟</td>
+<td>0-59</td>
+</tr>
+<tr>
+<td>第二个“*”</td>
+<td>一天当中的第几小时</td>
+<td>0-23</td>
+</tr>
+<tr>
+<td>第三个“*”</td>
+<td>一个月当中的第几天</td>
+<td>1-31</td>
+</tr>
+<tr>
+<td>第四个“*”</td>
+<td>一年当中的第几月</td>
+<td>1-12</td>
+</tr>
+<tr>
+<td>第五个“*”</td>
+<td>一周当中的星期几</td>
+<td>0-7（0和7都代表星期日）</td>
+</tr>
+</tbody>
+</table>
+<p>（2）特殊符号</p>
+<table>
+<thead>
+<tr>
+<th>特殊符号含义</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>*</td>
+<td>代表任何时间。比如第一个“*”就代表一小时中每分钟都执行一次的意思。</td>
+</tr>
+<tr>
+<td>,</td>
+<td>代表不连续的时间。比如“0 8,12,16 * * * 命令”，就代表在每天的8点0分，12点0分，16点0分都执行一次命令</td>
+</tr>
+<tr>
+<td>-</td>
+<td>代表连续的时间范围。比如“0 5  *    *  1-6命令”，代表在周一到周六的凌晨5点0分执行命令</td>
+</tr>
+<tr>
+<td>*/n</td>
+<td>代表每隔多久执行一次。比如“*/10  *    *  *  *  命令”，代表每隔10分钟就执行一遍命令</td>
+</tr>
+</tbody>
+</table>
+<p>（3）特定时间执行命令</p>
+<table>
+<thead>
+<tr>
+<th>时间</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>45 22 * * * 命令</td>
+<td>在22点45分执行命令</td>
+</tr>
+<tr>
+<td>0 17 * * 1 命令</td>
+<td>每周1 的17点0分执行命令</td>
+</tr>
+<tr>
+<td>0 5 1,15 * * 命令</td>
+<td>每月1号和15号的凌晨5点0分执行命令</td>
+</tr>
+<tr>
+<td>40 4 * * 1-5 命令</td>
+<td>每周一到周五的凌晨4点40分执行命令</td>
+</tr>
+<tr>
+<td><em>/10 4 * </em> * 命令</td>
+<td>每天的凌晨4点，每隔10分钟执行一次命令</td>
+</tr>
+<tr>
+<td>0 0 1,15 * 1 命令</td>
+<td>每月1号和15号，每周1的0点0分都会执行命令。注意：星期几和几号最好不要同时出现，因为他们定义的都是天。非常容易让管理员混乱。</td>
+</tr>
+</tbody>
+</table>
+<h1 id="rpm">RPM软件包</h1>
+<h2 id="rpm_1">RPM</h2>
+<p>RPM（RedHat Package Manager），RedHat软件包管理工具，类似windows里面的setup.exe</p>
+<p>是Linux这系列操作系统里面的打包安装工具，它虽然是RedHat的标志，但理念是通用的。</p>
+<p>RPM包的名称格式</p>
+<p>Apache-1.3.23-11.i386.rpm</p>
+<p>-          “apache” 软件名称</p>
+<p>-          “1.3.23-11”软件的版本号，主版本和此版本</p>
+<p>-          “i386”是软件所运行的硬件平台，Intel 32位处理器的统称</p>
+<p>-          “rpm”文件扩展名，代表RPM包</p>
+<h2 id="rpmrpm-qa">RPM查询命令（rpm -qa）</h2>
+<p>rpm -qa                        （功能描述：查询所安装的所有rpm软件包）</p>
+<p>由于软件包比较多，一般都会采取过滤。rpm -qa | grep rpm软件包</p>
+<h2 id="rpm-e">卸载命令（rpm -e）</h2>
+<p>（1）rpm -e RPM软件包   </p>
+<p>（2） rpm -e --nodeps 软件包  </p>
+<table>
+<thead>
+<tr>
+<th>选项</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-e</td>
+<td>卸载软件包</td>
+</tr>
+</tbody>
+</table>
+<h2 id="rpmrpm-ivh">RPM安装命令（rpm -ivh）</h2>
+<p>rpm -ivh RPM包全名</p>
+<table>
+<thead>
+<tr>
+<th>选项</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-i</td>
+<td>-i=install,安装</td>
+</tr>
+<tr>
+<td>-v</td>
+<td>-v=verbose,显示详细信息</td>
+</tr>
+<tr>
+<td>-h</td>
+<td>-h=hash,进度条</td>
+</tr>
+<tr>
+<td>--nodeps</td>
+<td>--nodeps,不检测依赖进度</td>
+</tr>
+</tbody>
+</table>
+<h1 id="yum">yum命令</h1>
+<p>YUM（全称为 Yellow dog Updater,Modified）是一个在Fedora和RedHat以及CentOS中的Shell前端软件包管理器。基于RPM包管理，能够从指定的服务器自动下载RPM包并且安装，可以自动处理依赖性关系，并且一次安装所有依赖的软件包，无须繁琐地一次次下载、安装。</p>
+<p>YUM的常用命令</p>
+<table>
+<thead>
+<tr>
+<th>选项</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-y</td>
+<td>对所有提问都回答“yes”</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>install</td>
+<td>安装rpm软件包</td>
+</tr>
+<tr>
+<td>update</td>
+<td>更新rpm软件包</td>
+</tr>
+<tr>
+<td>check-update</td>
+<td>检查是否有可用的更新rpm软件包</td>
+</tr>
+<tr>
+<td>remove</td>
+<td>删除指定的rpm软件包</td>
+</tr>
+<tr>
+<td>list</td>
+<td>显示软件包信息</td>
+</tr>
+<tr>
+<td>clean</td>
+<td>清理yum过期的缓存</td>
+</tr>
+<tr>
+<td>deplist</td>
+<td>显示yum软件包的所有依赖关系</td>
+</tr>
+</tbody>
+</table>
+<h3 id="yum_1">修改网络YUM源</h3>
+<ul>
+<li>默认的系统YUM源，需要连接国外apache网站，网速比较慢，可以修改关联的网络YUM源为国内镜像的网站，比如网易163,aliyun等</li>
+<li>安装wget, wget用来从指定的URL下载文件</li>
+<li>[root@hadoop101 ~] yum install wget</li>
+<li>在/etc/yum.repos.d/目录下，备份默认的repos文件, </li>
+<li>[root@hadoop101 yum.repos.d] cp CentOS-Base.repo   CentOS-Base.repo.backup</li>
+<li>下载网易163或者是aliyun的repos文件,任选其一</li>
+<li>[root@hadoop101 yum.repos.d] wget http://mirrors.aliyun.com/repo/Centos-7.repo  //阿里云</li>
+<li>[root@hadoop101 yum.repos.d] wget http://mirrors.163.com/.help/CentOS7-Base-163.repo //网易163 </li>
+</ul>
+<h1 id="shell">Shell 概述</h1>
+<p>Sell是一个命令行解释器，它接收应用程序、用户命令，然后调用操作系统内核。Shell也是一个功能强大的编程语言，易编写、易调试、灵活性强。</p>
+<h2 id="shell_1">Shell脚本入门</h2>
+<p>脚本以#!/bin/bash 开头 （指定解析器）</p>
+<pre><code class="language-properties">[root@hadoop myshell]# thouch helloword.sh
+[root@hadoop myshell]# vim helloword.sh
+
+在 helloword.sh 中输入
+#!/bin/bash
+echo &quot;helloword&quot;
+</code></pre>
+<p>脚本常用执行方式</p>
+<p><strong>第一种方式：</strong></p>
+<p>sh+脚本的相对路径</p>
+<pre><code class="language-properties">[root@hadoop myshell]# sh ./helloword.sh
+Hello Word!
+</code></pre>
+<p>sh+脚本的绝对路径</p>
+<pre><code class="language-properties">[root@hadoop myshell]# sh /root/myshell/helloword.sh
+Hello Word!
+</code></pre>
+<p>bash+脚本的相对路径</p>
+<pre><code class="language-properties">[root@hadoop myshell]# bash ./helloword.sh
+Hello Word!
+</code></pre>
+<p>bash+脚本的绝对路径</p>
+<pre><code class="language-properties">[root@hadoop myshell]# bash /root/myshell/helloword.sh
+Hello Word!
+</code></pre>
+<p><strong>第二种方式：</strong></p>
+<pre><code class="language-shell">#1、首先赋予 helloword.sh 脚本 +x 权限
+[root@hadoop myshell]# chmod +x helloword.sh
+#2、执行脚本
+[root@hadoop myshell]# ./helloword.sh
+Hello Word!
+</code></pre>
+<p><strong>第三种方式：</strong></p>
+<pre><code class="language-shell">#不用设置权限
+[root@hadoop myshell]# . helloword.sh
+Hello Word!
+</code></pre>
+<h2 id="_36">变量</h2>
+<h3 id="_37">系统预定义变量</h3>
+<p>1）常用系统变量</p>
+<p>​   <span class="arithmatex">\(HOME、\)</span>PWD、<span class="arithmatex">\(SHELL、\)</span>USER等</p>
+<p>2）案例</p>
+<p>(1) 查看系统变量的值</p>
+<pre><code class="language-shell">[root@hadoop myshell]# echo $HOME
+/root
+</code></pre>
+<h3 id="_38">自定义变量</h3>
+<p>1）基本语法</p>
+<p>​   （1）定义变量：变量名=变量值，注意，=号前后不能有空格</p>
+<p>​   （2）撤销变量：unset 变量名</p>
+<p>​   （3）声明静态变量：readonly 变量，注意：不能 unset</p>
+<p>2）变量定义规则</p>
+<p>​   （1）变量名称可以由字母、数字和下划线组成，但是不能以数字开头，环境变量名建议大写</p>
+<p>​   （2）等号两侧不能有空格</p>
+<p>​   （3）在bash 中，变量默认类型都是字符串类型，无法直接进行数值运算。</p>
+<p>​   （4）变量的值如果有空格，需要使用双引号或单引号括起来。</p>
+<p>3）案例：</p>
+<p>​   （1）定义变量A</p>
+<pre><code class="language-shell">[root@hadoop myshell]# A=5
+[root@hadoop myshell]# echo $A
+5
+</code></pre>
+<p>​   （2）给变量 A 重写赋值</p>
+<pre><code class="language-shell">[root@hadoop myshell]# A=8
+[root@hadoop myshell]# echo $A
+8
+</code></pre>
+<p>​   （3）撤销变量 A</p>
+<pre><code class="language-shell">[root@hadoop myshell]# unset A
+[root@hadoop myshell]# echo $A
+
+</code></pre>
+<p>​   （4）声明静态的变量 B=2，不能 unset</p>
+<pre><code class="language-shell">[root@hadoop myshell]# readonly B=2
+[root@hadoop myshell]# echo $B
+2
+[root@hadoop myshell]# B=9
+bash: B: 只读变量
+</code></pre>
+<p>​   （5）在bash中，变量默认类型都是字符串类型，无法直接进行数值运算</p>
+<pre><code class="language-shell">[root@hadoop myshell]# C=1+2
+[root@hadoop myshell]# echo $C
+1+2
+</code></pre>
+<p>​   （6）变量的值如果有空格，需要使用双引号或单引号</p>
+<pre><code class="language-shell">[root@hadoop myshell]# D=I love banzhang
+bash: love: 未找到命令...
+[root@hadoop myshell]# D=&quot;I love banzhang&quot;
+[root@hadoop myshell]# echo $D
+I love banzhang
+</code></pre>
+<p>​   （7）可把变量提升为全局环境变量，可供其他 Shell 程序使用</p>
+<p>在 helloword.sh 文件中增加 echo $B</p>
+<pre><code class="language-shell">#!/bin/bash
+echo &quot;Hello Word!&quot;
+echo $B
+</code></pre>
+<pre><code class="language-shell">[root@hadoop myshell]# ./helloword.sh
+Hello Word!
+</code></pre>
+<p>发现并没有打印出输出变量 B 的值，需要提升为全局变量</p>
+<pre><code class="language-shell">[root@hadoop myshell]# export B
+[root@hadoop myshell]# ./helloword.sh
+Hello Word!
+2
+</code></pre>
+<h3 id="_39">特殊变量</h3>
+<h4 id="n">$n</h4>
+<p>1）基本语法</p>
+<p>​   <span class="arithmatex">\(n （功能描述：n 为数字，\)</span>0代表该脚本名称，<span class="arithmatex">\(1-\)</span>9 代表第一到第九个参数，十以上的参数需要用大括号包含，如 ${10} ）</p>
+<p>2）案例</p>
+<pre><code class="language-shell">[root@hadoop myshell]# vim param.sh
+#!/bin/bash
+echo $0
+echo $1
+echo $2
+
+[root@hadoop myshell]# chmod +x param.sh
+[root@hadoop myshell]# ./param.sh cls xx
+./param.sh
+cls
+xx
+</code></pre>
+<h4 id="_40">$</h4>
+<p>1）基本语法</p>
+<p>​   $#  （功能描述：获取所有输入参数个数，常用于循环，判断参数的个数是否正确以及加强脚本的健壮性）</p>
+<p>2）案例</p>
+<pre><code class="language-shell">#!/bin/bash
+echo $0
+echo $1
+echo $2
+
+echo $#
+
+[root@hadoop myshell]# ./param.sh  cls xx 
+./param.sh
+cls
+xx
+2
+</code></pre>
+<h4 id="_41"><span class="arithmatex">\(*、\)</span>@</h4>
+<p>1）基本语法</p>
+<p>​   <span class="arithmatex">\(*  (功能描述：这个变量代表命令行中所有的参数，\)</span>*把所有的参数看成一个整体)</p>
+<p>​   <span class="arithmatex">\(@ (功能描述：这个变量也代表命令行中所有的参数，不过\)</span>@把每个参数区分对待)</p>
+<p>2）案例</p>
+<pre><code class="language-shell">#!/bin/bash
+echo $0
+echo $1
+echo $2
+echo &quot;===============&quot;
+echo $#
+echo &quot;===============&quot;
+echo &quot;$*&quot;
+echo &quot;===============&quot;
+echo &quot;$@&quot;
+
+[root@hadoop myshell]# ./param.sh sc xx sd a
+./param.sh
+sc
+xx
+===============
+4
+===============
+sc xx sd a
+===============
+sc xx sd a
+</code></pre>
+<h4 id="_42">$?</h4>
+<p>1）基本语法</p>
+<p>​   $?  (功能描述：最后一次执行的命令的返回状态，吐过这个变量的值为0，证明上一哥命令正确执行；如果这个变量的值为非0，（具体是哪个数，由命令自己来决定），则证明上一哥命令不正确了。)</p>
+<p>2）案例</p>
+<p>​   判断 helloword.sh 脚本是否正确执行</p>
+<pre><code class="language-shell">[root@hadoop myshell]# ./helloword.sh 
+Hello Word!
+2
+[root@hadoop myshell]# echo $?
+0
+</code></pre>
+<h2 id="_43">运算符</h2>
+<p>1）基本语法</p>
+<p>​   "<span class="arithmatex">\(((运算式))" 或 "\)</span>[运算式]"</p>
+<p>2）案例</p>
+<p>​    计算 (2+3) * 4 的值</p>
+<pre><code class="language-shell">[root@hadoop myshell]#  clear
+[root@hadoop myshell]#  S=$[(2+3)*4]
+[root@hadoop myshell]# echo $S
+20
+</code></pre>
+<h2 id="_44">条件判断</h2>
+<p>1）基本语法</p>
+<p>​   （1）test condition</p>
+<p>​   （2）[ conition ] (注意 condition 前后要有空格 )</p>
+<p>​   注意：条件非空即为 true, [ 有值 ] 返回 true， [  ] 返回false。</p>
+<p>2）常用判断条件</p>
+<p>​   （1）两个整数之间比较</p>
+<p>​   -eq  等于 ( equal )       -ne 不等于  ( not equal )</p>
+<p>​   -lt  小于  (less than)         -le   小于等于  (less equal)</p>
+<p>​   -gt  大于  (greater than)      -ge  大于等于  (greater equal)</p>
+<p>​   注：如果是字符串之间的比较，用括号"="判断相等</p>
+<p>​   （2）按照文件权限进行判断</p>
+<p>​   -r  有读的权限 （read)</p>
+<p>​   -w  有写的权限  （write)</p>
+<p>​   -x  有执行的权限  (execute)</p>
+<p>​   （3）按照文件类型进行判断</p>
+<p>​   -e  文件存在  (existence)</p>
+<p>​   -f  文件存在并且是一个常规的文件（file）</p>
+<p>​   -d  文件存在并且是一个目录（directory）</p>
+<p>3）案例</p>
+<p>​   （1）23是否大于等于22</p>
+<pre><code class="language-shell">[root@hadoop myshell]# [ 23 -ge 22 ]
+[root@hadoop myshell]# echo $?
+0
+</code></pre>
+<p>​   （2）helloworld 是否具有写的权限</p>
+<pre><code class="language-shell">[root@hadoop myshell]# [ -w helloword.sh ]
+[root@hadoop myshell]# echo $?
+0
+</code></pre>
+<p>​   （3）/home/myshell/helloword.sh 目录中的文件是否存在</p>
+<pre><code class="language-shell">[root@hadoop myshell]# [ -e /home/myshell/helloword.sh ]
+[root@hadoop myshell]# echo $?
+1
+</code></pre>
+<p>​   （4）多条件判断（&amp;&amp; 表示前一条命令执行成功时，才执行后一条命令，|| 表示上一条命令执行失败后，才执行下一条命令）</p>
+<pre><code class="language-shell">[root@hadoop myshell]# [ myshell ] &amp;&amp; echo OK || echo notOK
+OK
+[root@hadoop myshell]# [  ] &amp;&amp; echo OK || echo notOK
+notOK
+
+</code></pre>
+<h2 id="_45">流程控制（重点）</h2>
+<h3 id="if">if判断</h3>
+<p>1）基本语法</p>
+<p>​   （1）单分支</p>
+<pre><code class="language-shell">if [ 条件判断式 ]；then
+    程序
+fi
+</code></pre>
+<p>​   或者</p>
+<pre><code class="language-shell">if [ 条件判断式 ]
+then
+    程序
+fi
+</code></pre>
+<p>​   （2）多分支</p>
+<pre><code class="language-shell">if [ 条件判断式 ]
+then 
+    程序
+elif [ 条件判断式 ]
+then 
+    程序
+else
+    程序
+fi
+</code></pre>
+<p>​   注意事项：</p>
+<p>​     [ 条件判断式 ]，中括号和条件判断式之间必须有空格</p>
+<p>​     if  后要有空格</p>
+<p>2）案例</p>
+<p>​   输入一个数字，如果是1，则输出  banzhang zhen shuai,如果是2，则输出 cls zhen mei,</p>
+<p>如果是其他，什么也不输出。</p>
+<pre><code class="language-shell">root@hadoop myshell]# vim if.sh
+
+#!/bin/bash
+
+if [ $1 -eq 1 ]
+then 
+    echo &quot;banhzang zhen shuai&quot;
+elif [ $1 -eq 2 ]
+then
+    echo &quot;xxx zhen mei&quot;
+fi
+
+[root@hadoop myshell]# chmod 744 if.sh 
+[root@hadoop myshell]# ./if.sh 2
+xxx zhen mei
+</code></pre>
+<h3 id="case">case 语句</h3>
+<p>1）基本语法</p>
+<pre><code class="language-shell">case $变量名 in
+&quot;值1&quot;)
+    如果变量的值等于1，则执行程序 1
+;;
+&quot;值2&quot;)
+    如果变量的值等于2,，则执行程序 2
+;;
+    ...省略其他分支...
+*)
+    如果变量的值都不是以上的值，则执行此程序
+;;
+esac
+</code></pre>
+<p>​   注意事项：</p>
+<p>​   （1）case 行尾必须为单词 "in" ，每一个模式匹配必须以右括号 ")"  结束</p>
+<p>​   （2)  双分号";;"  表示命令序列结束，相当于 java 中的 break </p>
+<p>​   （3）最后的 "*) " 表示默认模式，相当于 java 中的 default </p>
+<p>2）案例</p>
+<p>​   输入一个数字，如果是 1 ，则输出 banzhang, 如果是 2 ，则输出 cls ，如果是其他则输出 renyao。</p>
+<pre><code class="language-shell">[root@hadoop ~]# vim case.sh
+
+!/bin/bash
+case $1 in
+&quot;1&quot;)
+echo &quot;banzhang&quot;
+;;
+&quot;2&quot;)
+echo &quot;cls&quot;
+;;
+*)
+echo &quot;renyao&quot;
+;;
+esac
+</code></pre>
+<h3 id="for">for 循环</h3>
+<p>1）基本语法 1</p>
+<pre><code class="language-shell">for (( 初始值；循环控制条件；变量变化 ))
+do
+    程序
+done
+</code></pre>
+<p>1）案例</p>
+<p>​       从1加到100</p>
+<pre><code class="language-shell">#!/bin/bash
+sum=0
+for (( i=0;i&lt;=100;i++ ))
+do
+        sum=$[$sum+$i]
+done
+echo $sum
+
+[root@hadoop myshell]# ./for1.sh 
+5050
+</code></pre>
+<p>3）基本语法 2</p>
+<pre><code class="language-shell">for 变量 in 值1  值2  值3...
+do
+    程序
+done
+</code></pre>
+<p>4）案例</p>
+<p>​       （1）打印所有输入参数</p>
+<pre><code class="language-shell">#!/bin/bash
+
+for i in cls mly wls
+do
+        echo &quot;banzhang love $i&quot;
+done
+
+[root@hadoop myshell]# ./for2.sh 
+banzhang love cls
+banzhang love mly
+banzhang love wls
+</code></pre>
+<p>​       （2）比较<span class="arithmatex">\(*和\)</span>@区别</p>
+<p>​           <span class="arithmatex">\(*和\)</span>@都表示传递给函数或脚本的所有参数，不被双引号 “” 包含时，都以$1 <span class="arithmatex">\(2 ...\)</span>n的形式输出所有参数。</p>
+<pre><code class="language-shell">[root@hadoop myshell]# vim for3.sh 
+#!/bin/bash
+for i in $*
+do
+        echo &quot; banzhang love $i&quot;
+done
+echo &quot;======================&quot;
+for j in $@
+do
+        echo &quot;banzhang love $j&quot;
+done
+
+[root@hadoop myshell]# ./for3.sh  xx aa dd 
+ banzhang love xx
+ banzhang love aa
+ banzhang love dd
+======================
+banzhang love xx
+banzhang love aa
+banzhang love dd
+</code></pre>
+<p>​       当他们被双引号 "" 包含时，<span class="arithmatex">\(*会将所有的参数作为一个整体，以"\)</span>1 <span class="arithmatex">\(2 ...\)</span>n"的形式输出所有参数：<span class="arithmatex">\(@会将各个参数分开，以"\)</span>1" "<span class="arithmatex">\(2" "\)</span>n"的形式输出所有参数。</p>
+<pre><code class="language-shell">[root@hadoop myshell]# vim for4.sh 
+#!/bin/bash
+for i in &quot;$*&quot;
+do
+        echo &quot;banzhang love $i&quot;
+done
+echo &quot;=====================&quot;
+for j in &quot;$@&quot;
+do
+        echo &quot;banzhang love $j&quot;
+done
+
+[root@hadoop myshell]# ./for4.sh  xx aa ff
+banzhang love xx aa ff
+=====================
+banzhang love xx
+banzhang love aa
+banzhang love ff
+</code></pre>
+<h2 id="while">while 循环</h2>
+<p>1）基本语法</p>
+<pre><code class="language-shell">while [ 条件判断式 ]
+do
+    程序
+done
+</code></pre>
+<p>2）案例</p>
+<p>​   从1加到100</p>
+<pre><code class="language-shell">[root@hadoop myshell]# vim while.sh 
+
+#!/bin/bash
+sum=0
+i=1
+while [ $i -le 100 ]
+do
+        sum=$[$sum+$i]
+        i=$[$i+1]
+done
+
+echo $sum
+
+[root@hadoop myshell]# ./while.sh 
+5050
+</code></pre>
+<h2 id="read">read 读取控制台输入</h2>
+<p>1）基本语法</p>
+<p>​       read （选项） （参数）</p>
+<p>​       （1）选项：</p>
+<p>​           -p：指定读取值时的提示符；</p>
+<p>​           -t：指定读取值时等待的时间（秒）如果 -t 不加表示一直等待</p>
+<p>​       （2）参数</p>
+<p>​                   变量：指定读取值的变量名</p>
+<p>2）案例</p>
+<p>​           提示 7 秒内，读取控制台输入的名称</p>
+<pre><code class="language-shell">[root@hadoop myshell]# vim read.sh 
+
+#!/bin/bash
+read -t 7 -p &quot;Enter your name in 7 seconds :&quot;  nn
+echo $nn
+
+[root@hadoop myshell]# ./read.sh 
+Enter your name in 7 seconds :what!
+what!
+</code></pre>
+<h2 id="_46">函数</h2>
+<h3 id="_47">系统函数</h3>
+<h4 id="basename">basename</h4>
+<p>1）基本语法</p>
+<p>​       baseename [string / pathname] [suffix]          (功能描述： basename 命令会删掉所有的前缀包括最后一个（ '/' ）字符，然后将字符串显示出来。)</p>
+<p>​       basename 可以理解为取路径里的文件名名称</p>
+<p>​       选项：</p>
+<p>​       suffix 为后缀，如果 suffix 被指定了，basename 会将 pathname 或 string 中的 suffix 去掉。</p>
+<p>2）案例</p>
+<p>​       截取该 /home/myshell/helloword.sh 路径的文件名称。</p>
+<pre><code class="language-shell">[root@hadoop myshell]# basename /root/myshell/helloword.sh 
+helloword.sh
+[root@hadoop myshell]# basename /root/myshell//helloword.sh  .sh
+helloword
+</code></pre>
+<h4 id="dirname">dirname</h4>
+<p>1）基本语法</p>
+<p>​       dirname 文件绝对路径          （功能描述：从给定的包含绝对路径的文件名中去除文件名（非目录的部分），然后返回剩下的路径（目录的部分））</p>
+<p>​       dirname   可以裂解为取文件路径的绝对路径名称</p>
+<p>2）案例</p>
+<p>​       获取 helloword.sh 文件的路径</p>
+<pre><code class="language-shell">[root@hadoop myshell]# dirname /root/myshell//helloword.sh 
+/root/myshell
+</code></pre>
+<h3 id="_48">自定义函数</h3>
+<p>1）基本语法</p>
+<p>​       [ function ]  funname[0]</p>
+<p>​       {</p>
+<p>​               Action;</p>
+<p>​               [return int;]</p>
+<p>​       }</p>
+<p>2）经验技巧</p>
+<p>​       （1）必须在调用函数地方之前，先声明函数，shell 脚本是逐行运行。不会象其它语言一样先编译。</p>
+<p>​       （2）函数返回值，只能通过$? 系统变量获得，可以显式加： return 返回，如果不加，将以最后一条命令运行结果，作为返回值。return 后跟数值 n(2-255)</p>
+<p>3）案例</p>
+<p>​           计算两个输入参数的和</p>
+<pre><code class="language-shell">[root@hadoop myshell]# vim fun.sh 
+#!/bin/bash
+function sum ()
+{
+        s=0
+        s=$[$1+$2]
+        echo &quot;$s&quot;
+}
+
+read -p &quot;Please input the number1: &quot; n1;
+read -p &quot;Please input the number2: &quot; n2;
+sum $n1 $n2;
+
+[root@hadoop myshell]# ./fun.sh 
+Please input the number1: 4
+Please input the number2: 5
+9
+</code></pre>
+<h2 id="_49">正则表达式入门</h2>
+<p>​       正则表达式使用单个字符串来描述、匹配一系列符合某个语法规则的字符串。在很多文本编辑器里，正则表达式通常被用来检索。替换那些符合某个模式的文本。在Linux 中，grep .sed,awk 等文本处理工具都支持通过正则表达式进行模式匹配。</p>
+<h3 id="_50">常规匹配</h3>
+<p>​       一串不包含特殊字符的正则表达式匹配它自己，例如：</p>
+<pre><code>[root@hadoop myshell]# cat /etc/passwd | grep root
+</code></pre>
+<p>​           就会匹配所有包含 root 的行</p>
+<h3 id="_51">常用特殊字符</h3>
+<p>1）特殊字符：^</p>
+<p>​           ^ 匹配一行的开头，例如：</p>
+<pre><code class="language-shell">[root@hadoop myshell]# cat /etc/passwd | grep ^a
+</code></pre>
+<p>​       会匹配出所有以a开头的行</p>
+<p>2）特殊字符：$</p>
+<p>​       $ 会匹配出所有以 t 结尾的行</p>
+<p>3）特殊字符：.</p>
+<p>​       . 匹配任意一个字符，例如</p>
+<pre><code>[root@hadoop myshell]# cat /etc/passwd | grep r..t
+</code></pre>
+<p>​       会匹配包含 rat,rabt,aoot 等的所有行</p>
+<p>4）特殊字符：*</p>
+<p>​   * 不单独使用，他和上一个字符连用，表示匹配上一个字符 0 次或多次，例如</p>
+<pre><code class="language-shell">[root@hadoop myshell]# cat /etc/passwd | grep ro*t
+</code></pre>
+<p>5）字符区间（中括号）：||</p>
+<p>​       [ ]  表示匹配某个范围内的一个字符，例如</p>
+<p>​       [6,8]-----匹配 6 或者 8</p>
+<p>​       [0-9]------匹配一个 0 - 9的数字</p>
+<p>​       [0-9]*----匹配任意长度的数字字符串</p>
+<p>​       [a-z]--------匹配一个 a-z 之间的字符</p>
+<p>​       [a-z]*-------匹配任意长度的字母字符串</p>
+<p>​       [a-c,e-f]-匹配 a-c 或者 e-f 之间的任意字符</p>
+<pre><code>[root@hadoop myshell]# cat /etc/passwd | grep r[a,b,c]*t
+</code></pre>
+<p>​       会匹配 rt,rat,rabt,raabbcct 等所有行</p>
+<p>6）特殊字符：\</p>
+<p>​           \表示转义，并不会单独使用。由于所有特殊字符都有其特定匹配模式，当我们想匹配某一些特殊字符本身时（例如，我想找出所有包含 '$' 的行 ），就会碰到困难。此时我们就要将转义字符和特殊字符连用，来表示特殊字符本身，例如</p>
+<pre><code>[root@hadoop myshell]# cat /etc/passwd | grep 'a\$b'
+</code></pre>
+<p>​           机会匹配所有包含 a$b 的行，注意需要使用单引号将表达式引起来。</p>
+<h2 id="_52">文本处理工具</h2>
+<h3 id="cut">cut</h3>
+<p>​       cut 的工作就是 “剪” ，具体的说就是在文件中负责剪切数据用的， cut 命令从文件的每一行剪切字节、字符和字段并将这些字节、字符和字段输出。</p>
+<p>1）基本用法</p>
+<p>​       cut   [选项参数]  filename</p>
+<p>​       说明：默认分隔符是制表符</p>
+<p>2）选项参数说明</p>
+<table>
+<thead>
+<tr>
+<th>选项参数</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-f</td>
+<td>列号，提取第几列</td>
+</tr>
+<tr>
+<td>-d</td>
+<td>分隔符，按照指定分隔符分割列，默认是制表符“\t"</td>
+</tr>
+<tr>
+<td>-c</td>
+<td>按字符进行切割，后加 n 表示取第几列 比如 -c 1</td>
+</tr>
+</tbody>
+</table>
+<p>3）案例</p>
+<p>​       （1）数据准备</p>
+<pre><code class="language-shell">[root@hadoop myshell]# vim cut.txt 
+
+dong shen
+guan zhen
+wo wo
+lai lai
+le le
+</code></pre>
+<p>​       （2）切割 cut.txt 第一列</p>
+<pre><code>[root@hadoop myshell]# cut -d &quot; &quot; -f 1 cut.txt 
+dong
+guan
+wo
+lai
+le
+</code></pre>
+<p>​       （3）切割 cut.txt 第二、三列</p>
+<pre><code>[root@hadoop myshell]# cut -d &quot; &quot; -f 2,3 cut.txt 
+shen
+zhen
+wo
+lai
+le
+</code></pre>
+<p>​       （4）在 cut.txt 文件中切割出 guan</p>
+<pre><code>[root@hadoop myshell]# cat cut.txt  | grep guan | cut -d &quot; &quot; -f 1
+guan
+</code></pre>
+<p>​       (5）选取系统 PATH 变量值，第 2 个“：” 开始后的所有路径：</p>
+<pre><code class="language-shell">[root@hadoop myshell]# echo $PATH
+/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/root/bin
+[root@hadoop myshell]# echo $PATH | cut -d &quot;:&quot; -f 3-
+/usr/sbin:/usr/bin:/root/bin
+</code></pre>
+<p>​       （6）切割 ifconfig 后打印的 IP 地址</p>
+<pre><code>[root@hadoop myshell]# ifconfig ens33 | grep netmask | cut -d &quot; &quot; -f 10
+192.168.136.100
+</code></pre>
+<h3 id="awk">awk</h3>
+<p>​           一个强大的文本分析工具，把文件逐行的读入，以空格为默认分隔符将每行切片，切开的部分在进行分析处理。</p>
+<p>1）基本用法</p>
+<p>​       awk   [ 选项参数 ]   '/patternl / { actionn1}  /pattern2 / { action2}...'  filename</p>
+<p>​       pattern：表示 awk  在数据中查找的内容，就是匹配模式</p>
+<p>​       action：在找到匹配内容时所执行的一系列命令</p>
+<p>2）选项参数说明</p>
+<table>
+<thead>
+<tr>
+<th>选项参数</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-F</td>
+<td>指定输入文件分隔符</td>
+</tr>
+<tr>
+<td>-v</td>
+<td>赋值一个用户定义变量</td>
+</tr>
+</tbody>
+</table>
+<p>3）案例</p>
+<p>​       （1）数据准备</p>
+<pre><code>[root@hadoop myshell]# sudo cp /etc/passwd ./
+passwd 数据的含义
+用户名：密码（加密过后的）：用户id：组id：注释：用户家目录：shell解析器
+</code></pre>
+<p>​       （2）搜索 passwd 文件以root 关键字开头的所有行，并输出该行的第七列</p>
+<pre><code>[root@hadoop myshell]# awk -F : '/^root/{print $7}' passwd
+/bin/bash
+</code></pre>
+<p>​       （3）搜索 passwd 文件以 root 关键字的所有行，并输出该行的第 1 列和第 7 列，中间以“，”号分割。</p>
+<pre><code>[root@hadoop myshell]# awk -F : '/^root/{print $1&quot;,&quot;$7}' passwd
+root,/bin/bash
+</code></pre>
+<p>​       （4）只显示/etc/passwd 的第一列和第七列，以逗号分割，且在所有行前添加列名 user,shell 在最后一行添加“dahaige，/bin/zuishuai"。</p>
+<pre><code class="language-shell">[root@hadoop myshell]# awk -F : 'BEGIN{print &quot;user,shell&quot;} {print $1&quot;,&quot;$7}END{print &quot;dadadada&quot;}' passwd
+user,shell
+root,/bin/bash
+bin,/sbin/nologin
+。。。。。
+dadadada
+</code></pre>
+<p>​       注意：BENIN 在所有数据读取行之前执行；END 在所有数据执行之后执行。</p>
+<p>​       （5）将 passwd 文件中的用户 id 增加数值 1 并输出</p>
+<pre><code>[root@hadoop myshell]# awk -v i=1 -F : '{print $3+i}' passwd
+1
+2
+3
+4
+</code></pre>
+<p>4）awk 的内置变量</p>
+<table>
+<thead>
+<tr>
+<th>变量</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FILENAME</td>
+<td>文件名</td>
+</tr>
+<tr>
+<td>NR</td>
+<td>已读的记录数（行号）</td>
+</tr>
+<tr>
+<td>NF</td>
+<td>浏览记录的域的个数（切割后，列的个数）</td>
+</tr>
+</tbody>
+</table>
+<p>5）案例</p>
+<p>​       （1）统计 passwd 文件名，每行的行号，每行的列数</p>
+<pre><code>[root@hadoop myshell]# awk -F : '{print &quot;filename:&quot; FILENAME &quot;,linenum:&quot;NR &quot;,col:&quot;NF}' passwd
+filename:passwd,linenum:1,col:7
+filename:passwd,linenum:2,col:7
+filename:passwd,linenum:3,col:7
+filename:passwd,linenum:4,col:7
+。。。。
+</code></pre>
+<p>​       （2）查询 ifconfig 命令输出结果中的空行所在的行号</p>
+<pre><code>[root@hadoop myshell]# ifconfig | awk '/^$/{print NR}'
+10
+19
+27
+</code></pre>
+<p>​       （3）切割 IP</p>
+<pre><code>[root@hadoop myshell]# ifconfig ens33 | awk '/netmask/{print $2}'
+192.168.136.100
+</code></pre>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="../.." class="md-footer__link md-footer__link--prev" aria-label="Previous: maomao的个人笔记网站" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              maomao的个人笔记网站
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../../Spark/Scala/" class="md-footer__link md-footer__link--next" aria-label="Next: Scala" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Scala
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2020 - 2022 Martin Donath
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+      
+      
+    
+    <a href="https://twitter.com/squidfunk" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d6c3db9e.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
