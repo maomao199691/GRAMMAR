@@ -1110,6 +1110,26 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#crontab" class="md-nav__link">
+    Crontab 定时器
+  </a>
+  
+    <nav class="md-nav" aria-label="Crontab 定时器">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_53" class="md-nav__link">
+    定时语法
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2175,6 +2195,26 @@
         
       </ul>
     </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#crontab" class="md-nav__link">
+    Crontab 定时器
+  </a>
+  
+    <nav class="md-nav" aria-label="Crontab 定时器">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_53" class="md-nav__link">
+    定时语法
+  </a>
   
 </li>
         
@@ -3734,6 +3774,30 @@ filename:passwd,linenum:4,col:7
 <p>​       （3）切割 IP</p>
 <pre><code>[root@hadoop myshell]# ifconfig ens33 | awk '/netmask/{print $2}'
 192.168.136.100
+</code></pre>
+<h1 id="crontab">Crontab 定时器</h1>
+<pre><code># 1 查看crontab任务列表
+crontab -l
+# 2 编辑crontab定时执行任务
+crontab -e
+# 3 删除crontab定时任务
+crontab -r
+
+# 4 crontab相关命令
+systemctl start crond.service # 启动服务
+systemctl stop crond.service # 关闭服务
+systemctl status crond.service # 查看服务状态
+systemctl restart crond.service # 重启服务
+</code></pre>
+<h2 id="_53">定时语法</h2>
+<pre><code>* * * * * command
+分 时 日 月 周 命令
+</code></pre>
+<p><a href="https://smms.app/image/e68uCGPSM9Lldza" target="_blank"><img src="https://s2.loli.net/2022/11/28/e68uCGPSM9Lldza.jpg" alt="crontab定时器.jpg"></a></p>
+<pre><code>1、* 取值范围内的所有数字 ，代表所有。
+2、/ 每过多少个数字 ，代表每隔n长时间。
+3、- 从X到Z ，代表一段时间范围。
+4、，散列数字，代表分割开多个值。
 </code></pre>
 
 
