@@ -13,7 +13,7 @@
     
     
       
-        <title>TiDB - maomao的笔记</title>
+        <title>TiDB数据类型 - maomao的笔记</title>
       
     
     
@@ -99,7 +99,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              TiDB
+              TiDB数据类型
             
           </span>
         </div>
@@ -207,14 +207,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" >
       
       
       
@@ -474,14 +472,12 @@
               
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_5" type="checkbox" id="__nav_1_5" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_5" type="checkbox" id="__nav_1_5" >
       
       
       
@@ -502,107 +498,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          TiDB
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../Tidb%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/" class="md-nav__link">
         TiDB
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#tidb_1" class="md-nav__link">
-    Tidb架构
-  </a>
-  
-    <nav class="md-nav" aria-label="Tidb架构">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#tidb-server" class="md-nav__link">
-    TiDB Server
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#pd-server" class="md-nav__link">
-    PD Server
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#tikv-server" class="md-nav__link">
-    TiKV Server
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#tispark" class="md-nav__link">
-    TiSpark
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#tidb-operator" class="md-nav__link">
-    TiDB Operator
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#mysql" class="md-nav__link">
-    与 MySQL 兼容性对比
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    不支持的功能特性
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -648,45 +548,92 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#tidb_1" class="md-nav__link">
-    Tidb架构
+  <a href="#_1" class="md-nav__link">
+    整数类型
   </a>
   
-    <nav class="md-nav" aria-label="Tidb架构">
+    <nav class="md-nav" aria-label="整数类型">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#tidb-server" class="md-nav__link">
-    TiDB Server
+  <a href="#_2" class="md-nav__link">
+    字段说明
+  </a>
+  
+    <nav class="md-nav" aria-label="字段说明">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bit" class="md-nav__link">
+    BIT 类型
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#pd-server" class="md-nav__link">
-    PD Server
+  <a href="#boolean" class="md-nav__link">
+    BOOLEAN &gt;类型
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#tikv-server" class="md-nav__link">
-    TiKV Server
+  <a href="#tinyint" class="md-nav__link">
+    TINYINT 类型
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#tispark" class="md-nav__link">
-    TiSpark
+  <a href="#smallint" class="md-nav__link">
+    SMALLINT 类型
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#tidb-operator" class="md-nav__link">
-    TiDB Operator
+  <a href="#mediumint" class="md-nav__link">
+    MEDIUMINT 类型
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#integer" class="md-nav__link">
+    INTEGER 类型
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#biging" class="md-nav__link">
+    BIGING类型
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    存储空间以及取值范围
+  </a>
+  
+    <nav class="md-nav" aria-label="存储空间以及取值范围">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    整数类型
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -696,16 +643,202 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#mysql" class="md-nav__link">
-    与 MySQL 兼容性对比
+  <a href="#_5" class="md-nav__link">
+    浮点类型
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    不支持的功能特性
+  <a href="#_6" class="md-nav__link">
+    定点类型
   </a>
+  
+    <nav class="md-nav" aria-label="定点类型">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    日期和时间类型
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    类型定义
+  </a>
+  
+    <nav class="md-nav" aria-label="类型定义">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#date" class="md-nav__link">
+    DATE 类型
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#time" class="md-nav__link">
+    TIME 类型
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datetime" class="md-nav__link">
+    DATETIME 类型
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#timestamp" class="md-nav__link">
+    TIMESTAMP 类型
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#year" class="md-nav__link">
+    YEAR 类型
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    字符串类型
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    类型定义
+  </a>
+  
+    <nav class="md-nav" aria-label="类型定义">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#char" class="md-nav__link">
+    CHAR 类型
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#varchar" class="md-nav__link">
+    VARCHAR 类型
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#text" class="md-nav__link">
+    TEXT 类型
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tinytext" class="md-nav__link">
+    TINYTEXT 类型
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mediumtext" class="md-nav__link">
+    MEDIUMTEXT 类型
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#longtext" class="md-nav__link">
+    LONGTEXT 类型
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#binary" class="md-nav__link">
+    BINARY 类型
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#varbinary" class="md-nav__link">
+    VARBINARY 类型
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tinyblob" class="md-nav__link">
+    TINYBLOB 类型
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#blob" class="md-nav__link">
+    BLOB 类型
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mediumblob" class="md-nav__link">
+    MEDIUMBLOB 类型
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#longblob" class="md-nav__link">
+    LONGBLOB 类型
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enum" class="md-nav__link">
+    ENUM 类型
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#set" class="md-nav__link">
+    SET 类型
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#json" class="md-nav__link">
+    JSON 类型
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -724,85 +857,229 @@
                   
 
 
-<h1 id="tidb">Tidb</h1>
-<h2 id="tidb_1">Tidb架构</h2>
-<p><center><strong>Tidb架构图</strong></center>
-<img src="https://s2.loli.net/2022/12/02/ehYXuOfGCpjT5w7.png" width="100%" height="100%"></p>
-<h3 id="tidb-server">TiDB Server</h3>
-<p>TiDB Server 负责接收 SQL 请求，处理 SQL 相关的逻辑，并通过 PD 找到存储计算所需数据的 TiKV 地址，与 TiKV 交互获取数据，最终返回结果。TiDB 是无状态的，其本身并不存储数据，只负责计算，可以无限水平扩展，可以通过负载均衡组件(如LVS、HAProxy 或 F5)对外提供统一的接入地址。</p>
-<h3 id="pd-server">PD Server</h3>
-<p>Placement Driver（简称PD）是整个集群的管理模块，其主要工作有三个：一是存储集群的元信息（某个 Key 存储在哪个 TiKV 节点）；二是对 TiKV 集群进行调度和负载均衡（如数据的迁移、Raft group leader的迁移等）；三是分配全部唯一且递增的事务 ID。</p>
-<p>PD 通过 Raft 协议保证数据的安全性。Raft 的 leader server 负责处理所有操作，其余的 PD server 仅用于保证高可用。建议部署奇数个 PD 节点。</p>
-<h3 id="tikv-server">TiKV Server</h3>
-<p>TiKV Server 负责存储数据，从外部看 TiKV 是一个分布式的提供事务的 Key-Value 存储引。存储数据的基本单位是 Region，每个 Region 负责存储一个 Key Range(从 StartKey 到 EndKey的左闭右开区间)的数据，每个 TiKV 节点会负责多个 Region。TiKV 使用 Raft 协议做复制，保持数据的一致性和容灾。副本以 Region 为单位进行管理，不同节点上的多个 Region 构成一个 Raft Group，互为副本。数据在多个 TiKV 之间的负载均衡由 PD 调度，这里也是以 Region 为单位进行调度。</p>
-<h3 id="tispark">TiSpark</h3>
-<p>TiSpark 作为 TiDB 中解决用户复杂 OLAP 需求的主要组件，将 Spark SQL 直接运行在 TiDB 存储层上，同时融合 TiKV 分布式集群的优势，并融入大数据社区生态。</p>
-<h3 id="tidb-operator">TiDB Operator</h3>
-<p>TiDB Operator 提供在主流云基础设施(Kubernetes)上部署管理 TiDB 集群的能力。它结合云原生社区的容器编排最佳实践与 TiDB 的专业运维知识，集成一键部署、多集群混部、自动运维、故障自愈等能力，极大地降低了用户和管理 TiDB 的门槛与成本。</p>
-<h2 id="mysql">与 MySQL 兼容性对比</h2>
-<p>​   TiDB 支持 MySQL 传输协议及绝大多数的术语。大多数情况下可以实现MySQL数据迁移至TiDB。</p>
-<p>​   TiDB 高度兼容 MySQL 5.7 协议、MySQL 5.7 常用的功能及语法。MySQL 5.7 生态中的系统工具（PHPMyAdmin、Navicat、MySQL Workbench、mysqldump、Mydumper/Myloader）、客户端等均适用于 TiDB。</p>
-<h2 id="_1">不支持的功能特性</h2>
-<ul>
-<li>存储过程与函数</li>
-<li>触发器</li>
-<li>事件</li>
-<li>自定义函数</li>
-<li>外键约束 <a href="https://github.com/pingcap/tidb/issues/18209">#18209</a></li>
-<li>全文语法与索引 <a href="https://github.com/pingcap/tidb/issues/1793">#1793</a></li>
-<li>空间类型的函数（即 <code>GIS</code>/<code>GEOMETRY</code>）、数据类型和索引 <a href="https://github.com/pingcap/tidb/issues/6347">#6347</a></li>
-<li>非 <code>ascii</code>、<code>latin1</code>、<code>binary</code>、<code>utf8</code>、<code>utf8mb4</code>、<code>gbk</code> 的字符集</li>
-<li>SYS schema</li>
-<li>MySQL 追踪优化器</li>
-<li>XML 函数</li>
-<li>X-Protocol <a href="https://github.com/pingcap/tidb/issues/1109">#1109</a></li>
-<li>Savepoints <a href="https://github.com/pingcap/tidb/issues/6840">#6840</a></li>
-<li>列级权限 <a href="https://github.com/pingcap/tidb/issues/9766">#9766</a></li>
-<li><code>XA</code> 语法（TiDB 内部使用两阶段提交，但并没有通过 SQL 接口公开）</li>
-<li><code>CREATE TABLE tblName AS SELECT stmt</code> 语法 <a href="https://github.com/pingcap/tidb/issues/4754">#4754</a></li>
-<li><code>CHECK TABLE</code> 语法 <a href="https://github.com/pingcap/tidb/issues/4673">#4673</a></li>
-<li><code>CHECKSUM TABLE</code> 语法 <a href="https://github.com/pingcap/tidb/issues/1895">#1895</a></li>
-<li><code>REPAIR TABLE</code> 语法</li>
-<li><code>OPTIMIZE TABLE</code> 语法</li>
-<li><code>HANDLER</code> 语句</li>
-<li><code>CREATE TABLESPACE</code> 语句</li>
-</ul>
-<h1 id="tidb-sql">Tidb SQL 缺点</h1>
-<p>在 TiDB 使用过程中，偶尔会有这样的情况，某几个字段建立了索引，但是查询过程还是很慢，甚至不经过索引检索。</p>
-<p>例如：</p>
-<p>索引混淆型：</p>
-<p>表结构</p>
-<pre><code class="language-sql">CREATE TABLE `t_test` (
-      `id` bigint(20) NOT NULL DEFAULT '0' COMMENT '主键id',
-      `a` int(11) NOT NULL DEFAULT '0' COMMENT 'a',
-      `b` int(11) NOT NULL DEFAULT '0' COMMENT 'b',
-      `c` int(11) NOT NULL DEFAULT '0' COMMENT 'c',
-      PRIMARY KEY (`id`),
-      KEY `idx_a_b` (`a`,`b`),
-      KEY `idx_c` (`c`)
-    ) ENGINE=InnoDB;
+<h1 id="tidb">TiDB数据类型</h1>
+<h2 id="_1">整数类型</h2>
+<p>TiDB 支持 MySQL 多有的整数类型，包括 <font color='red'>INTEGER/INT、TINYINT、SMALLINT、MEDIUMINT </font>以及 <font color='red'>BIGINT</font>。</p>
+<h3 id="_2">字段说明</h3>
+<table>
+<thead>
+<tr>
+<th align="center">语法元素</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">M</td>
+<td align="center">类型显示宽度，可选</td>
+</tr>
+<tr>
+<td align="center">UNSIGNED</td>
+<td align="center">无符号数，如果不加这个标识，则为有符号数</td>
+</tr>
+<tr>
+<td align="center">ZEROFILL</td>
+<td align="center">补零标识，如果有这个标识，TiDB会自动给类型增加 UNSIGNED 标识，但是没有做补零的操作</td>
+</tr>
+</tbody>
+</table>
+<h4 id="bit"><font color='red'>BIT</font> 类型</h4>
+<p>比特值类型。M 表示比特位的长度，取值范围从1到4，其默认值是1.</p>
+<pre><code class="language-SHELL">BIT[(M)]
 </code></pre>
-<p>查询：如果需要查询 (a=1 且 b=1）或 c=2 的数据，在 MySQL 中，sql 可以写为：</p>
-<p>SELECT id from t_test where (a=1 and b=1) or (c=2);，MySQL 做查询优化时，会检索到 idx_a_b 和 idx_c 两个索引；但是在 TiDB（v2.0.8-9）中，这个 sql 会成为一个慢 SQL，需要改写为：SELECT id from t_test where (a=1 and b=1) UNION SELECT id from t_test where (c=2);</p>
+<h4 id="boolean"><font color='red'>BOOLEAN </font>&gt;类型</h4>
+<p>布尔类型，别名为 BOOL, 和 TINYINT(1) 等价。零值被认为是 False，非零值认为是 True。在 TiDB 内部，True 存储为 1，False存储为0.</p>
+<pre><code class="language-shell">BOOLEAN
+</code></pre>
+<h4 id="tinyint"><font color='red'>TINYINT</font> 类型</h4>
+<p>TINYINT 类型。有符号数的范围是 <font color=pink>[-128, 127]</font>。无符号的范围是<font color='pink'>[0, 255]</font>。</p>
+<pre><code class="language-SHELL">TINYINT[(M)] [UNSIGNED] [ZEROFILL]
+</code></pre>
+<h4 id="smallint"><FONT COLOR='RED'>SMALLINT</FONT> 类型</h4>
+<p>SMALLINT 类型。有符号数的范围是<font color='pink'>[-32768, 32767]</font>。无符号的范围是<font color='pink'>[0, 65535]</font>。</p>
+<pre><code class="language-SHELL">SMALLINT[(M)] [UNSIGNED] [ZEROFILL]
+</code></pre>
+<h4 id="mediumint"><FONT COLOR='RED'>MEDIUMINT</FONT> 类型</h4>
+<p>MEDIUMINT 类型。有符号数的范围是 <font color='pink'>[-8388608, 8388607]</font>。无符号数的范围是 <font color=pink>[0, 16777215]</font></p>
+<pre><code class="language-SHELL">MEDIUMINT[(M)] [UNSIGNED] [ZEROFILL]
+</code></pre>
+<h4 id="integer"><font color=red>INTEGER</font> 类型</h4>
+<p>INTEGER 类型，别名 INT。有符号的范围是 <font color=pink>[-2147483648, 2147483647]</font>。无符号数的范围是 <font color=pink>[0, 4294967295]</font></p>
+<pre><code class="language-SHELL">INT[(M)] [UNSIGNED] [ZEROFILL]
+</code></pre>
+<p>或者:</p>
+<pre><code class="language-SHELL">INTEGER[(M)] [UNSIGNED] [ZEROFILL]
+</code></pre>
+<h4 id="biging"><font color=red>BIGING</font>类型</h4>
+<p>BIGINT 类型。有符号数的范围是 <font color=pink>[-9223372036854775808, 9223372036854775807]</font>。无符号数的范围是 <font color=pink>[0, 18446744073709551615]</font></p>
+<pre><code class="language-SHELL">BIGINT[(M)] [UNSIGNED] [ZEROFILL]
+</code></pre>
+<h3 id="_3">存储空间以及取值范围</h3>
+<h4 id="_4">整数类型</h4>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>存储空间</th>
+<th>最小值(有符号/无符号)</th>
+<th>最大值(有符号/无符号)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TINYINT</td>
+<td>1</td>
+<td>-128/0</td>
+<td>127/255</td>
+</tr>
+<tr>
+<td>SMALLINT</td>
+<td>2</td>
+<td>-32768/0</td>
+<td>32767/65535</td>
+</tr>
+<tr>
+<td>MEDIUMINT</td>
+<td>3</td>
+<td>-8388608/0</td>
+<td>8388607/16777215</td>
+</tr>
+<tr>
+<td>INT</td>
+<td>4</td>
+<td>-2147483648/0</td>
+<td>2147483647/4294967295</td>
+</tr>
+<tr>
+<td>BIGINT</td>
+<td>8</td>
+<td>-9223372036854775808/0</td>
+<td>9223372036854775807/18446744073709551615</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_5">浮点类型</h2>
+<p>TiDB 支持 MySQL 所有浮点类型，包括 FLOAT、DOUBLE。</p>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>存储空间</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FLOAT</td>
+<td>4</td>
+</tr>
+<tr>
+<td>FLOAT§</td>
+<td>如果0&lt;=p&lt;=24为4个字节，如果25&lt;=p&lt;=53为8个字节</td>
+</tr>
+<tr>
+<td>DOUBLE</td>
+<td>8</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_6">定点类型</h2>
+<p>TiDB 支持 MySQL 所有定点类型，包括 DECIMAL、NUMERIC。</p>
+<p><font color=red>与在 MySQL 中一样，DOUBLE 数据类型存储近似值。对于货币之类的精确值，建议使用 DECIMAL 类型。</font></p>
+<h3 id="_7">日期和时间类型</h3>
+<p>TiDB 支持 MySQL 所有的日期和时间类型，包括 DATE、DATETIME、TIMESTAMP、TIME 以及 YEAR。</p>
+<h3 id="_8">类型定义</h3>
+<h4 id="date"><font color=red>DATE</font> 类型</h4>
+<p>DATE 类型的格式为 <font color=red> YYYY-MM-DD</font>，支持的范围是 <font color=red> 1000-01-01 </font>到 <font color=red> 9999-12-31</font>。</p>
+<pre><code class="language-SHELL">DATE
+</code></pre>
+<h4 id="time"><font color=red>TIME</font> 类型</h4>
+<p>TIME 类型的格式为 <font color=pink> HH:MM:SS[.fraction]</font>，支持的范围是 <font color=pink> -838:59:59.000000 </font>到<font color=pink>838:59:59.000000</font>。TINE 不仅可用于指示一天内的时间，还可用与指两个事件之间的时间间隔。<font color=red>fsp</font> 参数表示秒精度，取值范围为： 0 ~ 6，默认值为 0。</p>
+<pre><code class="language-shell">TIME[(fsp)]
+</code></pre>
 <blockquote>
-<p>导致该问题的原因，可以理解为 TiDB 的 sql 解析还有优化空间。</p>
+<p>TIME 的缩写形式。例如，'11:12' 表示 '11:12:00'，而不是 '00:11:12'。</p>
 </blockquote>
-<h1 id="tidb_2">TiDB 适用场景</h1>
-<h2 id="_2">典型的应用场景</h2>
-<p>(1) 原业务的 MySQL 的业务遇到单机容量或者性能瓶颈时，可以考虑使用 TiDB 无缝替换 MySQL。TiDB可以提供如下特性：</p>
-<ul>
-<li>吞吐量、存储和计算能力的水平扩展</li>
-<li>水平伸缩时不停服务</li>
-<li>强一致性分布式 ACID 事务</li>
-</ul>
-<p>(2) 大数据量下，MySQL 复杂查询很慢。</p>
-<p>(3) 大数据量下，数据增长很快，接近单机处理的极限，不想分库分表或者使用数据库中间件对业务侵入性较大、对业务有约束的 Sharding 方案。</p>
-<p>(4) 大数据量下，有高并发实时写入、实时查询、实时统计分析的需求。</p>
-<p>(5) 有分布式事务、多数据中心的数据 100% 强一致性、auto-failover 的高可用的需求。</p>
-<h2 id="tidb_3">TiDB 不适合的场景</h2>
-<p>(1) 单机 MySQL 能满足的场景也用不到TiDB。</p>
-<p>(2) 数据条数少于 5000W 的场景下通常用不到 Ti'DB，TiDB 是为大规模的数据场景设计的。</p>
-<p>(3) 如果你的应用数据量小(所有数据千万级别行以下)，且没有高可用、强一致性或者多数据中心复制等要求，那么久不适合使用 TiDB。</p>
+<h4 id="datetime"><font color=red>DATETIME</font> 类型</h4>
+<p>DATETIME 类型是日期和时间的组合，格式为 <font color=pink> YYYY-MM-DD HH:MM:SS[.fraction]</font>。支持的范围是 <font color=pink> 1000-01-01 00:00:00.000000</font> 到 <font color=pink> 9999-12-31 23:59:59.000000</font>。<font color=red>fsp</font> 参数表示秒精度，取值范围为 0 ~ 6，默认值为 0.</p>
+<pre><code class="language-shell">DATETIME[(fsp)]
+</code></pre>
+<h4 id="timestamp"><font color=red>TIMESTAMP</font> 类型</h4>
+<p>TIMESTAMP 类型包含日期和时间，支持的范围是 <font color=pink> 1970-01-01 00:00:01.000000</font> 到 <font color=pink> 2038-01-19 01:14:07.999999。<font color=red>fsp</font> 参数表示秒精度，取值范围为 0 ~ 6，默认值为 0。在 <font color=pink>TIMESTAMP</font>中，不允许零出现在月份部分或日期部分唯一的例外是零值本身 '0000-00-00 00:00:00'。</p>
+<pre><code class="language-shell">TIMESTAMP[(fsp)]
+</code></pre>
+<h4 id="year"><font color=red>YEAR</font> 类型</h4>
+<p>YEAR 类型的格式为 'YYYY', 支持的值范围是 1901 到 2155，或零值 0000。</p>
+<pre><code class="language-SHELL">YEAR[(4)]
+</code></pre>
+<h3 id="_9">字符串类型</h3>
+<p>TiDB 支持 MySQL 所有字符串类型，包括 <font color=red>CHAR、VARCHAR、BINARY、VARBINARY、BLOB、TEXT、ENUM</font> 以及 <font color=red> SET </font>。</p>
+<h3 id="_10">类型定义</h3>
+<h4 id="char"><font color=red>CHAR</font> 类型</h4>
+<p>定长字符串。<font color=red>CHAR</font> 列的长度固定为创建表时声明的长度。长度可以为从 0 到 255 的任何值。当保存 CHAR 值时，在它们的右边填充空格以达到指定的长度。</p>
+<pre><code class="language-shell">[NATIONAL] CHAR[(M)] [CHARACTER SET charset_name] [COLLATE collation_name]
+</code></pre>
+<h4 id="varchar"><font color=red>VARCHAR</font> 类型</h4>
+<p>边长字符串。M 表示最大列长度，范围是 0 到 65535。VARCHAR 的最大实际长度由最长的行的大小和使用的字符集确定。</p>
+<pre><code class="language-shell">[NATIONAL] VARCHAR(M) [CHARACTER SET charset_name] [COLLATE collation_name]
+</code></pre>
+<h4 id="text"><font color=red>TEXT</font> 类型</h4>
+<p>文本串。M 表示最大列长度，范围是 0 到 65535。TEXT 的最大实际长度由最长的行的大小和使用的字符集确定。</p>
+<pre><code class="language-shell">TEXT[(M)] [CHARACTER SET charset_name] [COLLATE collation_name]
+</code></pre>
+<h4 id="tinytext"><font color=red>TINYTEXT</font> 类型</h4>
+<p>类似于 <font color=red>TEXT</font>，区别在于最大列长度为 255。</p>
+<pre><code class="language-shell">TINYTEXT [CHARACTER SET charset_name] [COLLATE collation_name]
+</code></pre>
+<h4 id="mediumtext"><font color=red>MEDIUMTEXT</font> 类型</h4>
+<p>类似于 <font color=red>TEXT</font>，区别在于最大列长度为 16,777,215。</p>
+<pre><code class="language-shell">MEDIUMTEXT [CHARACTER SET charset_name] [COLLATE collation_name]
+</code></pre>
+<h4 id="longtext"><font color=red>LONGTEXT</font> 类型</h4>
+<p>类似于 <font color=red>TEXT</font>, 区别在于最大列长度为 4,294,967,295。</p>
+<pre><code class="language-shell">LONGTEXT [CHARACTER SET charset_name] [COLLATE collatin_name]
+</code></pre>
+<h4 id="binary"><font color=red>BINARY</font> 类型</h4>
+<p>类似于 <font color=red>CHAR</font>, 区别在于 <font color=red>BINARY</font> 存储的是二进制字符串。</p>
+<pre><code class="language-SHELL">BINARY(M)
+</code></pre>
+<h4 id="varbinary"><font color=red>VARBINARY</font> 类型</h4>
+<p>类似于 <font color=red> VARCHAR</font>, 区别在于 <font color=red>VARBINARY</font> 存储的是二进制字符串。</p>
+<pre><code class="language-SHELL">VARBINARY(M)
+</code></pre>
+<h4 id="tinyblob"><font color=red>TINYBLOB</font> 类型</h4>
+<p>类似于<font color=red>BLOB</font>, 区别在于最大列长度为 255。</p>
+<pre><code class="language-SHELL">TINYBLOB
+</code></pre>
+<h4 id="blob"><font color=red>BLOB</font> 类型</h4>
+<p>二进制大文件。M 表示最大列长度，范围是 0 到 65535。</p>
+<pre><code class="language-SHELL">BLOB[(M)]
+</code></pre>
+<h4 id="mediumblob"><font color=red>MEDIUMBLOB</font> 类型</h4>
+<p>类似于 <font color=red>BLOB</font>, 区别在于最大列长度为 16,777,215。</p>
+<pre><code class="language-SHELL">MEDIUMBLOB
+</code></pre>
+<h4 id="longblob"><font color=red>LONGBLOB</font> 类型</h4>
+<p>类似于 <font color=red>BLOB</font>, 区别在于最大列长度为 4,294,967,295。</p>
+<pre><code class="language-SHELL">LONGBLOB
+</code></pre>
+<h4 id="enum"><font color=red>ENUM</font> 类型</h4>
+<p>枚举类型死一个字符串，他只能有一个值得字符串对象。其值必须是从一个固定集合中选取，这个固定集合在创建表的时候定义，语法是：</p>
+<pre><code>ENUM('value1','value2',....) [CHARACTER SET charset_name] [COLLATE collation_name]
+</code></pre>
+<h4 id="set"><font color=red>SET</font> 类型</h4>
+<p>集合类型是一个包含零个或多个值得字符串，其中每个值必须是从一个固定集合中选取，这个固定集合在创建表的时候定义，语法是：</p>
+<pre><code class="language-shell">SET('value1','value2',....) [CHARACTER SET charset_name] [COLLATE collation_name]
+</code></pre>
+<h4 id="json"><font color=red>JSON</font> 类型</h4>
+<p>JSON 类型可以存储 JSON 这种半结构化的数据，相比于直接将 JSON 存储为空字符串。</p>
+<pre><code class="language-SQL">CREATE TABLE city (
+    id INT PRIMARY KEY,
+    detail JSON,
+    population INT AS (JSON_EXTRACT(detail, '$.population'))
+);
+INSERT INTO city (id,detail) VALUES (1, '{&quot;name&quot;: &quot;Beijing&quot;, &quot;population&quot;: 100}');
+SELECT id FROM city WHERE population &gt;= 100;
+</code></pre>
 
 
 
@@ -818,27 +1095,6 @@
       </main>
       
         <footer class="md-footer">
-  
-    
-    <nav class="md-footer__inner md-grid" aria-label="Footer" >
-      
-        
-        <a href="../../Flink/Flink/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Flink" rel="prev">
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
-          </div>
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Previous
-              </span>
-              Flink
-            </div>
-          </div>
-        </a>
-      
-      
-    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
