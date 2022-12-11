@@ -13,7 +13,7 @@
     
     
       
-        <title>TiDB数据类型 - maomao的笔记</title>
+        <title>JavaSE - maomao的笔记</title>
       
     
     
@@ -66,7 +66,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#tidb" class="md-skip">
+        <a href="#guice" class="md-skip">
           Skip to content
         </a>
       
@@ -99,7 +99,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              TiDB数据类型
+              JavaSE
             
           </span>
         </div>
@@ -474,14 +474,12 @@
               
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_5" type="checkbox" id="__nav_1_5" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_5" type="checkbox" id="__nav_1_5" >
       
       
       
@@ -504,7 +502,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Tidb%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/" class="md-nav__link">
+      <a href="../../TiDB/Tidb%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/" class="md-nav__link">
         TiDB
       </a>
     </li>
@@ -516,340 +514,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          TiDB数据类型
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../TiDB/Tidb%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" class="md-nav__link">
         TiDB数据类型
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    整数类型
-  </a>
-  
-    <nav class="md-nav" aria-label="整数类型">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    字段说明
-  </a>
-  
-    <nav class="md-nav" aria-label="字段说明">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#bit" class="md-nav__link">
-    BIT 类型
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#boolean" class="md-nav__link">
-    BOOLEAN &gt;类型
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#tinyint" class="md-nav__link">
-    TINYINT 类型
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#smallint" class="md-nav__link">
-    SMALLINT 类型
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#mediumint" class="md-nav__link">
-    MEDIUMINT 类型
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#integer" class="md-nav__link">
-    INTEGER 类型
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#biging" class="md-nav__link">
-    BIGING类型
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    存储空间以及取值范围
-  </a>
-  
-    <nav class="md-nav" aria-label="存储空间以及取值范围">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    整数类型
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    浮点类型
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    定点类型
-  </a>
-  
-    <nav class="md-nav" aria-label="定点类型">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
-    日期和时间类型
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
-    类型定义
-  </a>
-  
-    <nav class="md-nav" aria-label="类型定义">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#date" class="md-nav__link">
-    DATE 类型
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#time" class="md-nav__link">
-    TIME 类型
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#datetime" class="md-nav__link">
-    DATETIME 类型
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#timestamp" class="md-nav__link">
-    TIMESTAMP 类型
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#year" class="md-nav__link">
-    YEAR 类型
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
-    字符串类型
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_10" class="md-nav__link">
-    类型定义
-  </a>
-  
-    <nav class="md-nav" aria-label="类型定义">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#char" class="md-nav__link">
-    CHAR 类型
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#varchar" class="md-nav__link">
-    VARCHAR 类型
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#text" class="md-nav__link">
-    TEXT 类型
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#tinytext" class="md-nav__link">
-    TINYTEXT 类型
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#mediumtext" class="md-nav__link">
-    MEDIUMTEXT 类型
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#longtext" class="md-nav__link">
-    LONGTEXT 类型
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#binary" class="md-nav__link">
-    BINARY 类型
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#varbinary" class="md-nav__link">
-    VARBINARY 类型
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#tinyblob" class="md-nav__link">
-    TINYBLOB 类型
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#blob" class="md-nav__link">
-    BLOB 类型
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#mediumblob" class="md-nav__link">
-    MEDIUMBLOB 类型
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#longblob" class="md-nav__link">
-    LONGBLOB 类型
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#enum" class="md-nav__link">
-    ENUM 类型
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#set" class="md-nav__link">
-    SET 类型
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#json" class="md-nav__link">
-    JSON 类型
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -866,12 +535,14 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_6" type="checkbox" id="__nav_1_6" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_6" type="checkbox" id="__nav_1_6" checked>
       
       
       
@@ -892,11 +563,223 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../JavaSE/Guice/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          JavaSE
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         JavaSE
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    绑定示例
+  </a>
+  
+    <nav class="md-nav" aria-label="绑定示例">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    链接绑定
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    绑定注解
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#named" class="md-nav__link">
+    @Named 绑定
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    常量绑定
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#provides" class="md-nav__link">
+    @Provides 注解
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    提供者类
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    构造函数绑定
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    内置绑定
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    即时绑定
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    注射实例
+  </a>
+  
+    <nav class="md-nav" aria-label="注射实例">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    构造函数注入
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    方法注入
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    字段注入
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    可选注入
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    按需注入
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    杂项示例
+  </a>
+  
+    <nav class="md-nav" aria-label="杂项示例">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    作用域
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aop" class="md-nav__link">
+    AOP
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#guice_1" class="md-nav__link">
+    Guice 有用的资源
+  </a>
+  
+    <nav class="md-nav" aria-label="Guice 有用的资源">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    快速指南
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    有用的资源
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -943,160 +826,71 @@
       
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
-    整数类型
+    绑定示例
   </a>
   
-    <nav class="md-nav" aria-label="整数类型">
+    <nav class="md-nav" aria-label="绑定示例">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
-    字段说明
+    链接绑定
   </a>
-  
-    <nav class="md-nav" aria-label="字段说明">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#bit" class="md-nav__link">
-    BIT 类型
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#boolean" class="md-nav__link">
-    BOOLEAN &gt;类型
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#tinyint" class="md-nav__link">
-    TINYINT 类型
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#smallint" class="md-nav__link">
-    SMALLINT 类型
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#mediumint" class="md-nav__link">
-    MEDIUMINT 类型
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#integer" class="md-nav__link">
-    INTEGER 类型
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#biging" class="md-nav__link">
-    BIGING类型
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
-    存储空间以及取值范围
+    绑定注解
   </a>
   
-    <nav class="md-nav" aria-label="存储空间以及取值范围">
-      <ul class="md-nav__list">
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#named" class="md-nav__link">
+    @Named 绑定
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
-    整数类型
+    常量绑定
   </a>
   
 </li>
         
-      </ul>
-    </nav>
+          <li class="md-nav__item">
+  <a href="#provides" class="md-nav__link">
+    @Provides 注解
+  </a>
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
+          <li class="md-nav__item">
   <a href="#_5" class="md-nav__link">
-    浮点类型
+    提供者类
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#_6" class="md-nav__link">
-    定点类型
+    构造函数绑定
   </a>
   
-    <nav class="md-nav" aria-label="定点类型">
-      <ul class="md-nav__list">
+</li>
         
           <li class="md-nav__item">
   <a href="#_7" class="md-nav__link">
-    日期和时间类型
+    内置绑定
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#_8" class="md-nav__link">
-    类型定义
-  </a>
-  
-    <nav class="md-nav" aria-label="类型定义">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#date" class="md-nav__link">
-    DATE 类型
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#time" class="md-nav__link">
-    TIME 类型
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#datetime" class="md-nav__link">
-    DATETIME 类型
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#timestamp" class="md-nav__link">
-    TIMESTAMP 类型
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#year" class="md-nav__link">
-    YEAR 类型
+    即时绑定
   </a>
   
 </li>
@@ -1105,129 +899,101 @@
     </nav>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#_9" class="md-nav__link">
-    字符串类型
+    注射实例
   </a>
   
-</li>
+    <nav class="md-nav" aria-label="注射实例">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#_10" class="md-nav__link">
-    类型定义
-  </a>
-  
-    <nav class="md-nav" aria-label="类型定义">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#char" class="md-nav__link">
-    CHAR 类型
+    构造函数注入
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#varchar" class="md-nav__link">
-    VARCHAR 类型
+  <a href="#_11" class="md-nav__link">
+    方法注入
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#text" class="md-nav__link">
-    TEXT 类型
+  <a href="#_12" class="md-nav__link">
+    字段注入
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#tinytext" class="md-nav__link">
-    TINYTEXT 类型
+  <a href="#_13" class="md-nav__link">
+    可选注入
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#mediumtext" class="md-nav__link">
-    MEDIUMTEXT 类型
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#longtext" class="md-nav__link">
-    LONGTEXT 类型
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#binary" class="md-nav__link">
-    BINARY 类型
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#varbinary" class="md-nav__link">
-    VARBINARY 类型
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#tinyblob" class="md-nav__link">
-    TINYBLOB 类型
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#blob" class="md-nav__link">
-    BLOB 类型
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#mediumblob" class="md-nav__link">
-    MEDIUMBLOB 类型
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#longblob" class="md-nav__link">
-    LONGBLOB 类型
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#enum" class="md-nav__link">
-    ENUM 类型
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#set" class="md-nav__link">
-    SET 类型
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#json" class="md-nav__link">
-    JSON 类型
+  <a href="#_14" class="md-nav__link">
+    按需注入
   </a>
   
 </li>
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    杂项示例
+  </a>
+  
+    <nav class="md-nav" aria-label="杂项示例">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    作用域
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aop" class="md-nav__link">
+    AOP
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#guice_1" class="md-nav__link">
+    Guice 有用的资源
+  </a>
+  
+    <nav class="md-nav" aria-label="Guice 有用的资源">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    快速指南
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    有用的资源
+  </a>
   
 </li>
         
@@ -1251,229 +1017,535 @@
                   
 
 
-<h1 id="tidb">TiDB数据类型</h1>
-<h2 id="_1">整数类型</h2>
-<p>TiDB 支持 MySQL 多有的整数类型，包括 <font color='red'>INTEGER/INT、TINYINT、SMALLINT、MEDIUMINT </font>以及 <font color='red'>BIGINT</font>。</p>
-<h3 id="_2">字段说明</h3>
-<table>
-<thead>
-<tr>
-<th align="center">语法元素</th>
-<th align="center">说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="center">M</td>
-<td align="center">类型显示宽度，可选</td>
-</tr>
-<tr>
-<td align="center">UNSIGNED</td>
-<td align="center">无符号数，如果不加这个标识，则为有符号数</td>
-</tr>
-<tr>
-<td align="center">ZEROFILL</td>
-<td align="center">补零标识，如果有这个标识，TiDB会自动给类型增加 UNSIGNED 标识，但是没有做补零的操作</td>
-</tr>
-</tbody>
-</table>
-<h4 id="bit"><font color='red'>BIT</font> 类型</h4>
-<p>比特值类型。M 表示比特位的长度，取值范围从1到4，其默认值是1.</p>
-<pre><code class="language-SHELL">BIT[(M)]
-</code></pre>
-<h4 id="boolean"><font color='red'>BOOLEAN </font>&gt;类型</h4>
-<p>布尔类型，别名为 BOOL, 和 TINYINT(1) 等价。零值被认为是 False，非零值认为是 True。在 TiDB 内部，True 存储为 1，False存储为0.</p>
-<pre><code class="language-shell">BOOLEAN
-</code></pre>
-<h4 id="tinyint"><font color='red'>TINYINT</font> 类型</h4>
-<p>TINYINT 类型。有符号数的范围是 <font color=pink>[-128, 127]</font>。无符号的范围是<font color='pink'>[0, 255]</font>。</p>
-<pre><code class="language-SHELL">TINYINT[(M)] [UNSIGNED] [ZEROFILL]
-</code></pre>
-<h4 id="smallint"><FONT COLOR='RED'>SMALLINT</FONT> 类型</h4>
-<p>SMALLINT 类型。有符号数的范围是<font color='pink'>[-32768, 32767]</font>。无符号的范围是<font color='pink'>[0, 65535]</font>。</p>
-<pre><code class="language-SHELL">SMALLINT[(M)] [UNSIGNED] [ZEROFILL]
-</code></pre>
-<h4 id="mediumint"><FONT COLOR='RED'>MEDIUMINT</FONT> 类型</h4>
-<p>MEDIUMINT 类型。有符号数的范围是 <font color='pink'>[-8388608, 8388607]</font>。无符号数的范围是 <font color=pink>[0, 16777215]</font></p>
-<pre><code class="language-SHELL">MEDIUMINT[(M)] [UNSIGNED] [ZEROFILL]
-</code></pre>
-<h4 id="integer"><font color=red>INTEGER</font> 类型</h4>
-<p>INTEGER 类型，别名 INT。有符号的范围是 <font color=pink>[-2147483648, 2147483647]</font>。无符号数的范围是 <font color=pink>[0, 4294967295]</font></p>
-<pre><code class="language-SHELL">INT[(M)] [UNSIGNED] [ZEROFILL]
-</code></pre>
-<p>或者:</p>
-<pre><code class="language-SHELL">INTEGER[(M)] [UNSIGNED] [ZEROFILL]
-</code></pre>
-<h4 id="biging"><font color=red>BIGING</font>类型</h4>
-<p>BIGINT 类型。有符号数的范围是 <font color=pink>[-9223372036854775808, 9223372036854775807]</font>。无符号数的范围是 <font color=pink>[0, 18446744073709551615]</font></p>
-<pre><code class="language-SHELL">BIGINT[(M)] [UNSIGNED] [ZEROFILL]
-</code></pre>
-<h3 id="_3">存储空间以及取值范围</h3>
-<h4 id="_4">整数类型</h4>
-<table>
-<thead>
-<tr>
-<th>类型</th>
-<th>存储空间</th>
-<th>最小值(有符号/无符号)</th>
-<th>最大值(有符号/无符号)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>TINYINT</td>
-<td>1</td>
-<td>-128/0</td>
-<td>127/255</td>
-</tr>
-<tr>
-<td>SMALLINT</td>
-<td>2</td>
-<td>-32768/0</td>
-<td>32767/65535</td>
-</tr>
-<tr>
-<td>MEDIUMINT</td>
-<td>3</td>
-<td>-8388608/0</td>
-<td>8388607/16777215</td>
-</tr>
-<tr>
-<td>INT</td>
-<td>4</td>
-<td>-2147483648/0</td>
-<td>2147483647/4294967295</td>
-</tr>
-<tr>
-<td>BIGINT</td>
-<td>8</td>
-<td>-9223372036854775808/0</td>
-<td>9223372036854775807/18446744073709551615</td>
-</tr>
-</tbody>
-</table>
-<h2 id="_5">浮点类型</h2>
-<p>TiDB 支持 MySQL 所有浮点类型，包括 FLOAT、DOUBLE。</p>
-<table>
-<thead>
-<tr>
-<th>类型</th>
-<th>存储空间</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>FLOAT</td>
-<td>4</td>
-</tr>
-<tr>
-<td>FLOAT§</td>
-<td>如果0&lt;=p&lt;=24为4个字节，如果25&lt;=p&lt;=53为8个字节</td>
-</tr>
-<tr>
-<td>DOUBLE</td>
-<td>8</td>
-</tr>
-</tbody>
-</table>
-<h2 id="_6">定点类型</h2>
-<p>TiDB 支持 MySQL 所有定点类型，包括 DECIMAL、NUMERIC。</p>
-<p><font color=red>与在 MySQL 中一样，DOUBLE 数据类型存储近似值。对于货币之类的精确值，建议使用 DECIMAL 类型。</font></p>
-<h3 id="_7">日期和时间类型</h3>
-<p>TiDB 支持 MySQL 所有的日期和时间类型，包括 DATE、DATETIME、TIMESTAMP、TIME 以及 YEAR。</p>
-<h3 id="_8">类型定义</h3>
-<h4 id="date"><font color=red>DATE</font> 类型</h4>
-<p>DATE 类型的格式为 <font color=red> YYYY-MM-DD</font>，支持的范围是 <font color=red> 1000-01-01 </font>到 <font color=red> 9999-12-31</font>。</p>
-<pre><code class="language-SHELL">DATE
-</code></pre>
-<h4 id="time"><font color=red>TIME</font> 类型</h4>
-<p>TIME 类型的格式为 <font color=pink> HH:MM:SS[.fraction]</font>，支持的范围是 <font color=pink> -838:59:59.000000 </font>到<font color=pink>838:59:59.000000</font>。TINE 不仅可用于指示一天内的时间，还可用与指两个事件之间的时间间隔。<font color=red>fsp</font> 参数表示秒精度，取值范围为： 0 ~ 6，默认值为 0。</p>
-<pre><code class="language-shell">TIME[(fsp)]
+<h1 id="guice">Guice基础</h1>
+<h2 id="_1">绑定示例</h2>
+<h3 id="_2">链接绑定</h3>
+<p>在链接绑定中，Guice 将类型映射到它的实现。即使用链接绑定 <code>bind(SpellChecker.class).to(SpellCheckerImpl.class);</code> 将 SpellChecker 接口与其实现 SpellCheckImpl 进行了映射。</p>
+<pre><code class="language-java">public class GuiceTester2 {
+    public static void main(String[] args) {
+        Injector injector = Guice.createInjector(new TestEditorModule2());
+        TestEditor2 instance = injector.getInstance(TestEditor2.class);
+        System.out.println(instance.hashCode());
+
+        TestEditor2 instance1 = injector.getInstance(TestEditor2.class);
+        System.out.println(instance1.hashCode());
+
+    }
+}
+
+@Singleton
+class TestEditor2{
+    private SpellChecker2 spellChecker2;
+
+    @Inject
+    public void setSpellChecker2(SpellChecker2 spellChecker2){
+        this.spellChecker2 = spellChecker2;
+    }
+    public TestEditor2(){ }
+
+    public void makeSpellCheck(){
+        spellChecker2.checkSpelling();
+    }
+
+    public double getSpellCheckerId(){
+        return spellChecker2.getId();
+    }
+}
+
+//Bind Module
+class TestEditorModule2 extends AbstractModule{
+
+    @Override
+    protected void configure() {
+        bind(SpellChecker2.class).to(SpellCheckerImpl2.class);
+    }
+}
+
+
+interface SpellChecker2{
+    public double getId();
+    public void checkSpelling();
+}
+
+@Singleton
+class SpellCheckerImpl2 implements SpellChecker2{
+
+    double id;
+    public SpellCheckerImpl2(){
+        id = Math.random();
+    }
+
+    @Override
+    public double getId() {
+        return id;
+    }
+
+    @Override
+    public void checkSpelling() {
+        System.out.println(&quot;Inside checkSpelling.&quot;);
+    }
+}
 </code></pre>
 <blockquote>
-<p>TIME 的缩写形式。例如，'11:12' 表示 '11:12:00'，而不是 '00:11:12'。</p>
+<p>其中 AbstractModule 即为绑定关系的定义父类，bind().to()，将两者进行映射。</p>
+<p>在Guice中使用 @Singleton 起到单例，默认为懒汉式。</p>
 </blockquote>
-<h4 id="datetime"><font color=red>DATETIME</font> 类型</h4>
-<p>DATETIME 类型是日期和时间的组合，格式为 <font color=pink> YYYY-MM-DD HH:MM:SS[.fraction]</font>。支持的范围是 <font color=pink> 1000-01-01 00:00:00.000000</font> 到 <font color=pink> 9999-12-31 23:59:59.000000</font>。<font color=red>fsp</font> 参数表示秒精度，取值范围为 0 ~ 6，默认值为 0.</p>
-<pre><code class="language-shell">DATETIME[(fsp)]
+<h3 id="_3">绑定注解</h3>
+<p>在 Guice 中，可以使用创建自定义注释的方式来映射具有多个实现的类型。</p>
+<pre><code class="language-java">@BindingAnnotation @Target({ FIELD, PARAMETER, METHOD}) @Retention(RUNTIME)
+@interface WinWord{}
+
+@BindingAnnotation
+@Target({ FIELD, PARAMETER, METHOD})
+@Retention(RUNTIME)
+@interface WinWord2{}
+
+public class GuiceTester {
+    public static void main(String[] args) {
+        Injector injector = Guice.createInjector(new TestSpellCheckerModule());
+        TextEditor instance = injector.getInstance(TextEditor.class);
+        instance.makeSpellCheck();
+
+        TextEditor instance1 = injector.getInstance(TextEditor.class);
+        instance1.makeSpellCheck1();
+    }
+}
+
+class TextEditor{
+    private SpellChecker spellChecker;
+    private SpellChecker spellChecker1;
+
+    @Inject
+    public TextEditor(@WinWord SpellChecker spellChecker,
+                      @WinWord2 SpellChecker spellChecker1){
+        this.spellChecker = spellChecker;
+        this.spellChecker1 = spellChecker1;
+    }
+
+    public void makeSpellCheck(){
+        spellChecker.checkSpelling();
+    }
+
+    public void makeSpellCheck1(){
+        spellChecker1.checkSpelling();
+    }
+}
+
+class TestSpellCheckerModule extends AbstractModule{
+    @Override
+    protected void configure() {
+        bind(SpellChecker.class).annotatedWith(WinWord.class)
+                .to(WinWordSpellCheckerImpl.class);
+        bind(SpellChecker.class).annotatedWith(WinWord2.class)
+                .to(SpellCheckerImpl.class);
+    }
+}
+
+interface SpellChecker{
+    public void checkSpelling();
+}
+
+class SpellCheckerImpl implements SpellChecker{
+    @Override
+    public void checkSpelling() {
+        System.out.println(&quot;Inside checkSpelling.&quot;);
+    }
+}
+
+class WinWordSpellCheckerImpl extends SpellCheckerImpl{
+    @Override
+    public void checkSpelling() {
+        System.out.println(&quot;Inside WinWordSpellCheckerImpl.checkSpelling.&quot;);
+    }
+}
 </code></pre>
-<h4 id="timestamp"><font color=red>TIMESTAMP</font> 类型</h4>
-<p>TIMESTAMP 类型包含日期和时间，支持的范围是 <font color=pink> 1970-01-01 00:00:01.000000</font> 到 <font color=pink> 2038-01-19 01:14:07.999999。<font color=red>fsp</font> 参数表示秒精度，取值范围为 0 ~ 6，默认值为 0。在 <font color=pink>TIMESTAMP</font>中，不允许零出现在月份部分或日期部分唯一的例外是零值本身 '0000-00-00 00:00:00'。</p>
-<pre><code class="language-shell">TIMESTAMP[(fsp)]
+<blockquote>
+<p>在绑定注解中，使用@interface 创建自定义注解</p>
+<ul>
+<li>@BindingAnnotation - 将注解标记为绑定注解(必须)</li>
+<li>@Target - 标记注释的适用性</li>
+<li>@Retention - 将注释的可用性标记为运行时，即运行时绑定注解生效 (必须)</li>
+</ul>
+</blockquote>
+<h3 id="named">@Named 绑定</h3>
+<p>Guice 中提供的一种无需创建自定义注释即可映射绑定的方法。即使用 @Named 注释。</p>
+<pre><code class="language-java">public class GuiceTester {
+    public static void main(String[] args) {
+        Injector injector = Guice.createInjector(new TextEditorModule());
+        TextEditor instance = injector.getInstance(TextEditor.class);
+        System.out.println(instance.hashCode());
+        instance.makeSpellCheck();
+
+        TextEditor instance1 = injector.getInstance(TextEditor.class);
+        System.out.println(instance1.hashCode());
+        instance1.makeSpellCheck1();
+    }
+}
+
+@Singleton
+class TextEditor{
+    private SpellChecker spellChecker;
+    private SpellChecker spellChecker1;
+
+    @Inject
+    public TextEditor(@Named(&quot;Imp&quot;) SpellChecker spellChecker,
+                      @Named(&quot;OpenOffice&quot;) SpellChecker spellChecker1){
+        this.spellChecker = spellChecker;
+        this.spellChecker1 = spellChecker1;
+    }
+
+    public void makeSpellCheck(){
+        spellChecker.checkSpelling();
+    }
+
+    public void makeSpellCheck1(){
+        spellChecker1.checkSpelling();
+    }
+}
+
+//Binding Module
+class TextEditorModule extends AbstractModule{
+    @Override
+    protected void configure() {
+        bind(SpellChecker.class).annotatedWith(Names.named(&quot;OpenOffice&quot;))
+                .to(OpenOfficeWordSpellCheckerImpl.class);
+        bind(SpellChecker.class).annotatedWith(Names.named(&quot;Imp&quot;))
+                .to(SpellCheckerImpl.class);
+    }
+}
+
+//spell checker interface
+interface SpellChecker{
+    public void checkSpelling();
+}
+
+//spell checker implementation
+class SpellCheckerImpl implements SpellChecker{
+    @Override
+    public void checkSpelling() {
+        System.out.println(&quot;Inside checkSpelling.&quot;);
+    }
+}
+
+//subclass of SpellCheckerImpl
+class OpenOfficeWordSpellCheckerImpl extends SpellCheckerImpl{
+    @Override
+    public void checkSpelling() {
+        System.out.println(&quot;Inside OpenOfficeWordSpellCheckerImpl.checkSpelling.&quot;);
+    }
+}
 </code></pre>
-<h4 id="year"><font color=red>YEAR</font> 类型</h4>
-<p>YEAR 类型的格式为 'YYYY', 支持的值范围是 1901 到 2155，或零值 0000。</p>
-<pre><code class="language-SHELL">YEAR[(4)]
+<blockquote>
+<p>@Named 注解注入的方式，能够注解多个子类或者实现类，可以通过这种方式调用不同子类或实现类的方法。</p>
+</blockquote>
+<h3 id="_4">常量绑定</h3>
+<p>Guice 提供了一种创建值对象或常量绑定的方法。(考虑到配置 JDBC</p>
+<p>url 的情况)</p>
+<pre><code class="language-java">public class GuiceTester{
+    public static void main(String[] args) {
+        Injector injector = Guice.createInjector(new TextEditorModule());
+        TestEditor instance = injector.getInstance(TestEditor.class);
+        instance.makeConnection();
+    }
+}
+
+class TestEditor{
+    private String dbUrl;
+
+    @Inject
+    public TestEditor(@Named(&quot;JDBC&quot;) String dbUrl){
+        this.dbUrl = dbUrl;
+    }
+
+    public void makeConnection(){
+        System.out.println(dbUrl);
+    }
+}
+
+//Binding Module
+class TextEditorModule extends AbstractModule{
+    @Override
+    protected void configure() {
+        bind(String.class).annotatedWith(Names.named(&quot;JDBC&quot;))
+                .toInstance(&quot;jdbc:mysql://localhost:3306/emp&quot;);
+    }
+}
 </code></pre>
-<h3 id="_9">字符串类型</h3>
-<p>TiDB 支持 MySQL 所有字符串类型，包括 <font color=red>CHAR、VARCHAR、BINARY、VARBINARY、BLOB、TEXT、ENUM</font> 以及 <font color=red> SET </font>。</p>
-<h3 id="_10">类型定义</h3>
-<h4 id="char"><font color=red>CHAR</font> 类型</h4>
-<p>定长字符串。<font color=red>CHAR</font> 列的长度固定为创建表时声明的长度。长度可以为从 0 到 255 的任何值。当保存 CHAR 值时，在它们的右边填充空格以达到指定的长度。</p>
-<pre><code class="language-shell">[NATIONAL] CHAR[(M)] [CHARACTER SET charset_name] [COLLATE collation_name]
+<blockquote>
+<p>通过 @Named 和 toInstance 将常量进行注解绑定 </p>
+</blockquote>
+<h3 id="provides">@Provides 注解</h3>
+<p>Guice 提供了一种使用 @Provides 注释创建复杂对象绑定的方法。</p>
+<pre><code class="language-java">public class GuiceTester {
+    public static void main(String[] args) {
+        Injector injector = Guice.createInjector(new TestSpellCheckerModule());
+        TestEditor instance = injector.getInstance(TestEditor.class);
+        instance.connectionSpellChecker();
+    }
+}
+
+class TestEditor{
+    private SpellChecker spellChecker;
+
+    @Inject
+    public TestEditor(SpellChecker spellChecker){
+        this.spellChecker = spellChecker;
+    }
+
+    public void connectionSpellChecker(){
+        spellChecker.checkSpelling();
+    }
+}
+
+//Binding Module
+class TestSpellCheckerModule extends AbstractModule{
+    @Override
+    protected void configure() { }
+
+    @Provides
+    public SpellChecker provideSpellChecker(){
+
+        String dbUrl = &quot;jdbc:mysql://localhost:3306/emp&quot;;
+        String user = &quot;root&quot;;
+        int timeout = 1000;
+
+        return new SpellCheckerImpl(dbUrl, user, timeout);
+    }
+}
+
+//interface
+interface SpellChecker{
+    public void checkSpelling();
+}
+
+//implementation
+class SpellCheckerImpl implements SpellChecker{
+
+    private String dbUrl;
+    private String user;
+    private Integer timeout;
+
+    @Inject
+    public SpellCheckerImpl(String dbUrl,
+                            String user,
+                            Integer timeout){
+        this.dbUrl = dbUrl;
+        this.user = user;
+        this.timeout = timeout;
+    }
+
+    @Override
+    public void checkSpelling() {
+        System.out.println(dbUrl);
+        System.out.println(user);
+        System.out.println(timeout);
+    }
+}
 </code></pre>
-<h4 id="varchar"><font color=red>VARCHAR</font> 类型</h4>
-<p>边长字符串。M 表示最大列长度，范围是 0 到 65535。VARCHAR 的最大实际长度由最长的行的大小和使用的字符集确定。</p>
-<pre><code class="language-shell">[NATIONAL] VARCHAR(M) [CHARACTER SET charset_name] [COLLATE collation_name]
+<blockquote>
+<p>此方法是绑定模块的一部分，并提供要映射的复杂对象。</p>
+</blockquote>
+<h3 id="_5">提供者类</h3>
+<pre><code class="language-java">public class GuiceTester {
+    public static void main(String[] args) {
+        Injector injector = Guice.createInjector(new SpellCheckerModule());
+        TestEditor instance = injector.getInstance(TestEditor.class);
+        instance.makeCheckSpelling();
+    }
+}
+
+class TestEditor{
+    private SpellChecker spellChecker;
+
+    @Inject
+    public TestEditor(SpellChecker spellChecker){
+        this.spellChecker = spellChecker;
+    }
+
+    public void makeCheckSpelling(){
+        spellChecker.checkSpelling();
+    }
+}
+
+//binding module
+class SpellCheckerModule extends AbstractModule{
+    @Override
+    protected void configure() {
+        bind(SpellChecker.class).toProvider(checkSpellingProvides.class);
+    }
+}
+
+//interface
+interface SpellChecker{
+    public void checkSpelling();
+}
+
+//implement
+class SpellCheckerImpl implements SpellChecker{
+
+    private String dbUrl;
+    private String user;
+    private Integer timeout;
+
+    @Inject
+    public SpellCheckerImpl(String dbUrl,
+                            String user,
+                            Integer timeout){
+        this.dbUrl = dbUrl;
+        this.user = user;
+        this.timeout = timeout;
+    }
+
+    @Override
+    public void checkSpelling() {
+        System.out.println(&quot;Inside checkSpelling.&quot;);
+        System.out.println(dbUrl);
+        System.out.println(user);
+        System.out.println(timeout);
+    }
+}
+
+//provides class
+class checkSpellingProvides implements Provider&lt;SpellChecker&gt;{
+    @Override
+    public SpellChecker get() {
+        String dbUrl = &quot;jdbc:mysql://localhost:3306/emp&quot;;
+        String user = &quot;root&quot;;
+        int timeout = 1000;
+
+        return new SpellCheckerImpl(dbUrl, user, timeout);
+    }
+}
 </code></pre>
-<h4 id="text"><font color=red>TEXT</font> 类型</h4>
-<p>文本串。M 表示最大列长度，范围是 0 到 65535。TEXT 的最大实际长度由最长的行的大小和使用的字符集确定。</p>
-<pre><code class="language-shell">TEXT[(M)] [CHARACTER SET charset_name] [COLLATE collation_name]
+<blockquote>
+<p>随着 @provides 方法变得越来越复杂，可以使用 Provider 接口将这些方法移动到单独的类中。</p>
+</blockquote>
+<h3 id="_6">构造函数绑定</h3>
+<p>Guice 提供了一种使用 toConstructor() 方法创建于对象的特定构造函数的绑定的方法。</p>
+<pre><code class="language-java">public class GuiceTester {
+    public static void main(String[] args) {
+        Injector injector = Guice.createInjector(new TestEditorModule());
+        TestEditor instance = injector.getInstance(TestEditor.class);
+        instance.makeCheckSpelling();
+    }
+}
+
+class TestEditor{
+    private SpellChecker spellChecker;
+
+    @Inject
+    public TestEditor(SpellChecker spellChecker){
+        this.spellChecker = spellChecker;
+    }
+
+    public void makeCheckSpelling(){
+        spellChecker.checkSpelling();
+    }
+}
+
+//binding module
+class TestEditorModule extends AbstractModule{
+    @Override
+    protected void configure() {
+        try {
+            bind(SpellChecker.class).toConstructor(SpellCheckerImpl.class.getConstructor(String.class));
+        } catch (NoSuchMethodException | SecurityException e) {
+            System.out.println(&quot;Required constructor missing&quot;);
+        }
+        bind(String.class).annotatedWith(Names.named(&quot;JDBC&quot;)).toInstance(&quot;jdbc:mysql://localhost:3306/emp&quot;);  
+    }
+}
+
+//interface
+interface SpellChecker{
+    public void checkSpelling();
+}
+
+//implement
+class SpellCheckerImpl implements SpellChecker{
+
+    private String dbUrl;
+
+    public SpellCheckerImpl(){}
+
+    public SpellCheckerImpl(@Named(&quot;JDBC&quot;) String dbUrl){
+        this.dbUrl = dbUrl;
+    }
+
+    @Override
+    public void checkSpelling() {
+        System.out.println(&quot;Inside checkSpelling.&quot;);
+        System.out.println(dbUrl);
+    }
+} 
 </code></pre>
-<h4 id="tinytext"><font color=red>TINYTEXT</font> 类型</h4>
-<p>类似于 <font color=red>TEXT</font>，区别在于最大列长度为 255。</p>
-<pre><code class="language-shell">TINYTEXT [CHARACTER SET charset_name] [COLLATE collation_name]
+<h3 id="_7">内置绑定</h3>
+<p>Guice 为 java.util.logging.Longer 类提供内置绑定。Logger 的名称自动设置为 Logger 注入的类的名称。</p>
+<pre><code class="language-java">public class GuiceTester {
+    public static void main(String[] args) {
+        Injector injector = Guice.createInjector(new TestEditorModule());
+        TestEditor instance = injector.getInstance(TestEditor.class);
+        instance.makeSpellCheck();
+    }
+}
+
+class TestEditor{
+    private Logger logger;
+
+    @Inject
+    public TestEditor(Logger logger){
+        this.logger = logger;
+    }
+
+    public void makeSpellCheck(){
+        logger.info(&quot;In TestEditor.makeSpellCheck() method&quot;);
+    }
+}
+
+//Binding Module
+class TestEditorModule extends AbstractModule{
+    @Override
+    protected void configure() {
+
+    }
+}
 </code></pre>
-<h4 id="mediumtext"><font color=red>MEDIUMTEXT</font> 类型</h4>
-<p>类似于 <font color=red>TEXT</font>，区别在于最大列长度为 16,777,215。</p>
-<pre><code class="language-shell">MEDIUMTEXT [CHARACTER SET charset_name] [COLLATE collation_name]
-</code></pre>
-<h4 id="longtext"><font color=red>LONGTEXT</font> 类型</h4>
-<p>类似于 <font color=red>TEXT</font>, 区别在于最大列长度为 4,294,967,295。</p>
-<pre><code class="language-shell">LONGTEXT [CHARACTER SET charset_name] [COLLATE collatin_name]
-</code></pre>
-<h4 id="binary"><font color=red>BINARY</font> 类型</h4>
-<p>类似于 <font color=red>CHAR</font>, 区别在于 <font color=red>BINARY</font> 存储的是二进制字符串。</p>
-<pre><code class="language-SHELL">BINARY(M)
-</code></pre>
-<h4 id="varbinary"><font color=red>VARBINARY</font> 类型</h4>
-<p>类似于 <font color=red> VARCHAR</font>, 区别在于 <font color=red>VARBINARY</font> 存储的是二进制字符串。</p>
-<pre><code class="language-SHELL">VARBINARY(M)
-</code></pre>
-<h4 id="tinyblob"><font color=red>TINYBLOB</font> 类型</h4>
-<p>类似于<font color=red>BLOB</font>, 区别在于最大列长度为 255。</p>
-<pre><code class="language-SHELL">TINYBLOB
-</code></pre>
-<h4 id="blob"><font color=red>BLOB</font> 类型</h4>
-<p>二进制大文件。M 表示最大列长度，范围是 0 到 65535。</p>
-<pre><code class="language-SHELL">BLOB[(M)]
-</code></pre>
-<h4 id="mediumblob"><font color=red>MEDIUMBLOB</font> 类型</h4>
-<p>类似于 <font color=red>BLOB</font>, 区别在于最大列长度为 16,777,215。</p>
-<pre><code class="language-SHELL">MEDIUMBLOB
-</code></pre>
-<h4 id="longblob"><font color=red>LONGBLOB</font> 类型</h4>
-<p>类似于 <font color=red>BLOB</font>, 区别在于最大列长度为 4,294,967,295。</p>
-<pre><code class="language-SHELL">LONGBLOB
-</code></pre>
-<h4 id="enum"><font color=red>ENUM</font> 类型</h4>
-<p>枚举类型死一个字符串，他只能有一个值得字符串对象。其值必须是从一个固定集合中选取，这个固定集合在创建表的时候定义，语法是：</p>
-<pre><code>ENUM('value1','value2',....) [CHARACTER SET charset_name] [COLLATE collation_name]
-</code></pre>
-<h4 id="set"><font color=red>SET</font> 类型</h4>
-<p>集合类型是一个包含零个或多个值得字符串，其中每个值必须是从一个固定集合中选取，这个固定集合在创建表的时候定义，语法是：</p>
-<pre><code class="language-shell">SET('value1','value2',....) [CHARACTER SET charset_name] [COLLATE collation_name]
-</code></pre>
-<h4 id="json"><font color=red>JSON</font> 类型</h4>
-<p>JSON 类型可以存储 JSON 这种半结构化的数据，相比于直接将 JSON 存储为空字符串。</p>
-<pre><code class="language-SQL">CREATE TABLE city (
-    id INT PRIMARY KEY,
-    detail JSON,
-    population INT AS (JSON_EXTRACT(detail, '$.population'))
-);
-INSERT INTO city (id,detail) VALUES (1, '{&quot;name&quot;: &quot;Beijing&quot;, &quot;population&quot;: 100}');
-SELECT id FROM city WHERE population &gt;= 100;
-</code></pre>
+<h3 id="_8">即时绑定</h3>
+<p>由于绑定是在绑定模块中定义的，Guice 会在需要注入依赖项时使用它们。如果绑定不存在，它可以尝试创建即时绑定。绑定模块中存在的绑定称为显示绑定并且具有更高的优先级，而即时绑定为隐式绑定。如果两种类型的绑定都存在，则考虑显示绑定进行映射。</p>
+<table>
+<thead>
+<tr>
+<th align="center">绑定类型</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">Injectable <br /> Constructor</td>
+<td>非私有、无参数的构造函数有资格进行即时绑定。另一种方法是使用 @Inject 注释来注释构造函数。</td>
+</tr>
+<tr>
+<td align="center">@ImplementedBy<br />annotation</td>
+<td>@ImplementedBy 注释告诉指南有关实现类的信息。在这种情况下，绑定模块中不需要绑定。</td>
+</tr>
+<tr>
+<td align="center">@ProvidedBy<br />annotation</td>
+<td>@ProvidedBy 注解告诉指南关于实现类的提供者。在这种情况下，绑定模块中不需要绑定。</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_9">注射实例</h2>
+<h3 id="_10">构造函数注入</h3>
+<h3 id="_11">方法注入</h3>
+<h3 id="_12">字段注入</h3>
+<h3 id="_13">可选注入</h3>
+<h3 id="_14">按需注入</h3>
+<h2 id="_15">杂项示例</h2>
+<h3 id="_16">作用域</h3>
+<h3 id="aop">AOP</h3>
+<h2 id="guice_1">Guice 有用的资源</h2>
+<h3 id="_17">快速指南</h3>
+<h3 id="_18">有用的资源</h3>
 
 
 
@@ -1494,7 +1566,7 @@ SELECT id FROM city WHERE population &gt;= 100;
     <nav class="md-footer__inner md-grid" aria-label="Footer" >
       
         
-        <a href="../Tidb%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/" class="md-footer__link md-footer__link--prev" aria-label="Previous: TiDB" rel="prev">
+        <a href="../../TiDB/Tidb%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" class="md-footer__link md-footer__link--prev" aria-label="Previous: TiDB数据类型" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -1503,26 +1575,11 @@ SELECT id FROM city WHERE population &gt;= 100;
               <span class="md-footer__direction">
                 Previous
               </span>
-              TiDB
+              TiDB数据类型
             </div>
           </div>
         </a>
       
-      
-        
-        <a href="../../JavaSE/Guice/" class="md-footer__link md-footer__link--next" aria-label="Next: JavaSE" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              JavaSE
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
-          </div>
-        </a>
       
     </nav>
   

@@ -629,6 +629,53 @@
 
             
           
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_6" type="checkbox" id="__nav_1_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1_6">
+          JavaSE
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="JavaSE" data-md-level="2">
+        <label class="md-nav__title" for="__nav_1_6">
+          <span class="md-nav__icon md-icon"></span>
+          JavaSE
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/Guice/" class="md-nav__link">
+        JavaSE
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -817,6 +864,10 @@
 <p>(1) 单机 MySQL 能满足的场景也用不到TiDB。</p>
 <p>(2) 数据条数少于 5000W 的场景下通常用不到 Ti'DB，TiDB 是为大规模的数据场景设计的。</p>
 <p>(3) 如果你的应用数据量小(所有数据千万级别行以下)，且没有高可用、强一致性或者多数据中心复制等要求，那么久不适合使用 TiDB。</p>
+<h1 id="tidb_4">TiDB命令</h1>
+<pre><code class="language-shell"># 依次查看tidb pd tikv组件
+ansible tidb_servers -m shell -a &quot;ps aux | grep tidb-server&quot; 
+</code></pre>
 
 
 
