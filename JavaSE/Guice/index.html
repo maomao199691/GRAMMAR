@@ -13,7 +13,7 @@
     
     
       
-        <title>JavaSE - maomao的笔记</title>
+        <title>Guice - maomao的笔记</title>
       
     
     
@@ -99,7 +99,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              JavaSE
+              Guice
             
           </span>
         </div>
@@ -575,12 +575,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          JavaSE
+          Guice
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        JavaSE
+        Guice
       </a>
       
         
@@ -735,12 +735,38 @@
     作用域
   </a>
   
+    <nav class="md-nav" aria-label="作用域">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    应用范围的方法
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
   <a href="#aop" class="md-nav__link">
     AOP
   </a>
+  
+    <nav class="md-nav" aria-label="AOP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    重要类
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -758,14 +784,14 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_17" class="md-nav__link">
+  <a href="#_19" class="md-nav__link">
     快速指南
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_18" class="md-nav__link">
+  <a href="#_20" class="md-nav__link">
     有用的资源
   </a>
   
@@ -961,12 +987,38 @@
     作用域
   </a>
   
+    <nav class="md-nav" aria-label="作用域">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    应用范围的方法
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
   <a href="#aop" class="md-nav__link">
     AOP
   </a>
+  
+    <nav class="md-nav" aria-label="AOP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    重要类
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -984,14 +1036,14 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_17" class="md-nav__link">
+  <a href="#_19" class="md-nav__link">
     快速指南
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_18" class="md-nav__link">
+  <a href="#_20" class="md-nav__link">
     有用的资源
   </a>
   
@@ -1534,18 +1586,667 @@ class TestEditorModule extends AbstractModule{
 </tr>
 </tbody>
 </table>
+<p><strong>Injectable 示例：</strong></p>
+<pre><code>/**
+ * Injectable中使用 @Inject and @Named 来注释构造函数
+ */
+public class GuiceTester {
+    public static void main(String[] args) {
+        Injector injector = Guice.createInjector(new TestEditorModule());
+        TestEditor instance = injector.getInstance(TestEditor.class);
+        instance.makeCheckSpelling();
+    }
+}
+
+//interface
+interface SpellChecker{
+    public void checkSpelling();
+}
+
+class TestEditor{
+    private SpellChecker spellChecker;
+
+    @Inject
+    public TestEditor(SpellChecker spellChecker){
+        this.spellChecker = spellChecker;
+    }
+
+    public void makeCheckSpelling(){
+        spellChecker.checkSpelling();
+    }
+}
+
+//Binding Module
+class TestEditorModule extends AbstractModule{
+    @Override
+    protected void configure() {
+        bind(SpellChecker.class).to(SpellCheckerImpl.class);
+        bind(String.class)
+                .annotatedWith(Names.named(&quot;JDBC&quot;))
+                .toInstance(&quot;jdbc:mysql://localhost:3306/emp&quot;);
+    }
+}
+
+//implement
+class SpellCheckerImpl implements SpellChecker{
+
+    @Inject @Named(&quot;JDBC&quot;)
+    private String dbUrl;
+
+    public SpellCheckerImpl(){}
+
+    @Override
+    public void checkSpelling() {
+        System.out.println(&quot;Inside checkSpelling.&quot;);
+        System.out.println(dbUrl);
+    }
+}
+</code></pre>
+<p><strong>@ImplementedBy 示例：</strong></p>
+<pre><code class="language-java">public class GuiceTester {
+    public static void main(String[] args) {
+        Injector injector = Guice.createInjector(new TestEditorModule());
+        TestEditor instance = injector.getInstance(TestEditor.class);
+        instance.makeCheckSpelling();
+    }
+}
+
+class TestEditor{
+    private SpellChecker spellChecker;
+
+    @Inject
+    public TestEditor(SpellChecker spellChecker){
+        this.spellChecker = spellChecker;
+    }
+
+    public void makeCheckSpelling(){
+        spellChecker.checkSpelling();
+    }
+}
+
+//Binding Module
+class TestEditorModule extends AbstractModule{
+    @Override
+    protected void configure() {
+        bind(String.class)
+                .annotatedWith(Names.named(&quot;JDBC&quot;))
+                .toInstance(&quot;jdbc:mysql://localhost:3306/emp&quot;);
+    }
+}
+
+//interface 使用@ImplementedBy绑定实现，不需要在AbstractModule中再次绑定
+@ImplementedBy(SpellCheckerImpl.class)
+interface SpellChecker{
+    public void checkSpelling();
+}
+
+//implement
+class SpellCheckerImpl implements SpellChecker{
+
+    @Inject @Named(&quot;JDBC&quot;)
+    private String dbUrl;
+
+    public SpellCheckerImpl(){}
+
+    @Override
+    public void checkSpelling() {
+        System.out.println(&quot;Inside checkSpelling.&quot;);
+        System.out.println(dbUrl);
+    }
+}
+</code></pre>
+<p><strong>ProvidedBy 示例：</strong></p>
+<pre><code class="language-java">public class GuiceTester {
+    public static void main(String[] args) {
+        Injector injector = Guice.createInjector(new TestEditorModule());
+        TestEditor instance = injector.getInstance(TestEditor.class);
+        instance.makeCheckSpelling();
+    }
+}
+
+class TestEditor{
+    private SpellChecker spellChecker;
+
+    @Inject
+    public TestEditor(SpellChecker spellChecker){
+        this.spellChecker = spellChecker;
+    }
+
+    public void makeCheckSpelling(){
+        spellChecker.checkSpelling();
+    }
+}
+
+//Binding Module
+class TestEditorModule extends AbstractModule{
+    @Override
+    protected void configure() {
+
+    }
+}
+
+//interface
+@ProvidedBy(SpellCheckerProvider.class)
+interface SpellChecker{
+    public void checkSpelling();
+}
+
+//implement
+class SpellCheckerImpl implements SpellChecker{
+
+    private String dbUrl;
+    private String user;
+    private Integer timeout;
+
+    @Inject
+    public SpellCheckerImpl(String dbUrl,
+                            String user,
+                            int timeout){
+        this.dbUrl = dbUrl;
+        this.user = user;
+        this.timeout = timeout;
+    }
+
+    @Override
+    public void checkSpelling() {
+        System.out.println(&quot;Inside checkSpelling.&quot;);
+        System.out.println(dbUrl);
+        System.out.println(user);
+        System.out.println(timeout);
+    }
+}
+
+//@provider
+class SpellCheckerProvider implements Provider&lt;SpellChecker&gt;{
+    @Override
+    public SpellChecker get() {
+        String dbUrl = &quot;jdbc:mysql://localhost:3306/emp1&quot;;
+        String user = &quot;root&quot;;
+        int timeout = 1000;
+
+        return new SpellCheckerImpl(dbUrl, user, timeout);
+    }
+}
+</code></pre>
 <h2 id="_9">注射实例</h2>
 <h3 id="_10">构造函数注入</h3>
+<p>注入是将依赖关系注入对象的过程。构造函数注入很常见，即将依赖项作为参数注入到构造函数中。</p>
+<pre><code class="language-java">public class GuiceTester {
+    public static void main(String[] args) {
+        Injector injector = Guice.createInjector(new TestEditorModule());
+        TestEditor instance = injector.getInstance(TestEditor.class);
+        instance.makeCheckSpelling();
+    }
+}
+
+class TestEditor{
+    private SpellChecker spellChecker;
+
+    @Inject
+    public TestEditor(SpellChecker spellChecker){
+        this.spellChecker = spellChecker;
+    }
+
+    public void makeCheckSpelling(){
+        spellChecker.checkSpelling();
+    }
+}
+
+//Binding Module
+class TestEditorModule extends AbstractModule{
+    @Override
+    protected void configure() {
+        bind(SpellChecker.class).to(SpellCheckerImpl.class);
+    }
+}
+
+//interface
+interface SpellChecker{
+    public void checkSpelling();
+}
+
+//implement
+class SpellCheckerImpl implements SpellChecker{
+
+    @Override
+    public void checkSpelling() {
+        System.out.println(&quot;Inside checkSpelling.&quot;);
+    }
+}
+</code></pre>
+<blockquote>
+<p>构造函数注入，比较常用的一种注入方式</p>
+</blockquote>
 <h3 id="_11">方法注入</h3>
+<p>使用AbstractModule中的bind的toIntance将常量进行绑定，并通过@Named将常量注入到方法中。</p>
+<pre><code class="language-java">public class GuiceTester {
+    public static void main(String[] args) {
+        Injector injector = Guice.createInjector(new TestEditorModule());
+        TestEditor instance = injector.getInstance(TestEditor.class);
+        instance.makeCheckSpelling();
+    }
+}
+
+class TestEditor{
+    private SpellChecker spellChecker;
+
+    @Inject
+    public TestEditor(SpellChecker spellChecker){
+        this.spellChecker = spellChecker;
+    }
+
+    public void makeCheckSpelling(){
+        spellChecker.checkSpelling();
+    }
+}
+
+//Binding Module 使用@Named和toInstance实现常量绑定并注入到方法中
+class TestEditorModule extends AbstractModule{
+    @Override
+    protected void configure() {
+        bind(String.class)
+                .annotatedWith(Names.named(&quot;JDBC&quot;))
+                .toInstance(&quot;jdbc:mysql://localhost:3306/emp&quot;);
+    }
+}
+
+//interface @ImplementedBy的作用是绑定一个自身的实现类为默认实现类
+@ImplementedBy(SpellCheckerImpl.class)
+interface SpellChecker{
+    public void checkSpelling();
+}
+
+//implement
+class SpellCheckerImpl implements SpellChecker{
+
+    private String dbUrl;
+
+    @Inject
+    public SpellCheckerImpl(@Named(&quot;JDBC&quot;) String dbUrl){
+        this.dbUrl = dbUrl;
+
+    }
+
+    @Override
+    public void checkSpelling() {
+        System.out.println(&quot;Inside checkSpelling.&quot;);
+        System.out.println(dbUrl);
+    }
+}
+</code></pre>
 <h3 id="_12">字段注入</h3>
+<p>字段注入用于将值对象设置为对象字段的依赖项。</p>
+<pre><code class="language-java">public class GuiceTester {
+    public static void main(String[] args) {
+        Injector injector = Guice.createInjector(new TestEditorModule());
+        TestEditor instance = injector.getInstance(TestEditor.class);
+        instance.makeCheckSpelling();
+    }
+}
+
+class TestEditor{
+    private SpellChecker spellChecker;
+
+    @Inject
+    public TestEditor(SpellChecker spellChecker){
+        this.spellChecker = spellChecker;
+    }
+
+    public void makeCheckSpelling(){
+        spellChecker.checkSpelling();
+    }
+}
+
+//Binding Module
+class TestEditorModule extends AbstractModule{
+    @Override
+    protected void configure() {
+        bind(String.class)
+                .annotatedWith(Names.named(&quot;JDBC&quot;))
+                .toInstance(&quot;jdbc:mysql://localhost:3306/emp&quot;);
+    }
+}
+
+//interface
+@ImplementedBy(SpellCheckerImpl.class)
+interface SpellChecker{
+    public void checkSpelling();
+}
+
+//implement
+class SpellCheckerImpl implements SpellChecker{
+
+    @Inject @Named(&quot;JDBC&quot;)
+    private String dbUrl;
+
+    public SpellCheckerImpl(){}
+
+    @Override
+    public void checkSpelling() {
+        System.out.println(&quot;Inside checkSpelling.&quot;);
+        System.out.println(dbUrl);
+    }
+}
+</code></pre>
+<blockquote>
+<p>使用@Named和@Inject注解将常量注入到字段</p>
+</blockquote>
 <h3 id="_13">可选注入</h3>
+<p>可选注入意味着注入依赖项（如果存在）。方法和字段注入可能是可选的依赖关系，如果不存在依赖关系，则应具有一些默认值。</p>
+<pre><code class="language-java">public class GuiceTester {
+    public static void main(String[] args) {
+        Injector injector = Guice.createInjector(new TestEditorModule());
+        TestEditor instance = injector.getInstance(TestEditor.class);
+        instance.makeCheckSpelling();
+    }
+}
+
+class TestEditor{
+    private SpellChecker spellChecker;
+
+    @Inject
+    public TestEditor(SpellChecker spellChecker){
+        this.spellChecker = spellChecker;
+    }
+
+    public void makeCheckSpelling(){
+        spellChecker.checkSpelling();
+    }
+}
+
+//Binding Module
+class TestEditorModule extends AbstractModule{
+    @Override
+    protected void configure() {
+        bind(String.class)
+                .annotatedWith(Names.named(&quot;JDBC&quot;))
+                .toInstance(&quot;jdbc:oracle://localhost:1521/test&quot;);
+    }
+}
+
+//interface
+@ImplementedBy(SpellCheckerImpl.class)
+interface SpellChecker{
+    public void checkSpelling();
+}
+
+//implement
+class SpellCheckerImpl implements SpellChecker{
+
+    private String dbUrl = &quot;jdbc:mysql://localhost:3306/emp&quot;;
+
+    public SpellCheckerImpl(){}
+
+    @Inject(optional = true)
+    public void setDbUrl(@Named(&quot;JDBC&quot;) String dbUrl){
+        this.dbUrl = dbUrl;
+    }
+
+    @Override
+    public void checkSpelling() {
+        System.out.println(&quot;Inside checkSpelling.&quot;);
+        System.out.println(dbUrl);
+    }
+}
+</code></pre>
+<blockquote>
+<p>在使用@Inject的同时使用optional设置可选参数，true为支持默认参数，当不设定注入的值时生效，flase为不支持，当不设定注入的值时，报异常</p>
+</blockquote>
 <h3 id="_14">按需注入</h3>
+<p>注入是将依赖关系注入对象的过程。方法和字段注入可用于使用 <em>injector.injectMembers（）</em> 方法使用退出对象进行初始化</p>
+<pre><code class="language-java">public class GuiceTester {
+    public static void main(String[] args) {
+        Injector injector = Guice.createInjector(new TestEditorModule());
+        SpellChecker spellChecker = new SpellCheckerImpl();
+        injector.injectMembers(spellChecker);
+
+        TestEditor instance = injector.getInstance(TestEditor.class);
+        instance.makeCheckSpelling();
+    }
+}
+
+class TestEditor{
+    private SpellChecker spellChecker;
+
+    @Inject
+    public TestEditor(SpellChecker spellChecker){
+        this.spellChecker = spellChecker;
+    }
+
+    public void makeCheckSpelling(){
+        spellChecker.checkSpelling();
+    }
+}
+
+//Binding Module
+class TestEditorModule extends AbstractModule{
+    @Override
+    protected void configure() {
+
+    }
+}
+
+//interface
+@ImplementedBy(SpellCheckerImpl.class)
+interface SpellChecker{
+    public void checkSpelling();
+}
+
+//implement
+class SpellCheckerImpl implements SpellChecker{
+
+    public SpellCheckerImpl(){}
+
+    @Override
+    public void checkSpelling() {
+        System.out.println(&quot;Inside checkSpelling.&quot;);
+    }
+}
+</code></pre>
+<blockquote>
+<p>injectMembers方法是Guice的一个方法，它可以将一个对象中的所有带@Inject注解的属性或方法注入相应的依赖。</p>
+</blockquote>
+<p>例如，如果你有一个类Foo，它有一个带@Inject注解的属性bar，那么你可以使用injectMembers方法来将bar属性注入相应的依赖，如下所示：</p>
+<pre><code class="language-java">// 假设Foo类有一个名为bar的带@Inject注解的属性
+Foo foo = new Foo();
+
+// 创建Guice的Injector对象
+Injector injector = Guice.createInjector(...);
+
+// 使用injectMembers方法将foo对象中所有带@Inject注解的属性注入相应的依赖
+injector.injectMembers(foo);
+</code></pre>
+<p>总之，injectMembers方法可以让你在不用手动实例化依赖的情况下，自动将依赖注入到一个对象中，大大简化了依赖注入的工作。</p>
 <h2 id="_15">杂项示例</h2>
 <h3 id="_16">作用域</h3>
+<p>Guice 每次提供值作为其默认行为时都会返回一个新实例。它可以通过范围进行配置。以下是 Guice 支持的范围：</p>
+<ul>
+<li>@Singleton - 应用程序生存期的单个实例。@Singleton对象必须是线程安全的。</li>
+<li>@SessionScoped - Web 应用程序特定会话的单个实例。@SessionScoped对象必须是线程安全的。</li>
+<li>@RequestScoped - Web 应用程序的特定请求的单个实例。@RequestScoped对象不需要是线程安全的。</li>
+</ul>
+<h4 id="_17">应用范围的方法</h4>
+<p><strong>在类级别：</strong></p>
+<pre><code class="language-java">@Singleton
+class SpellCheckImp implements SpellChecker{
+
+    public SpellCheckerImpl(){}
+
+    @Override
+    public void checkSpelling(){
+        System.out.println(&quot;Inside checkSpelling.&quot;);
+    }
+}
+</code></pre>
+<p><strong>配置级别：</strong></p>
+<pre><code class="language-java">    bind(SpellChecker.class).to(SpellCheckerImpl.class).in(Singleton.class);
+</code></pre>
+<p><strong>方法级别：</strong></p>
+<pre><code class="language-java">@Providers @Singeton
+public SpellChecker provideSpellChecker(){
+
+    String dbUrl = &quot;jdbc:mysql://localhost:5326/emp&quot;;
+    String user = &quot;user&quot;;
+    int timeout = 100;
+
+    return = new SpellCheckerImpl(dbUrl, user, timeout);
+}
+</code></pre>
+<p>带有@Singleton注释的结果：</p>
+<pre><code class="language-java">public class GuiceTester {
+    public static void main(String[] args) {
+        Injector injector = Guice.createInjector(new TestEditorModule());
+        SpellCheckerImpl spellChecker = new SpellCheckerImpl();
+        injector.injectMembers(spellChecker);
+
+        TestEditor instance = injector.getInstance(TestEditor.class);
+        instance.makeCheckSpelling();
+        System.out.println(instance.checkSpellingId());
+
+
+        TestEditor instance1 = injector.getInstance(TestEditor.class);
+        instance1.makeCheckSpelling();
+        System.out.println(instance1.checkSpellingId());
+    }
+}
+
+class TestEditor{
+    private SpellChecker spellChecker;
+
+    @Inject
+    public TestEditor(SpellChecker spellChecker){
+        this.spellChecker = spellChecker;
+    }
+
+    public void makeCheckSpelling(){
+        spellChecker.checkSpelling();
+    }
+
+    public double checkSpellingId(){
+        return spellChecker.getId();
+    }
+}
+
+//Binding module
+class TestEditorModule extends AbstractModule{
+    @Override
+    protected void configure() {
+        bind(SpellChecker.class).to(SpellCheckerImpl.class);
+    }
+}
+
+//interface
+interface SpellChecker{
+    public void checkSpelling();
+    public double getId();
+}
+
+//implement
+@Singleton
+class SpellCheckerImpl implements SpellChecker{
+
+    private double id;
+
+    public SpellCheckerImpl(){
+        this.id = Math.random();
+    }
+
+    @Override
+    public void checkSpelling() {
+        System.out.println(&quot;Inside checkSpelling.&quot;);
+    }
+
+    @Override
+    public double getId() {
+        return id;
+    }
+}
+
+//结果:
+Inside checkSpelling.
+0.2128649670953675
+Inside checkSpelling.
+0.2128649670953675
+</code></pre>
+<p>不带有@Singleton注释的结果：</p>
+<pre><code class="language-java">Inside checkSpelling.
+0.22763053883974516
+Inside checkSpelling.
+0.33234896487113263
+</code></pre>
 <h3 id="aop">AOP</h3>
+<p>Guice 是一种依赖注入框架，它可以帮助开发人员实现依赖注入。AOP 是面向切面编程的缩写，它是一种编程技术，可以在不修改源代码的情况下提供应用程序的某些功能。在 Guice 中，AOP 可以用来实现横切关注点，这些关注点是应用程序的特定功能，比如日志记录、事务管理等。</p>
+<h4 id="_18">重要类</h4>
+<ul>
+<li><strong>匹配器</strong> - 匹配器是接受或拒绝值的接口。在 Guice AOP 中，我们需要两个匹配器：一个用于定义哪些类参与，另一个用于这些类的方法。</li>
+<li><strong>方法拦截</strong>器 - 方法拦截器在调用匹配方法时执行。他们可以检查调用：方法、其参数和接收实例。我们可以执行横切逻辑，然后委托给底层方法。最后，我们可以检查返回值或异常并返回。</li>
+</ul>
+<pre><code class="language-java">public class GuiceTester {
+    public static void main(String[] args) {
+        Injector injector = Guice.createInjector(new TestEditorModule());
+        TestEditor instance = injector.getInstance(TestEditor.class);
+        instance.makeCheckSpelling();
+    }
+}
+
+class TestEditor{
+    private SpellChecker spellChecker;
+
+
+    @Inject
+    public TestEditor(SpellChecker spellChecker){
+        this.spellChecker = spellChecker;
+    }
+
+    public void makeCheckSpelling(){
+        spellChecker.checkSpelling();
+    }
+}
+
+//Binding Module
+class TestEditorModule extends AbstractModule{
+    @Override
+    protected void configure() {
+        bind(SpellChecker.class).to(SpellCheckerImpl.class);
+        bindInterceptor(Matchers.any(),
+                Matchers.annotatedWith(CallTracker.class),
+                new CallTrackerService());
+    }
+}
+
+//interface
+interface SpellChecker{
+    public void checkSpelling();
+}
+
+//implement
+class SpellCheckerImpl implements SpellChecker{
+
+    @Override @CallTracker
+    public void checkSpelling() {
+        System.out.println(&quot;Inside checkSpelling.&quot;);
+    }
+}
+
+@Retention(RetentionPolicy.RUNTIME) @Target(ElementType.METHOD)
+@interface CallTracker{}
+
+class CallTrackerService implements MethodInterceptor{
+    @Override
+    public Object invoke(MethodInvocation methodInvocation) throws Throwable {
+        System.out.println(&quot;Before &quot; + methodInvocation.getMethod().getName());
+        Object result = methodInvocation.proceed();
+        System.out.println(&quot;After &quot; + methodInvocation.getMethod().getName());
+        return result;
+    }
+}
+</code></pre>
+<blockquote>
+<p>@CallTracker 是 Guice 中的一个注释，它可以用来标注一个方法，表明该方法需要被跟踪。在实际应用中，通常需要定义一个拦截器来拦截标注了 @CallTracker 的方法，并实现跟踪逻辑。这样，就可以跟踪标注了 @CallTracker 的方法的调用情况，比如方法被调用的次数、调用时间等.</p>
+</blockquote>
 <h2 id="guice_1">Guice 有用的资源</h2>
-<h3 id="_17">快速指南</h3>
-<h3 id="_18">有用的资源</h3>
+<h3 id="_19">快速指南</h3>
+<h3 id="_20">有用的资源</h3>
 
 
 
