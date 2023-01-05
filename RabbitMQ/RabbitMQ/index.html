@@ -13,7 +13,7 @@
     
     
       
-        <title>Spark入门 - maomao的笔记</title>
+        <title>RabbitMQ概述 - maomao的笔记</title>
       
     
     
@@ -65,6 +65,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#rabbitmq" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -94,7 +99,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Spark入门
+              RabbitMQ概述
             
           </span>
         </div>
@@ -321,8 +326,78 @@
   
   
     <li class="md-nav__item">
-      <a href="../Scala/" class="md-nav__link">
+      <a href="../../Spark/Scala/" class="md-nav__link">
         Scala
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Spark/Spark%E5%85%A5%E9%97%A8/" class="md-nav__link">
+        Spark入门
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Spark/SparkCore/" class="md-nav__link">
+        SparkCore
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Spark/SparkSQL/" class="md-nav__link">
+        SparkSQL
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Spark/SparkStreaming/" class="md-nav__link">
+        SparkStreaming
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Spark/Spark%E5%86%85%E6%A0%B8/" class="md-nav__link">
+        Spark内核
       </a>
     </li>
   
@@ -341,9 +416,11 @@
       <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
       
       
+        
+      
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Spark入门
+        RabbitMQ概述
       </a>
       
     </li>
@@ -357,77 +434,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../SparkCore/" class="md-nav__link">
-        SparkCore
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../SparkSQL/" class="md-nav__link">
-        SparkSQL
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../SparkStreaming/" class="md-nav__link">
-        SparkStreaming
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Spark%E5%86%85%E6%A0%B8/" class="md-nav__link">
-        Spark内核
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../RabbitMQ/RabbitMQ/" class="md-nav__link">
-        RabbitMQ概述
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../RabbitMQ/RabbitMQ%E9%BB%98%E8%AE%A4%E9%85%8D%E7%BD%AE/" class="md-nav__link">
+      <a href="../RabbitMQ%E9%BB%98%E8%AE%A4%E9%85%8D%E7%BD%AE/" class="md-nav__link">
         RabbitMQ默认配置
       </a>
     </li>
@@ -620,6 +627,8 @@
   
   
   
+    
+  
   
 </nav>
                   </div>
@@ -634,9 +643,27 @@
                   
 
 
-  <h1>Spark入门</h1>
-
-
+<h1 id="rabbitmq">RabbitMQ概述</h1>
+<p><center><strong>思维导图</strong></center></p>
+<p><img alt="trigger" src="https://s2.loli.net/2023/01/03/PNGJ2zHmDQlv1jE.png" width="width" /></p>
+<h1 id="1">1. 消息队列</h1>
+<h3 id="11">1.1 消息队列模式</h3>
+<p>​   消息队列目前主要有 2 种模式，分别为"点对点模式"和"发布/订阅模式"。</p>
+<h4 id="111">1.1.1 点对点模式</h4>
+<p>​   一个具体的消息只能由一个消费者消费，多个生产者可以向同一个消息队列发送消息，但是一个消息在被一个消费者处理的时候，这个消息在队列上会被锁住或者被移除并且其他消费者无法处理该消息。</p>
+<p>​   需要额外注意的是，如果消费者处理了一个消息失败了，消息系统一般会把这个消息放回队列， 这样其他消费者可以继续处理。</p>
+<p><center><strong>点对点模式</strong></center></p>
+<p><img alt="trigger" src="https://s2.loli.net/2023/01/04/MKzVXF7l9mepPJZ.png" width="width" /></p>
+<h4 id="112">1.1.2 发布/订阅模式</h4>
+<p>单个消息可以被多个订阅者并发的获取和处理。一般来说，订阅有两种类型：</p>
+<ul>
+<li><font color='green'>临时（ephemeral）订阅：</font>这种订阅只有在消费者启动并且运行的时候才存在。一旦消费者退出，相应的订阅以及尚未处理的消息就会丢失。</li>
+<li><font color='green'>持久（durable）订阅：</font>这种订阅会一直存在，除非主动去删除。消费者退出后，消息系统会继续维护该订阅，并且后续消息可以被继续处理。</li>
+</ul>
+<p><center><strong>发布/订阅模式</strong></center></p>
+<p><img alt="trigger" src="https://s2.loli.net/2023/01/04/7YLxEXwZ3Vo1Jyd.png" width="width" /></p>
+<h3 id="12">1.2 衡量标准</h3>
+<p>​   对消息队列进行技术选型时，需要通过一下指标衡量</p>
 
 
 
@@ -657,7 +684,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer" >
       
         
-        <a href="../Scala/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Scala" rel="prev">
+        <a href="../../Spark/Spark%E5%86%85%E6%A0%B8/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Spark内核" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -666,20 +693,20 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              Scala
+              Spark内核
             </div>
           </div>
         </a>
       
       
         
-        <a href="../SparkCore/" class="md-footer__link md-footer__link--next" aria-label="Next: SparkCore" rel="next">
+        <a href="../RabbitMQ%E9%BB%98%E8%AE%A4%E9%85%8D%E7%BD%AE/" class="md-footer__link md-footer__link--next" aria-label="Next: RabbitMQ默认配置" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              SparkCore
+              RabbitMQ默认配置
             </div>
           </div>
           <div class="md-footer__button md-icon">
